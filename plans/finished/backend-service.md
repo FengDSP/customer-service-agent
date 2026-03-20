@@ -48,7 +48,8 @@ Build the FastAPI backend service that receives customer messages, runs an agent
 - [x] Write unit tests for config loader
 - [x] Write unit tests for CSV lookup tool
 - [x] Write integration test for the `/chat` endpoint (mock LLM calls)
-- [ ] Manual smoke test: start server, send messages via curl, verify multi-turn conversation works
+- [x] Manual smoke test: start server, send messages via curl, verify multi-turn conversation works
 
 ## Notes
 - Branch: `worktree-backend`
+- Smoke test: server starts, accepts requests, routes to correct config. Full LLM round-trip requires ANTHROPIC_API_KEY in .env.
