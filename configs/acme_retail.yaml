@@ -1,0 +1,18 @@
+business_id: "acme_retail"
+name: "Acme Retail Support"
+
+system_prompt: |
+  You are a customer service agent for Acme Retail.
+  Be polite, concise, and helpful.
+  Always check order status before responding to order-related questions.
+  When looking up data, use the available tools to find relevant information.
+
+data_sources:
+  - name: "orders"
+    type: "csv"
+    path: "data/acme/orders.csv"
+    description: "Customer orders with order_id, customer_email, status, order_date, total, and items."
+  - name: "products"
+    type: "csv"
+    path: "data/acme/products.csv"
+    description: "Product catalog with sku, name, price, category, and in_stock status."
