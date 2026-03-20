@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from agent.config import BusinessConfig
 from agent.csv_tool import build_tool_definitions, execute_csv_lookup
 from agent.logging import log_interaction
+from agent.prompt import build_user_prompt
 from agent.session import append_message
 
 load_dotenv()
@@ -19,8 +20,8 @@ def run_agent_loop(
     history: list[dict],
     message: str,
     customer_id: str,
-) -> str:
-    """Run the agent loop: call LLM, handle tool calls, return final reply."""
+) -> dict:
+    """Run the agent loop and return the structured response dict."""
     client = anthropic.Anthropic()
     model = os.getenv("LLM_MODEL", DEFAULT_MODEL)
     tools = build_tool_definitions(config)
@@ -29,14 +30,16 @@ def run_agent_loop(
     history.append(user_msg)
     append_message(config.business_id, customer_id, user_msg)
 
-    messages = list(history)
-    all_turns = list(history)
+    structured_prompt = build_user_prompt(message, history[:-1], config, customer_id)
+
+    messages = [{"role": "user", "content": structured_prompt}]
+    all_turns = [{"role": "user", "content": structured_prompt}]
     total_usage = {"input_tokens": 0, "output_tokens": 0}
 
     while True:
         response = client.messages.create(
             model=model,
-            max_tokens=1024,
+            max_tokens=2048,
             system=config.system_prompt,
             tools=tools,
             messages=messages,
@@ -64,7 +67,10 @@ def run_agent_loop(
             messages.append(tool_msg)
             all_turns.append(tool_msg)
         else:
-            reply_text = _extract_text(response)
+            raw_text = _extract_text(response)
+            result = _parse_response(raw_text)
+
+            reply_text = result["draft_reply"]
             assistant_msg = {"role": "assistant", "content": reply_text}
             history.append(assistant_msg)
             append_message(config.business_id, customer_id, assistant_msg)
@@ -79,7 +85,7 @@ def run_agent_loop(
                 system_prompt=config.system_prompt,
             )
 
-            return reply_text
+            return result
 
 
 def _dispatch_tool(config: BusinessConfig, tool_name: str, args: dict) -> str:
@@ -94,3 +100,35 @@ def _extract_text(response) -> str:
         if block.type == "text":
             parts.append(block.text)
     return "\n".join(parts)
+
+
+def _parse_response(text: str) -> dict:
+    """Parse JSON response from LLM, with fallback for plain text."""
+    text = text.strip()
+
+    # Strip markdown code fences if present
+    if text.startswith("```"):
+        lines = text.split("\n")
+        lines = lines[1:]  # remove opening fence
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        text = "\n".join(lines).strip()
+
+    try:
+        data = json.loads(text)
+        return {
+            "draft_reply": data.get("draft_reply", ""),
+            "internal_note": data.get("internal_note", ""),
+            "confidence": data.get("confidence", "medium"),
+            "needs_human_review": data.get("needs_human_review", False),
+            "suggested_actions": data.get("suggested_actions", []),
+        }
+    except json.JSONDecodeError:
+        # Fallback: treat the entire text as the reply
+        return {
+            "draft_reply": text,
+            "internal_note": "LLM did not return valid JSON",
+            "confidence": "low",
+            "needs_human_review": True,
+            "suggested_actions": [],
+        }

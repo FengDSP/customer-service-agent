@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -16,7 +17,9 @@ def get_or_create_session(business_id: str, customer_id: str) -> list[dict]:
 
 
 def append_message(business_id: str, customer_id: str, message: dict) -> None:
-    """Append a message to the session history file."""
+    """Append a message (with timestamp) to the session history file."""
+    if "timestamp" not in message:
+        message["timestamp"] = datetime.now().isoformat()
     path = _session_path(business_id, customer_id)
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "a") as f:
