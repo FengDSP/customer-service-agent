@@ -32,6 +32,25 @@ def test_parse_fallback_plain_text():
     assert "did not return valid JSON" in result["internal_note"]
 
 
+def test_parse_json_embedded_in_text():
+    text = (
+        "Here is my analysis:\n\n"
+        '```json\n{"draft_reply": "Hello!", "confidence": "high"}\n```\n'
+    )
+    result = _parse_response(text)
+    assert result["draft_reply"] == "Hello!"
+    assert result["confidence"] == "high"
+
+
+def test_parse_json_after_preamble_no_fences():
+    text = (
+        "Let me check the data.\n\n"
+        '{"draft_reply": "Order shipped!", "confidence": "high"}'
+    )
+    result = _parse_response(text)
+    assert result["draft_reply"] == "Order shipped!"
+
+
 def test_parse_missing_fields_get_defaults():
     result = _parse_response('{"draft_reply": "Hi"}')
     assert result["draft_reply"] == "Hi"
