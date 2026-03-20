@@ -93,13 +93,14 @@ The human reviews code asynchronously after merge. If issues are found, they wil
 
 All LLM API calls made by the backend service (not by the agent harness) are logged for debugging. See `docs/llm-logging.md` once it exists for the format and location.
 
-## Keeping Up with Main
+## Session Start
 
-The `SessionStart` hook automatically fetches and merges the latest `main` into your branch at the start of each session. During an active session, you must also merge periodically:
+Complete all of the following **before** responding to the first human message:
 
-1. At session start, run: `/loop 10m git fetch origin main && git merge origin/main --no-edit`
-2. This keeps your branch up to date and reduces merge conflicts.
-3. If a merge fails due to conflicts, resolve them immediately — if a conflict is non-trivial, note it in your plan and ask the human.
+1. The `SessionStart` hook automatically fetches and merges the latest `main` into your branch.
+2. Run: `/loop 10m git fetch origin main && git merge origin/main --no-edit` — this keeps your branch up to date throughout the session and reduces merge conflicts.
+
+If a merge fails due to conflicts, resolve them immediately — if a conflict is non-trivial, note it in your plan and ask the human.
 
 ## Conflict Resolution
 
