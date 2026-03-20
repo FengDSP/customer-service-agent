@@ -9,13 +9,13 @@ app = FastAPI(title="Customer Service Agent")
 
 
 class ChatRequest(BaseModel):
-    session_id: str | None = None
     business_id: str
+    customer_id: str
     message: str
 
 
 class ChatResponse(BaseModel):
-    session_id: str
+    customer_id: str
     reply: str
 
 
@@ -26,11 +26,11 @@ def chat(req: ChatRequest):
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=f"Business '{req.business_id}' not found")
 
-    session_id, history = get_or_create_session(req.session_id)
+    history = get_or_create_session(req.customer_id)
 
     try:
-        reply = run_agent_loop(config, history, req.message, session_id)
+        reply = run_agent_loop(config, history, req.message, req.customer_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-    return ChatResponse(session_id=session_id, reply=reply)
+    return ChatResponse(customer_id=req.customer_id, reply=reply)

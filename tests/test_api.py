@@ -10,6 +10,7 @@ client = TestClient(app)
 def test_chat_invalid_business():
     resp = client.post("/chat", json={
         "business_id": "nonexistent",
+        "customer_id": "alice@example.com",
         "message": "hello",
     })
     assert resp.status_code == 404
@@ -21,11 +22,12 @@ def test_chat_success(mock_loop):
 
     resp = client.post("/chat", json={
         "business_id": "acme_retail",
+        "customer_id": "alice@example.com",
         "message": "Hi there",
     })
     assert resp.status_code == 200
     data = resp.json()
-    assert "session_id" in data
+    assert data["customer_id"] == "alice@example.com"
     assert data["reply"] == "Hello! How can I help you today?"
     mock_loop.assert_called_once()
 
@@ -35,15 +37,16 @@ def test_chat_session_continuity(mock_loop):
     mock_loop.return_value = "First reply"
     resp1 = client.post("/chat", json={
         "business_id": "acme_retail",
+        "customer_id": "bob@example.com",
         "message": "First message",
     })
-    session_id = resp1.json()["session_id"]
+    assert resp1.json()["customer_id"] == "bob@example.com"
 
     mock_loop.return_value = "Second reply"
     resp2 = client.post("/chat", json={
-        "session_id": session_id,
         "business_id": "acme_retail",
+        "customer_id": "bob@example.com",
         "message": "Second message",
     })
-    assert resp2.json()["session_id"] == session_id
+    assert resp2.json()["customer_id"] == "bob@example.com"
     assert resp2.json()["reply"] == "Second reply"

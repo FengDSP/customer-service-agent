@@ -6,7 +6,7 @@ LOGS_DIR = Path(__file__).resolve().parent.parent.parent / "logs" / "llm"
 
 
 def log_interaction(
-    session_id: str,
+    customer_id: str,
     business_id: str,
     turns: list[dict],
     model: str,
@@ -16,16 +16,18 @@ def log_interaction(
     """Log an agent loop invocation to a JSON file."""
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
-    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    filename = f"{session_id}_{timestamp}.json"
+    now = datetime.now()
+    timestamp = now.strftime("%Y%m%d_%H%M%S")
+    safe_customer_id = customer_id.replace("/", "_").replace("\\", "_")
+    filename = f"{timestamp}-{safe_customer_id}.json"
     log_path = LOGS_DIR / filename
 
     serializable_turns = _make_serializable(turns)
 
     log_data = {
-        "session_id": session_id,
+        "customer_id": customer_id,
         "business_id": business_id,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "timestamp": now.isoformat(),
         "system_prompt": system_prompt,
         "turns": serializable_turns,
         "model": model,

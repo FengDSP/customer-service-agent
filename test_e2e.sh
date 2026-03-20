@@ -6,6 +6,7 @@ set -euo pipefail
 
 BASE_URL="http://127.0.0.1:8000"
 BUSINESS_ID="acme_retail"
+CUSTOMER_ID="alice@example.com"
 PASSED=0
 FAILED=0
 SERVER_PID=""
@@ -57,16 +58,16 @@ echo ""
 echo "Test 1: Greeting message"
 RESP1=$(curl -s -X POST "$BASE_URL/chat" \
     -H "Content-Type: application/json" \
-    -d "{\"business_id\":\"$BUSINESS_ID\",\"message\":\"Hello, I need some help.\"}")
+    -d "{\"business_id\":\"$BUSINESS_ID\",\"customer_id\":\"$CUSTOMER_ID\",\"message\":\"Hello, I need some help.\"}")
 
-SESSION_ID=$(echo "$RESP1" | python3 -c "import sys,json; print(json.load(sys.stdin).get('session_id',''))" 2>/dev/null)
 REPLY1=$(echo "$RESP1" | python3 -c "import sys,json; print(json.load(sys.stdin).get('reply',''))" 2>/dev/null)
+CID1=$(echo "$RESP1" | python3 -c "import sys,json; print(json.load(sys.stdin).get('customer_id',''))" 2>/dev/null)
 
-if [ -n "$SESSION_ID" ] && [ -n "$REPLY1" ]; then
-    pass "Got session_id and reply"
+if [ "$CID1" = "$CUSTOMER_ID" ] && [ -n "$REPLY1" ]; then
+    pass "Got customer_id and reply"
     echo "  Reply: ${REPLY1:0:120}..."
 else
-    fail "No session_id or reply returned"
+    fail "No customer_id or reply returned"
     echo "  Response: $RESP1"
 fi
 
@@ -76,7 +77,7 @@ echo ""
 echo "Test 2: Order lookup (should trigger CSV tool call)"
 RESP2=$(curl -s -X POST "$BASE_URL/chat" \
     -H "Content-Type: application/json" \
-    -d "{\"session_id\":\"$SESSION_ID\",\"business_id\":\"$BUSINESS_ID\",\"message\":\"What is the status of order ORD-1002?\"}")
+    -d "{\"business_id\":\"$BUSINESS_ID\",\"customer_id\":\"$CUSTOMER_ID\",\"message\":\"What is the status of order ORD-1002?\"}")
 
 REPLY2=$(echo "$RESP2" | python3 -c "import sys,json; print(json.load(sys.stdin).get('reply',''))" 2>/dev/null)
 
@@ -84,7 +85,6 @@ if echo "$REPLY2" | grep -qi "ship"; then
     pass "Reply contains order status info (shipped)"
     echo "  Reply: ${REPLY2:0:200}..."
 elif [ -n "$REPLY2" ]; then
-    # LLM might phrase it differently, just check we got a substantive reply
     pass "Got a reply (LLM may have phrased status differently)"
     echo "  Reply: ${REPLY2:0:200}..."
 else
@@ -95,16 +95,16 @@ fi
 echo ""
 
 # --- Test 3: Follow-up in same session (multi-turn) ---
-echo "Test 3: Follow-up message (session continuity)"
+echo "Test 3: Follow-up message (session continuity via customer_id)"
 RESP3=$(curl -s -X POST "$BASE_URL/chat" \
     -H "Content-Type: application/json" \
-    -d "{\"session_id\":\"$SESSION_ID\",\"business_id\":\"$BUSINESS_ID\",\"message\":\"And what about order ORD-1003?\"}")
+    -d "{\"business_id\":\"$BUSINESS_ID\",\"customer_id\":\"$CUSTOMER_ID\",\"message\":\"And what about order ORD-1003?\"}")
 
 REPLY3=$(echo "$RESP3" | python3 -c "import sys,json; print(json.load(sys.stdin).get('reply',''))" 2>/dev/null)
-SID3=$(echo "$RESP3" | python3 -c "import sys,json; print(json.load(sys.stdin).get('session_id',''))" 2>/dev/null)
+CID3=$(echo "$RESP3" | python3 -c "import sys,json; print(json.load(sys.stdin).get('customer_id',''))" 2>/dev/null)
 
-if [ "$SID3" = "$SESSION_ID" ] && [ -n "$REPLY3" ]; then
-    pass "Same session_id maintained, got reply"
+if [ "$CID3" = "$CUSTOMER_ID" ] && [ -n "$REPLY3" ]; then
+    pass "Same customer_id maintained, got reply"
     echo "  Reply: ${REPLY3:0:200}..."
 else
     fail "Session continuity broken or no reply"
@@ -113,11 +113,13 @@ fi
 
 echo ""
 
-# --- Test 4: LLM logs created ---
-echo "Test 4: LLM log files created"
+# --- Test 4: LLM log files created with new naming ---
+echo "Test 4: LLM log files created (datetime-customer_id format)"
 LOG_COUNT=$(find logs/llm -name "*.json" 2>/dev/null | wc -l | tr -d ' ')
+LOG_SAMPLE=$(ls logs/llm/*.json 2>/dev/null | head -1 | xargs basename 2>/dev/null)
 if [ "$LOG_COUNT" -ge 3 ]; then
     pass "Found $LOG_COUNT log files in logs/llm/"
+    echo "  Sample filename: $LOG_SAMPLE"
 else
     fail "Expected at least 3 log files, found ${LOG_COUNT:-0}"
 fi

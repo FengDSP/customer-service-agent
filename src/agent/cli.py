@@ -2,7 +2,6 @@
 """CLI for interacting with the customer service agent backend."""
 
 import argparse
-import sys
 
 import httpx
 
@@ -12,11 +11,11 @@ DEFAULT_URL = "http://localhost:8000"
 def main():
     parser = argparse.ArgumentParser(description="Customer service agent CLI")
     parser.add_argument("--business", required=True, help="Business ID to use")
+    parser.add_argument("--customer", required=True, help="Customer ID (e.g., email or unique identifier)")
     parser.add_argument("--url", default=DEFAULT_URL, help=f"Backend URL (default: {DEFAULT_URL})")
     args = parser.parse_args()
 
-    session_id = None
-    print(f"Connected to {args.url} as business '{args.business}'")
+    print(f"Connected to {args.url} as business '{args.business}', customer '{args.customer}'")
     print("Type your message (or 'quit'/'exit' to end)\n")
 
     while True:
@@ -32,9 +31,7 @@ def main():
             print("Bye!")
             break
 
-        payload = {"business_id": args.business, "message": message}
-        if session_id:
-            payload["session_id"] = session_id
+        payload = {"business_id": args.business, "customer_id": args.customer, "message": message}
 
         try:
             resp = httpx.post(f"{args.url}/chat", json=payload, timeout=60.0)
@@ -50,7 +47,6 @@ def main():
             continue
 
         data = resp.json()
-        session_id = data["session_id"]
         print(f"\nAgent: {data['reply']}\n")
 
 
