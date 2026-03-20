@@ -1,26 +1,28 @@
-This repo implements an end-to-end customer service copilot agent with human in the loop. Basically, this provides draft messages for the customer service people to quickly approve or modify, and send to the customer. 
+# Architecture
 
-The core value of the agent is to integrate with the data system of the company and autonomously retrieve the related information and parse to the best effort draft reply message.
+A customer service copilot that drafts reply messages by autonomously retrieving company data. Human agents approve or modify drafts before sending.
 
-The system contains the following components.
-- A backend service to handle in coming service calls, and run the agent loop to generate the draft messages.
-- A CLI that tests the backend service.
-- A frontend UI that customer service human uses to approve and modify the messages. (To be built)
+## Components
 
+### Backend Service (FastAPI, Python)
+Handles incoming customer messages, runs an agent loop (LLM + tool calls) to pull relevant data, and returns draft replies.
 
-Functional features for the backend:
-- Receive testing customer messages from the CLI, and return drafted messages.
-- Integrate with the company internal data system. The access of the data is internally encapsulated into tool calls for the LLMs.
-  - Starting with readonly local csv files.
-  - Support popular database and MCPs in the future (to be build)
-- Support configurable natural language business desciptions and instructions. For each supported company or business, the agent loop calls LLM APIs using the configured information.
-- Integration with real world chat applications as a customer service account. Hook on the customer service account on the chat app, and generate a draft message for each in-coming message. (TO BE built)
+- Agent loop calls LLM APIs with business-specific config (system prompt, instructions, available data sources).
+- Data access is encapsulated as LLM tool calls. Starting with read-only local CSV files.
+- Business configs live in `configs/` as YAML files (one per business).
+- LLM call logs are saved to a local folder for debugging. See `docs/llm-logging.md`.
+- Local runnable for development. Cloud hosting required for production use.
 
-Non-functional features for the backend:
-- Save the LLM calling logs in a folder for debugging purposes.
-- A debugging and evaluation portal will be built to browse and replay the LLM logs. (to be built)
+Details: `docs/backend.md`
 
-Implementations:
-- The backend service is implemented in FastAPI python.
-- The service is designed to be local runable for now.
-- Discuss the format of the LLM logging and update this section.
+### CLI
+The primary interface until the UI is built. Sends customer messages to the backend and displays draft replies. Supports multi-turn conversations with session tracking. Does not include human-in-the-loop approval — replies are returned directly.
+
+Details: `docs/cli.md`
+
+## Planned (not yet built)
+
+- **Frontend UI** — Human-in-the-loop interface where CS agents approve/modify drafts before sending. Will be built after CLI is functional.
+- **Chat app integration** — Hook into real chat platforms (e.g., WhatsApp, Slack) as a CS account, generating drafts for each incoming message.
+- **Database / MCP data sources** — Extend beyond CSV to support databases and MCPs as tool-call backends.
+- **Eval portal** — Browse and replay LLM call logs for debugging and evaluation.
