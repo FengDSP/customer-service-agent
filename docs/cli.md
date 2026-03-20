@@ -6,7 +6,7 @@ Command-line interface for interacting with the backend service. Primary interfa
 
 ```bash
 # Start a conversation with a business
-python cli.py --business <business_id>
+python -m agent.cli --business <business_id>
 
 # The CLI opens an interactive prompt where you type customer messages
 # and see draft replies from the agent.
