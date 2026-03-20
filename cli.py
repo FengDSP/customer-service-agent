@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+"""CLI for interacting with the customer service agent backend."""
+
+import argparse
+import sys
+
+import httpx
+
+DEFAULT_URL = "http://localhost:8000"
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Customer service agent CLI")
+    parser.add_argument("--business", required=True, help="Business ID to use")
+    parser.add_argument("--url", default=DEFAULT_URL, help=f"Backend URL (default: {DEFAULT_URL})")
+    args = parser.parse_args()
+
+    session_id = None
+    print(f"Connected to {args.url} as business '{args.business}'")
+    print("Type your message (or 'quit'/'exit' to end)\n")
+
+    while True:
+        try:
+            message = input("You: ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\nBye!")
+            break
+
+        if not message:
+            continue
+        if message.lower() in ("quit", "exit"):
+            print("Bye!")
+            break
+
+        payload = {"business_id": args.business, "message": message}
+        if session_id:
+            payload["session_id"] = session_id
+
+        try:
+            resp = httpx.post(f"{args.url}/chat", json=payload, timeout=60.0)
+        except httpx.ConnectError:
+            print(f"Error: cannot connect to backend at {args.url}. Is it running?")
+            continue
+        except httpx.TimeoutException:
+            print("Error: request timed out.")
+            continue
+
+        if resp.status_code != 200:
+            print(f"Error ({resp.status_code}): {resp.text}")
+            continue
+
+        data = resp.json()
+        session_id = data["session_id"]
+        print(f"\nAgent: {data['reply']}\n")
+
+
+if __name__ == "__main__":
+    main()
