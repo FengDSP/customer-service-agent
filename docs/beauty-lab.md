@@ -1,22 +1,21 @@
-# Velluto Beauty Lab — Business Research
+# Beauty Lab — Business Research
 
-Research conducted by crawling [www.vellutobeautylab.net](https://www.vellutobeautylab.net) and related sources on 2026-03-20.
+Research conducted by crawling the business website and related sources on 2026-03-20.
 
 ## Business Overview
 
-Velluto Beauty Lab is a premium beauty salon in San Jose, CA, offering facial treatments, scalp & hair care, eyelash extensions, and manicure services. They position themselves as a luxury experience using top-tier brands and devices.
+Beauty Lab is a premium beauty salon in San Jose, CA, offering facial treatments, scalp & hair care, eyelash extensions, and manicure services. They position themselves as a luxury experience using top-tier brands and devices.
 
 ## Location & Contact
 
 - **Address:** 5406 Thornwood Dr, STE 175, San Jose, CA 95123
 - **Phone:** 408-912-6845
-- **Email:** vellutobeautylabcs@gmail.com
-- **WeChat:** vellutobeautylab
-- **Website:** www.vellutobeautylab.net
+- **Email:** beautylabcs@gmail.com
+- **WeChat:** beautylab
 
 ## Scheduling System
 
-- Uses **Square Appointments** for online booking: `book.squareup.com/appointments/zrp73f2bowr7mq/location/LB96VD80W08DD/services`
+- Uses **Square Appointments** for online booking.
 - The booking flow is a JavaScript SPA (not scrapable server-side). Customers select a service category, pick a specific service, choose a staff member, and then select a date/time slot.
 - **Cancellation policy:** Cancellations with 24-hour notice are free; cancellations within that timeframe incur a $50 fee.
 
