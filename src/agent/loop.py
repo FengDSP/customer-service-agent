@@ -1,8 +1,11 @@
 import json
+import logging
 import os
 
 import anthropic
 from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
 
 from agent.config import BusinessConfig
 from agent.csv_tool import build_tool_definitions, execute_csv_lookup, execute_grep
@@ -25,6 +28,7 @@ def run_agent_loop(
     client = anthropic.Anthropic()
     model = os.getenv("LLM_MODEL", DEFAULT_MODEL)
     tools = build_tool_definitions(config)
+    logger.info("Starting agent loop: model=%s, tools=%d", model, len(tools))
 
     user_msg = {"role": "user", "content": message}
     history.append(user_msg)
@@ -47,6 +51,10 @@ def run_agent_loop(
 
         total_usage["input_tokens"] += response.usage.input_tokens
         total_usage["output_tokens"] += response.usage.output_tokens
+        logger.info(
+            "LLM response: stop_reason=%s, tokens=%d/%d",
+            response.stop_reason, response.usage.input_tokens, response.usage.output_tokens,
+        )
 
         if response.stop_reason == "tool_use":
             assistant_msg = {"role": "assistant", "content": response.content}
@@ -56,7 +64,9 @@ def run_agent_loop(
             tool_results = []
             for block in response.content:
                 if block.type == "tool_use":
+                    logger.info("Tool call: %s(%s)", block.name, json.dumps(block.input)[:200])
                     result_text = _dispatch_tool(config, block.name, block.input)
+                    logger.info("Tool result: %s chars", len(result_text))
                     tool_results.append({
                         "type": "tool_result",
                         "tool_use_id": block.id,
@@ -69,6 +79,11 @@ def run_agent_loop(
         else:
             raw_text = _extract_text(response)
             result = _parse_response(raw_text)
+            logger.info(
+                "Agent loop complete: tokens_total=%d/%d, confidence=%s",
+                total_usage["input_tokens"], total_usage["output_tokens"],
+                result.get("confidence"),
+            )
 
             reply_text = result["draft_reply"]
             assistant_msg = {"role": "assistant", "content": reply_text}
