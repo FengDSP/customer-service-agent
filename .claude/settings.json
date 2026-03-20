@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat AGENT.md ARCHITECTURE.md",
+            "statusMessage": "Reading AGENT.md and ARCHITECTURE.md..."
+          }
+        ]
+      }
+    ]
+  }
+}

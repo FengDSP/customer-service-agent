@@ -195,7 +195,8 @@ cython_debug/
 .pypirc
 
 # Claude Code
-.claude/
+.claude/*
+!.claude/settings.json
 
 # Cursor
 #  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
