@@ -7,6 +7,11 @@
             "type": "command",
             "command": "cat AGENT.md ARCHITECTURE.md",
             "statusMessage": "Reading AGENT.md and ARCHITECTURE.md..."
+          },
+          {
+            "type": "command",
+            "command": "git fetch origin main && git merge origin/main --no-edit 2>&1 || echo 'WARN: merge from main failed — resolve conflicts before continuing'",
+            "statusMessage": "Merging latest main..."
           }
         ]
       }
