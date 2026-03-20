@@ -1,0 +1,201 @@
+customer_id,name,email,phone,member_since,membership_tier,total_visits,prepaid_balance,notes
+CUS-001,Aurora Lin,aurora.lin4@email.com,408-555-5012,2025-11-21,Bronze,1,0.00,
+CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,2025-11-16,Silver,4,0.00,
+CUS-003,Paisley Jackson,paisley.jackson54@outlook.com,408-555-1106,2025-02-20,Silver,15,0.00,
+CUS-004,Amanda Sato,amanda.sato14@gmail.com,408-555-6881,2025-01-06,Bronze,3,0.00,
+CUS-005,Ling Guo,ling.guo49@outlook.com,408-555-6925,2025-05-24,Bronze,1,961.98,
+CUS-006,Diana Pan,diana.pan13@email.com,408-555-8428,2025-04-24,Silver,6,0.00,Always 10-15 min late - schedule buffer time
+CUS-007,Paisley Scott,paisley.scott10@email.com,408-555-3803,2025-06-15,Silver,6,0.00,
+CUS-008,Aurora White,aurora.white29@email.com,408-555-1916,2025-11-18,Silver,9,0.00,Cannot use products with retinol - causes severe irritation
+CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,2026-01-01,Bronze,2,0.00,
+CUS-010,Samantha Clark,samantha.clark55@email.com,408-555-7543,2025-09-11,Bronze,2,0.00,Dark circles and puffiness - interested in eye area treatments
+CUS-011,Christine Liang,christine.liang81@icloud.com,408-555-2040,2025-08-30,Bronze,4,0.00,
+CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,2025-02-15,Silver,5,1027.62,Frequently reschedules - confirm 48hrs in advance
+CUS-013,Xin Han,xin.han65@email.com,408-555-5889,2025-01-09,Silver,13,824.55,Pregnant - avoid certain ingredients and essential oils
+CUS-014,Jessica Robinson,jessica.robinson42@email.com,408-555-2832,2025-09-11,Gold,36,0.00,Prefers morning appointments before 11am
+CUS-015,Aria Sun,aria.sun11@email.com,408-555-2133,2025-02-19,Silver,6,729.15,
+CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,2025-06-12,Silver,15,883.09,
+CUS-017,Ivy Nguyen,ivy.nguyen57@email.com,408-555-8397,2026-01-13,Bronze,1,0.00,
+CUS-018,Rebecca Lewis,rebecca.lewis29@gmail.com,408-555-4750,2026-02-09,Gold,37,0.00,
+CUS-019,Pamela Davis,pamela.davis28@email.com,408-555-8744,2025-11-11,Silver,10,1085.24,
+CUS-020,Vivian Bui,vivian.bui60@email.com,408-555-1887,2025-04-05,Silver,14,797.53,
+CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,2025-08-11,Bronze,4,307.51,
+CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,2025-01-11,Bronze,1,0.00,
+CUS-023,Emily Bui,emily.bui63@email.com,408-555-7570,2026-02-13,Bronze,1,0.00,
+CUS-024,Aaliyah Brown,aaliyah.brown37@email.com,408-555-8973,2025-12-26,Bronze,2,0.00,
+CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,2025-05-20,Bronze,5,272.21,"Hates upsells - just do what was booked, nothing more"
+CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,2025-08-21,Bronze,5,616.92,
+CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,2025-12-01,Silver,9,803.97,
+CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,2026-03-11,Bronze,5,0.00,Wants detailed skin analysis and product recommendations after each visit
+CUS-029,Xin Choi,xin.choi17@email.com,408-555-2127,2025-11-10,Bronze,2,0.00,
+CUS-030,Alice Young,alice.young84@email.com,408-555-5905,2025-04-10,Bronze,2,339.09,
+CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,2025-12-01,Silver,8,0.00,
+CUS-032,Rachel Ma,rachel.ma82@email.com,408-555-5533,2026-02-21,Bronze,2,0.00,
+CUS-033,Elena Johnson,elena.johnson71@email.com,408-555-1158,2026-01-17,Bronze,6,0.00,
+CUS-034,Lily Clark,lily.clark71@yahoo.com,408-555-1685,2025-10-09,Bronze,1,0.00,Only available on weekends
+CUS-035,Nova Hu,nova.hu46@email.com,408-555-7658,2025-05-02,Silver,7,0.00,
+CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,2025-01-29,Silver,15,0.00,
+CUS-037,Aaliyah Hu,aaliyah.hu49@email.com,408-555-8711,2025-11-22,Bronze,4,0.00,
+CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,2025-09-28,Bronze,1,0.00,
+CUS-039,Willow Anderson,willow.anderson52@email.com,408-555-9785,2025-09-27,Gold,13,0.00,
+CUS-040,Ella Choi,ella.choi5@icloud.com,408-555-6663,2025-03-07,Silver,10,0.00,
+CUS-041,Natalie Thompson,natalie.thompson25@icloud.com,408-555-1027,2025-06-22,Gold,27,0.00,
+CUS-042,Elena Wei,elena.wei47@email.com,408-555-6409,2025-04-30,Bronze,1,0.00,
+CUS-043,Betty Bui,betty.bui42@email.com,408-555-5844,2025-06-05,Bronze,4,0.00,
+CUS-044,Samantha Han,samantha.han79@email.com,408-555-7653,2025-06-08,Silver,8,771.87,
+CUS-045,Ivy Yamamoto,ivy.yamamoto60@email.com,408-555-4501,2025-06-27,Bronze,6,1096.66,
+CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,2025-11-20,Silver,6,946.03,
+CUS-047,Madeline Xu,madeline.xu59@email.com,408-555-4185,2025-03-13,Silver,11,0.00,Needs acne removal - active breakouts on chin and forehead
+CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,2025-06-03,Bronze,1,0.00,
+CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,2025-05-06,Silver,12,0.00,
+CUS-050,Mei Song,mei.song96@email.com,408-555-8373,2025-11-03,Silver,14,444.54,
+CUS-051,Sharon Kang,sharon.kang57@outlook.com,408-555-4841,2025-10-27,Bronze,5,1034.51,
+CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,2025-06-11,Bronze,1,781.04,
+CUS-053,Ella Zhang,ella.zhang98@email.com,408-555-8814,2026-03-12,Gold,19,0.00,
+CUS-054,Tracy Moore,tracy.moore96@email.com,408-555-4613,2025-07-09,Bronze,4,0.00,
+CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,2025-05-01,Silver,10,0.00,
+CUS-056,Diana Scott,diana.scott55@icloud.com,408-555-3977,2026-02-18,Bronze,3,868.85,
+CUS-057,Monica Kang,monica.kang97@email.com,408-555-7906,2025-11-06,Silver,11,668.78,
+CUS-058,Irene Cao,irene.cao84@gmail.com,408-555-1508,2025-11-09,Bronze,1,0.00,Referred by friend - first visit gift given
+CUS-059,Nova Lin,nova.lin73@email.com,408-555-8619,2025-03-22,Bronze,3,604.94,
+CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,2025-05-25,Silver,10,0.00,
+CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,2026-01-22,Silver,8,0.00,
+CUS-062,Helen Harris,helen.harris6@email.com,408-555-8018,2025-04-11,Bronze,5,0.00,Budget-conscious - prefers basic treatments only
+CUS-063,Jing Hu,jing.hu56@email.com,408-555-8532,2025-03-18,Bronze,2,0.00,
+CUS-064,Janet Young,janet.young69@email.com,408-555-8616,2025-08-04,Silver,13,374.86,
+CUS-065,Wendy Kang,wendy.kang58@icloud.com,408-555-7209,2025-09-24,Bronze,3,976.83,
+CUS-066,Frances Kang,frances.kang77@email.com,408-555-5526,2025-06-04,Bronze,2,498.75,
+CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,2025-07-29,Silver,5,795.86,Prefers natural-looking classic lashes - nothing dramatic
+CUS-068,Sakura Martin,sakura.martin68@email.com,408-555-6419,2025-09-16,Silver,8,0.00,Do NOT suggest upgrades or add-ons - gets annoyed
+CUS-069,Cynthia Guo,cynthia.guo96@email.com,408-555-4033,2025-12-07,Bronze,4,621.56,
+CUS-070,Mila Yoon,mila.yoon13@email.com,408-555-5853,2025-11-19,Bronze,3,673.75,
+CUS-071,Rachel Martin,rachel.martin38@email.com,408-555-3068,2025-04-23,Gold,25,1164.93,
+CUS-072,Min Johnson,min.johnson44@gmail.com,408-555-5136,2024-12-29,Bronze,1,0.00,Dark circles and puffiness - interested in eye area treatments
+CUS-073,Maria Liang,maria.liang73@email.com,408-555-2395,2025-11-08,Bronze,4,0.00,
+CUS-074,Melissa Taylor,melissa.taylor49@email.com,408-555-8253,2025-10-14,Gold,23,0.00,
+CUS-075,Riley Zhu,riley.zhu98@yahoo.com,408-555-5335,2025-04-11,Bronze,2,1105.82,Tips generously - treat well
+CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,2025-03-19,Bronze,4,956.78,
+CUS-077,Hazel Lewis,hazel.lewis85@email.com,408-555-4241,2025-08-10,Bronze,2,0.00,
+CUS-078,Anna Xu,anna.xu8@outlook.com,408-555-5728,2025-08-03,Bronze,6,0.00,
+CUS-079,Janet Martinez,janet.martinez70@email.com,408-555-2317,2025-05-13,Bronze,4,0.00,
+CUS-080,Sarah Ma,sarah.ma30@email.com,408-555-1339,2025-02-17,Silver,8,0.00,
+CUS-081,Laura Garcia,laura.garcia67@email.com,408-555-5557,2025-12-13,Gold,23,0.00,
+CUS-082,Wendy Garcia,wendy.garcia45@email.com,408-555-6260,2025-04-06,Bronze,2,0.00,
+CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,2026-01-29,Bronze,3,449.37,
+CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,2025-06-23,Bronze,4,0.00,
+CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,2025-03-23,Bronze,1,0.00,
+CUS-086,Sharon Song,sharon.song40@email.com,408-555-7684,2026-01-27,Bronze,1,0.00,Loyal to Mia for lashes - won't see anyone else
+CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,2025-01-12,Bronze,4,657.63,
+CUS-088,Mila Anderson,mila.anderson96@email.com,408-555-2143,2025-10-25,Silver,10,0.00,
+CUS-089,Janet Chen,janet.chen37@email.com,408-555-9022,2024-12-27,Bronze,5,0.00,
+CUS-090,Evelyn Jackson,evelyn.jackson49@email.com,408-555-6272,2024-12-25,Bronze,6,816.03,
+CUS-091,Sandy Huang,sandy.huang41@email.com,408-555-7246,2025-08-30,Gold,35,0.00,
+CUS-092,Wei Li,wei.li17@email.com,408-555-6439,2024-12-25,Bronze,4,319.58,Prefers Emma for scalp treatments - gentle touch
+CUS-093,Sandy Hill,sandy.hill20@outlook.com,408-555-6546,2025-04-30,Silver,14,867.23,
+CUS-094,Ling Tran,ling.tran41@email.com,408-555-8994,2025-06-11,Bronze,1,532.33,
+CUS-095,Rebecca Ma,rebecca.ma56@email.com,408-555-2646,2025-07-31,Bronze,3,0.00,Large pores on nose and cheeks - wants deep cleaning
+CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,2025-06-17,Bronze,6,0.00,Likes gentle massage only - bruises easily
+CUS-097,Riley Tran,riley.tran80@email.com,408-555-9153,2025-05-21,Bronze,4,0.00,
+CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,2025-12-25,Bronze,3,0.00,
+CUS-099,Vivian Lee,vivian.lee59@email.com,408-555-4263,2025-08-31,Gold,13,638.19,
+CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,2025-10-26,Bronze,6,0.00,
+CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,2025-05-09,Silver,7,0.00,
+CUS-102,Emery Luo,emery.luo81@gmail.com,408-555-6061,2025-02-05,Bronze,5,0.00,Sensitive to fragrance - use fragrance-free products only
+CUS-103,Denise Dang,denise.dang23@outlook.com,408-555-9697,2025-07-02,Gold,36,316.19,
+CUS-104,Gloria Sato,gloria.sato15@email.com,408-555-2233,2026-01-02,Silver,7,0.00,
+CUS-105,Paula White,paula.white47@icloud.com,408-555-1228,2025-10-31,Silver,11,0.00,
+CUS-106,Dorothy Clark,dorothy.clark49@email.com,408-555-7086,2026-01-19,Silver,11,344.25,
+CUS-107,Riley Cao,riley.cao83@icloud.com,408-555-5951,2025-04-17,Bronze,2,1141.45,
+CUS-108,Christine Zhu,christine.zhu31@email.com,408-555-3222,2025-08-29,Bronze,6,0.00,
+CUS-109,Qian Dang,qian.dang76@email.com,408-555-3531,2025-08-15,Silver,11,0.00,
+CUS-110,Pamela Li,pamela.li89@email.com,408-555-8264,2025-07-31,Gold,37,0.00,
+CUS-111,Lily Jackson,lily.jackson83@email.com,408-555-7523,2025-10-25,Bronze,1,0.00,
+CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,2026-02-18,Silver,7,0.00,
+CUS-113,Nicole Zhou,nicole.zhou98@email.com,408-555-4538,2025-01-23,Gold,20,0.00,
+CUS-114,Mila Chen,mila.chen36@email.com,408-555-3370,2026-01-08,Silver,6,360.99,Itchy scalp with flaking - needs herbal treatment
+CUS-115,Aaliyah Kim,aaliyah.kim76@email.com,408-555-3854,2025-10-31,Bronze,6,0.00,Dry flaky patches - needs intense hydration treatments
+CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,2025-07-27,Silver,13,439.32,
+CUS-117,Fei Jang,fei.jang59@email.com,408-555-1510,2026-02-12,Gold,37,0.00,
+CUS-118,Jing Johnson,jing.johnson10@email.com,408-555-6277,2025-05-08,Bronze,2,580.63,
+CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,2025-06-30,Silver,5,0.00,Wants detailed skin analysis and product recommendations after each visit
+CUS-120,Yvonne Williams,yvonne.williams30@email.com,408-555-8430,2025-08-23,Bronze,1,0.00,
+CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,2026-02-09,Bronze,1,1085.59,
+CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,2025-04-06,Bronze,3,0.00,
+CUS-123,Vivian Wu,vivian.wu37@email.com,408-555-6761,2026-01-21,Silver,7,722.64,
+CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,2025-01-26,Bronze,5,0.00,
+CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,2025-12-13,Bronze,3,0.00,
+CUS-126,Victoria Zheng,victoria.zheng73@email.com,408-555-2140,2026-01-02,Silver,4,677.19,
+CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,2025-02-11,Gold,29,1126.96,Dark circles and puffiness - interested in eye area treatments
+CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,2025-07-10,Silver,10,465.94,Interested in prepaid package deals for savings
+CUS-129,Christine Yoon,christine.yoon87@email.com,408-555-8972,2025-06-19,Silver,4,249.93,Prefers silence during treatments - comes to relax
+CUS-130,Alice Deng,alice.deng99@outlook.com,408-555-5742,2025-09-29,Bronze,4,0.00,Wants mega-volume dramatic lashes for events
+CUS-131,Ling Pan,ling.pan65@email.com,408-555-6802,2026-02-07,Bronze,6,1158.83,
+CUS-132,Cynthia Thompson,cynthia.thompson55@email.com,408-555-7843,2025-10-18,Bronze,1,0.00,VIP client - complimentary drinks and snacks
+CUS-133,Ellie Nakamura,ellie.nakamura12@email.com,408-555-2734,2025-11-11,Bronze,4,0.00,
+CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,2026-02-04,Silver,5,0.00,Postpartum hair loss - very stressed about it
+CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,2025-12-04,Bronze,2,0.00,
+CUS-136,Laura King,laura.king64@email.com,408-555-8354,2025-04-01,Gold,28,0.00,
+CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,2025-08-01,Silver,8,0.00,
+CUS-138,Nancy Han,nancy.han60@email.com,408-555-1932,2025-09-08,Silver,5,0.00,
+CUS-139,Wendy Young,wendy.young77@email.com,408-555-8581,2025-05-22,Silver,15,0.00,
+CUS-140,Luna Hill,luna.hill25@email.com,408-555-8792,2025-07-02,Bronze,1,0.00,
+CUS-141,Frances Sun,frances.sun65@email.com,408-555-1641,2025-11-09,Silver,11,0.00,
+CUS-142,Kelly Nguyen,kelly.nguyen37@email.com,408-555-6543,2025-04-02,Silver,14,0.00,Sensitive skin - absolutely no firm pressure during facials
+CUS-143,Harper Pham,harper.pham37@yahoo.com,408-555-6461,2026-02-02,Silver,6,0.00,
+CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,2025-10-08,Silver,14,0.00,
+CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,2026-03-06,Bronze,2,0.00,
+CUS-146,Madeline Davis,madeline.davis25@yahoo.com,408-555-3538,2026-02-04,Bronze,1,0.00,
+CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,2025-05-14,Bronze,2,524.38,
+CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,2025-07-31,Silver,15,0.00,Prefers morning appointments before 11am
+CUS-149,Betty Garcia,betty.garcia25@email.com,408-555-8218,2025-07-22,Silver,10,0.00,
+CUS-150,Catherine Wei,catherine.wei78@outlook.com,408-555-1854,2025-04-21,Bronze,3,0.00,Claustrophobic - no face covers or heavy masks
+CUS-151,Helen Yoon,helen.yoon11@email.com,408-555-5469,2025-07-28,Gold,14,0.00,Likes being educated about what products are being used
+CUS-152,Mei Watanabe,mei.watanabe4@email.com,408-555-7495,2025-07-01,Bronze,4,0.00,
+CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,2025-02-03,Bronze,1,395.52,
+CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,2026-03-06,Bronze,2,0.00,
+CUS-155,Lan Do,lan.do15@email.com,408-555-4893,2025-10-12,Bronze,2,0.00,
+CUS-156,Yuki Zhou,yuki.zhou15@email.com,408-555-9189,2025-05-14,Silver,14,0.00,Prefers Emma for scalp treatments - gentle touch
+CUS-157,Gloria Do,gloria.do1@email.com,408-555-4941,2025-05-27,Bronze,6,0.00,
+CUS-158,Kelly Zhou,kelly.zhou68@email.com,408-555-9316,2025-06-05,Bronze,4,812.35,
+CUS-159,Samantha Zhang,samantha.zhang46@email.com,408-555-6649,2025-11-12,Silver,14,628.80,
+CUS-160,Susan Huang,susan.huang46@email.com,408-555-3868,2025-01-14,Silver,11,0.00,
+CUS-161,Victoria Luo,victoria.luo9@email.com,408-555-8498,2026-02-25,Bronze,1,0.00,
+CUS-162,Cynthia Han,cynthia.han66@email.com,408-555-9897,2025-07-16,Bronze,6,840.49,
+CUS-163,Ivy Suzuki,ivy.suzuki35@outlook.com,408-555-8159,2025-08-23,Silver,10,0.00,Takes photos of every treatment for her beauty blog
+CUS-164,Lily Taylor,lily.taylor35@email.com,408-555-7955,2026-02-03,Bronze,2,0.00,
+CUS-165,Diana Yamamoto,diana.yamamoto85@icloud.com,408-555-7981,2025-12-20,Silver,9,0.00,
+CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,2025-04-06,Silver,9,0.00,
+CUS-167,Catherine Liu,catherine.liu19@email.com,408-555-8179,2026-02-26,Bronze,2,0.00,
+CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,2025-09-07,Bronze,1,0.00,
+CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,2025-03-04,Bronze,5,0.00,
+CUS-170,Dorothy Choi,dorothy.choi91@email.com,408-555-5678,2025-03-25,Gold,25,1048.73,Loves Olivia's Hydrafacial technique
+CUS-171,Skylar Johnson,skylar.johnson12@email.com,408-555-6236,2025-04-08,Bronze,1,0.00,
+CUS-172,Alice Song,alice.song92@email.com,408-555-3852,2025-02-02,Bronze,2,987.31,Takes photos of every treatment for her beauty blog
+CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,2025-01-28,Gold,14,0.00,Allergic to adhesive in certain lash glues - use sensitive formula
+CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,2025-01-18,Silver,6,0.00,
+CUS-175,Mei Jones,mei.jones88@email.com,408-555-3102,2025-01-15,Silver,14,0.00,
+CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,2025-01-14,Bronze,2,0.00,Likes being educated about what products are being used
+CUS-177,Irene Taylor,irene.taylor37@email.com,408-555-5105,2025-12-05,Silver,12,588.21,
+CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,2025-04-12,Silver,13,0.00,
+CUS-179,Amy Liu,amy.liu11@outlook.com,408-555-4453,2025-02-16,Silver,13,0.00,
+CUS-180,Hazel Jackson,hazel.jackson38@email.com,408-555-5949,2025-07-11,Bronze,6,0.00,
+CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,2025-07-21,Bronze,5,365.66,
+CUS-182,Irene Vo,irene.vo17@email.com,408-555-9437,2025-06-01,Bronze,2,0.00,
+CUS-183,Cindy Zheng,cindy.zheng13@icloud.com,408-555-7850,2025-11-08,Gold,38,868.30,
+CUS-184,Cynthia Cheng,cynthia.cheng98@icloud.com,408-555-9171,2025-10-09,Bronze,1,0.00,
+CUS-185,Sharon Deng,sharon.deng75@email.com,408-555-1828,2025-10-22,Bronze,6,0.00,
+CUS-186,Karen Hu,karen.hu56@outlook.com,408-555-6992,2025-02-17,Bronze,1,0.00,
+CUS-187,Christina Nakamura,christina.nakamura71@icloud.com,408-555-9261,2025-07-28,Silver,8,0.00,
+CUS-188,Riley Guo,riley.guo17@email.com,408-555-7453,2025-09-05,Silver,9,0.00,
+CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,2026-02-23,Bronze,2,0.00,
+CUS-190,Fei Brown,fei.brown20@email.com,408-555-9446,2026-01-03,Bronze,5,0.00,
+CUS-191,Riley Jang,riley.jang76@email.com,408-555-9351,2025-06-16,Bronze,5,408.71,
+CUS-192,Emery Lin,emery.lin54@email.com,408-555-1436,2025-05-14,Bronze,6,0.00,
+CUS-193,Luna Pan,luna.pan93@icloud.com,408-555-3793,2025-06-20,Silver,13,0.00,
+CUS-194,Isla Park,isla.park5@email.com,408-555-2800,2025-12-08,Bronze,3,0.00,
+CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,2025-01-05,Silver,4,0.00,
+CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,2025-10-06,Gold,24,0.00,
+CUS-197,Jade Scott,jade.scott89@icloud.com,408-555-4150,2025-11-09,Bronze,3,260.79,
+CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,2025-07-13,Bronze,6,1061.77,
+CUS-199,Monica Hoang,monica.hoang45@email.com,408-555-3399,2025-10-18,Bronze,6,306.81,
+CUS-200,Samantha Miller,samantha.miller28@outlook.com,408-555-5450,2026-01-04,Bronze,6,0.00,Pregnant - avoid certain ingredients and essential oils

@@ -1,0 +1,27 @@
+service_id,category,name,duration_min,price,description
+SVC-001,Facial,Hydrafacial Signature,30,199.00,Entry-level hydrafacial with cleansing and hydration
+SVC-002,Facial,Hydrafacial Deluxe,45,299.00,Mid-tier hydrafacial with LED light therapy and boosters
+SVC-003,Facial,Hydrafacial Platinum,60,399.00,Premium hydrafacial with lymphatic drainage and boosters
+SVC-004,Facial,AQUA PEEL Deep Cleaning & Hydrating Facial,60,180.00,Advanced cleansing with hydration and LED therapy
+SVC-005,Facial,Vital Glow Face Relaxation,75,220.00,Ultrasonic serum infusion with LED and facial massage
+SVC-006,Facial,Personalized Ampoule Infusion Skincare,90,280.00,Customized ampoules for targeted skin solutions
+SVC-007,Facial,Algae Vitalizer Detox,90,260.00,Nutrient-rich algae detox with antioxidants and vitamins
+SVC-008,Facial,Magnetic Glow Skin Treatment,90,250.00,Magnetic technology for deep cleansing and exfoliation
+SVC-009,Facial,Perfect Glow Treatment,90,240.00,Radiance enhancement through hydration and nourishment
+SVC-010,Facial,Multivita Antioxidant Treatment,90,270.00,Vitamin-packed anti-aging treatment
+SVC-011,Facial,24K Radiance Luxury Gold Facial,90,350.00,24K gold collagen boost and elasticity enhancement
+SVC-012,Facial,RF Anti-aging V-shape & Lifting Treatment,90,320.00,Non-invasive RF collagen stimulation and wrinkle reduction
+SVC-013,Facial,MTS Nano Acne-free Glow Treatment,90,290.00,Micro-needling treatment targeting acne
+SVC-014,Facial,MTS Nano Hyaluronic Radiance Therapy,90,290.00,Micro-needling with hyaluronic acid infusion
+SVC-015,Facial,MTS Nano Salmon DNA Rejuvenation,90,310.00,Micro-needling with salmon DNA for rejuvenation
+SVC-016,Facial,MTS Nano Stem Cell Anti-aging Skincare,90,330.00,Micro-needling with stem cells for anti-aging
+SVC-017,Facial,Skin Revival Treatment,90,230.00,Post-sunburn and damaged skin barrier recovery
+SVC-018,Hair & Scalp,The Head Retreat,60,150.00,Deep scalp cleansing and tension relief
+SVC-019,Hair & Scalp,Herbal Hair & Scalp Refreshment,75,180.00,Anti-dandruff herbal therapy with oil control
+SVC-020,Hair & Scalp,Hair & Scalp Intensive Nourishment and Restoration,90,220.00,Deep nourishment and repair for hair and scalp
+SVC-021,Hair & Scalp,Hair & Scalp Revitalization with LED Lights,110,280.00,LED-stimulated follicle growth with anti-hair-loss products
+SVC-022,Eyelash,Classic Lashes,60,120.00,Natural subtle eyelash extensions
+SVC-023,Eyelash,Design Lashes,90,180.00,Dramatic customized eyelash extensions
+SVC-024,Manicure,Single Color,30,45.00,Basic single-color gel manicure
+SVC-025,Manicure,Cat Eye,45,65.00,Cat eye gel effect manicure
+SVC-026,Manicure,Custom Design,60,85.00,Custom nail art and design manicure
