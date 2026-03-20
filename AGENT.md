@@ -98,7 +98,8 @@ All LLM API calls made by the backend service (not by the agent harness) are log
 Complete all of the following **before** responding to the first human message:
 
 1. The `SessionStart` hook automatically fetches and merges the latest `main` into your branch.
-2. Run: `/loop 10m git fetch origin main && git merge origin/main --no-edit` — this keeps your branch up to date throughout the session and reduces merge conflicts.
+2. Create a feature branch from `main` if not already on one: `git checkout -b agent/<plan-name>` (see [Branching and Worktrees](#branching-and-worktrees) for naming conventions). Never work directly on `main`.
+3. Run: `/loop 10m git fetch origin main && git merge origin/main --no-edit` — this keeps your branch up to date throughout the session and reduces merge conflicts.
 
 If a merge fails due to conflicts, resolve them immediately — if a conflict is non-trivial, note it in your plan and ask the human.
 
