@@ -1,8 +1,8 @@
 # Customer Service Agent
 
-A customer service copilot that drafts reply messages by autonomously retrieving company data. Human agents approve or modify drafts before sending.
+A **copilot** for human customer service agents — not a fully autonomous chatbot. The agent drafts reply messages by retrieving company data, but a human always reviews, edits, and approves before anything is sent to the customer.
 
-The agent receives a customer message, runs an LLM-powered loop that pulls relevant business data via tool calls, and returns a draft reply.
+> **This is a human-in-the-loop system by design.** The LLM generates draft replies with confidence scores and internal notes. Human CS agents audit every draft — approving, editing, or rejecting it. The agent handles data retrieval and drafting; the human owns the final response.
 
 ## Quick Start
 
@@ -18,8 +18,20 @@ cp .env.example .env
 uvicorn agent.api:app --reload
 
 # 4. Chat via CLI (in another terminal)
-python -m cli --business beauty_lab
+python -m cli --business beauty_lab --customer CUS-001
 ```
+
+The CLI shows each draft for review before it's "sent." Use `--auto-approve` to skip review (for testing only).
+
+## How It Works
+
+1. Customer sends a message
+2. Backend loads the business config and retrieves relevant data via tool calls
+3. LLM generates a **draft reply** (not a final response)
+4. **Human agent reviews the draft** — approve, edit, or reject
+5. Only approved/edited replies are sent to the customer
+
+The agent is fast at pulling data and composing responses. The human ensures accuracy, tone, and handles edge cases the LLM can't.
 
 ## Project Structure
 
@@ -30,9 +42,9 @@ src/
     loop.py       # Agent loop (LLM + tool calls)
     config.py     # Business config loader
     csv_tool.py   # CSV data lookup tool
-    logging.py    # LLM call logging
+    logging.py    # LLM call logging (JSONL)
     session.py    # Session management
-  cli.py          # CLI client
+  cli.py          # CLI client with draft review
 configs/          # Business configs (YAML per business)
 data/             # CSV data files per business
 scripts/          # Data generation scripts
@@ -40,15 +52,6 @@ tests/            # Unit and e2e tests
 docs/             # Component documentation
 logs/             # LLM call logs (gitignored)
 ```
-
-## How It Works
-
-1. Customer sends a message via CLI (or API directly)
-2. Backend loads the business config (`configs/<business_id>.yaml`)
-3. Agent loop sends the conversation to Claude with business-specific tools
-4. If Claude makes tool calls (e.g., CSV lookup), they execute and feed results back
-5. Loop repeats until Claude produces a final text reply
-6. Draft reply is returned to the caller
 
 ## API
 
@@ -68,6 +71,8 @@ logs/             # LLM call logs (gitignored)
   "reply": "Your next appointment is..."
 }
 ```
+
+The response is a **draft** — the calling application is responsible for presenting it for human review before delivering to the customer.
 
 ## Business Configs
 
