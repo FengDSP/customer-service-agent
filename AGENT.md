@@ -49,24 +49,30 @@ If a plan is in `plans/in-progress/`, it is taken — pick a different one.
 
 ## Branching and Worktrees
 
-Each agent works in its own git worktree on a feature branch.
+Each agent works in its own git worktree on a feature branch. Never push directly to `main`.
 
 - Branch naming: `agent/<plan-name>` (e.g., `agent/csv-tool-calls`)
 - Branch from `main` at the latest commit.
 - Do not work on `main` directly.
 - Each worktree is isolated — agents do not coordinate in real time.
+- Push your feature branch to the remote as its own branch (e.g., `git push origin HEAD -u`). Never push to `origin/main` directly.
 
 ## Commits and PRs
 
-Agents commit directly and push without waiting for human review.
+Agents commit to their feature branch and merge to `main` via PRs.
 
 - Make small, focused commits with clear messages.
 - Commit format: `<type>: <description>` (e.g., `feat: add order lookup tool`, `fix: handle missing CSV column`, `test: add agent loop unit tests`).
 - Merge early and often. If a change is atomic and self-contained (e.g., a `.gitignore` update, a new config file, a standalone utility), open a PR and merge it immediately. Do not batch unrelated changes.
-- Push the branch and open a PR at meaningful checkpoints — do not wait until the entire plan is complete.
-- PR description should summarize what was done and link to the plan file.
-- Merge your own PR into `main` once CI passes (or immediately if no CI is set up yet). Do not wait for human review. Push to remote immediately after merging.
-- The human reviews code asynchronously after merge. If issues are found, they will be addressed in a follow-up plan.
+
+### PR workflow
+
+1. Push your feature branch to the remote: `git push origin HEAD -u`
+2. Create a PR with `gh pr create` targeting `main`. PR description should summarize what was done and link to the plan file.
+3. Merge immediately with `gh pr merge <number> --merge`. Do not wait for human review. If CI is set up, wait for it to pass first.
+4. Do not wait until the entire plan is complete — open and merge PRs at meaningful checkpoints.
+
+The human reviews code asynchronously after merge. If issues are found, they will be addressed in a follow-up plan.
 
 ## Code Practices
 
