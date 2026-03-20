@@ -121,6 +121,20 @@ If your work requires changes to another agent's plan (e.g., you discovered a de
 
 If the other plan is in `to-do/` (unclaimed), you may edit it directly since no agent is working on it.
 
+## Available Agents
+
+Specialized agents live in `.claude/agents/`. Each coding agent session should ask the human developer to kick off the relevant agent if there is a need.
+
+| Agent | File | Purpose |
+|-------|------|---------|
+| **Janitor** | `.claude/agents/janitor.md` | Fixes failing CI (test failures, lint errors). Run after merging code to clean up any issues. |
+
+### When to request an agent
+
+- After merging a PR, if CI fails → ask the human to kick off the **janitor** agent.
+- If you notice lint warnings while working but they're outside your plan scope → note it and ask for the janitor.
+- Do not do janitor work yourself unless the human explicitly asks you to.
+
 ## What Not to Do
 
 - Do not modify another agent's in-progress plan or branch.
