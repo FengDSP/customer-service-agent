@@ -62,7 +62,8 @@ Agents commit directly and push without waiting for human review.
 
 - Make small, focused commits with clear messages.
 - Commit format: `<type>: <description>` (e.g., `feat: add order lookup tool`, `fix: handle missing CSV column`, `test: add agent loop unit tests`).
-- Push the branch and open a PR when the plan is complete (or at meaningful checkpoints for large plans).
+- Merge early and often. If a change is atomic and self-contained (e.g., a `.gitignore` update, a new config file, a standalone utility), open a PR and merge it immediately. Do not batch unrelated changes.
+- Push the branch and open a PR at meaningful checkpoints — do not wait until the entire plan is complete.
 - PR description should summarize what was done and link to the plan file.
 - Merge your own PR into `main` once CI passes (or immediately if no CI is set up yet). Do not wait for human review.
 - The human reviews code asynchronously after merge. If issues are found, they will be addressed in a follow-up plan.
