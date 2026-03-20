@@ -1,0 +1,1240 @@
+appointment_id,customer_id,customer_name,customer_email,customer_phone,service_id,staff_id,date,time,status,notes
+APT-1001,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-023,STF-003,2025-11-20,16:00,completed,
+APT-1002,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-018,STF-005,2025-11-20,11:30,completed,Prefers low music volume
+APT-1003,CUS-123,Vivian Wu,vivian.wu37@email.com,408-555-6761,SVC-021,STF-001,2025-11-20,10:00,no_show,Package deal - session 2 of 5
+APT-1004,CUS-074,Melissa Taylor,melissa.taylor49@email.com,408-555-8253,SVC-021,STF-001,2025-11-20,10:30,completed,Prepaid balance used
+APT-1005,CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,SVC-018,STF-002,2025-11-20,15:30,cancelled,
+APT-1006,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-006,STF-005,2025-11-21,14:00,no_show,Follow-up session
+APT-1007,CUS-010,Samantha Clark,samantha.clark55@email.com,408-555-7543,SVC-001,STF-001,2025-11-21,11:00,completed,Package deal - session 2 of 5
+APT-1008,CUS-073,Maria Liang,maria.liang73@email.com,408-555-2395,SVC-015,STF-005,2025-11-21,10:00,completed,Prefers low music volume
+APT-1009,CUS-035,Nova Hu,nova.hu46@email.com,408-555-7658,SVC-017,STF-002,2025-11-21,16:00,completed,
+APT-1010,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-006,STF-005,2025-11-21,14:30,completed,
+APT-1011,CUS-157,Gloria Do,gloria.do1@email.com,408-555-4941,SVC-021,STF-005,2025-11-22,13:30,cancelled,Late arrival - 15 min
+APT-1012,CUS-103,Denise Dang,denise.dang23@outlook.com,408-555-9697,SVC-022,STF-003,2025-11-22,13:00,no_show,Prefers low music volume
+APT-1013,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-008,STF-001,2025-11-22,11:30,completed,Rescheduled from last week
+APT-1014,CUS-193,Luna Pan,luna.pan93@icloud.com,408-555-3793,SVC-009,STF-005,2025-11-22,11:00,completed,Prepaid balance used
+APT-1015,CUS-129,Christine Yoon,christine.yoon87@email.com,408-555-8972,SVC-023,STF-004,2025-11-24,13:30,completed,Follow-up session
+APT-1016,CUS-095,Rebecca Ma,rebecca.ma56@email.com,408-555-2646,SVC-020,STF-001,2025-11-24,11:30,no_show,Prefers low music volume
+APT-1017,CUS-040,Ella Choi,ella.choi5@icloud.com,408-555-6663,SVC-015,STF-005,2025-11-24,10:00,completed,Referred by existing client
+APT-1018,CUS-180,Hazel Jackson,hazel.jackson38@email.com,408-555-5949,SVC-018,STF-005,2025-11-24,10:30,completed,First-time client
+APT-1019,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-008,STF-005,2025-11-24,15:30,completed,
+APT-1020,CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,SVC-015,STF-002,2025-11-24,11:00,completed,Prepaid balance used
+APT-1021,CUS-029,Xin Choi,xin.choi17@email.com,408-555-2127,SVC-002,STF-005,2025-11-24,14:30,cancelled,First-time client
+APT-1022,CUS-039,Willow Anderson,willow.anderson52@email.com,408-555-9785,SVC-006,STF-001,2025-11-24,14:00,completed,
+APT-1023,CUS-175,Mei Jones,mei.jones88@email.com,408-555-3102,SVC-007,STF-005,2025-11-24,16:00,completed,Late arrival - 15 min
+APT-1024,CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,SVC-015,STF-005,2025-11-25,10:00,completed,
+APT-1025,CUS-102,Emery Luo,emery.luo81@gmail.com,408-555-6061,SVC-009,STF-005,2025-11-25,14:30,completed,Prepaid balance used
+APT-1026,CUS-019,Pamela Davis,pamela.davis28@email.com,408-555-8744,SVC-002,STF-002,2025-11-25,11:00,completed,Cancelled within 24hrs - $50 fee
+APT-1027,CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,SVC-003,STF-005,2025-11-25,14:00,completed,Follow-up session
+APT-1028,CUS-105,Paula White,paula.white47@icloud.com,408-555-1228,SVC-006,STF-005,2025-11-25,11:30,completed,Referred by existing client
+APT-1029,CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,SVC-013,STF-002,2025-11-25,13:00,cancelled,Birthday treatment
+APT-1030,CUS-175,Mei Jones,mei.jones88@email.com,408-555-3102,SVC-022,STF-004,2025-11-25,16:00,completed,Package deal - session 3 of 5
+APT-1031,CUS-187,Christina Nakamura,christina.nakamura71@icloud.com,408-555-9261,SVC-008,STF-005,2025-11-26,11:00,completed,Follow-up session
+APT-1032,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-022,STF-004,2025-11-26,15:00,completed,Birthday treatment
+APT-1033,CUS-059,Nova Lin,nova.lin73@email.com,408-555-8619,SVC-008,STF-002,2025-11-26,14:00,completed,First-time client
+APT-1034,CUS-186,Karen Hu,karen.hu56@outlook.com,408-555-6992,SVC-025,STF-003,2025-11-26,16:00,completed,Referred by existing client
+APT-1035,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-022,STF-004,2025-11-27,10:00,completed,
+APT-1036,CUS-103,Denise Dang,denise.dang23@outlook.com,408-555-9697,SVC-015,STF-001,2025-11-27,11:30,completed,
+APT-1037,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-017,STF-005,2025-11-27,15:30,completed,Prepaid balance used
+APT-1038,CUS-082,Wendy Garcia,wendy.garcia45@email.com,408-555-6260,SVC-019,STF-002,2025-11-27,10:30,completed,Package deal - session 2 of 5
+APT-1039,CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,SVC-010,STF-005,2025-11-27,16:00,no_show,Late arrival - 15 min
+APT-1040,CUS-057,Monica Kang,monica.kang97@email.com,408-555-7906,SVC-014,STF-001,2025-11-27,13:00,completed,Prepaid balance used
+APT-1041,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-006,STF-005,2025-11-27,14:00,completed,Prefers low music volume
+APT-1042,CUS-013,Xin Han,xin.han65@email.com,408-555-5889,SVC-012,STF-005,2025-11-27,15:00,completed,Late arrival - 15 min
+APT-1043,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-018,STF-002,2025-11-28,14:00,cancelled,Follow-up session
+APT-1044,CUS-037,Aaliyah Hu,aaliyah.hu49@email.com,408-555-8711,SVC-026,STF-004,2025-11-28,16:00,completed,Referred by existing client
+APT-1045,CUS-107,Riley Cao,riley.cao83@icloud.com,408-555-5951,SVC-018,STF-002,2025-11-28,11:00,completed,Sensitive skin - gentle products
+APT-1046,CUS-053,Ella Zhang,ella.zhang98@email.com,408-555-8814,SVC-011,STF-005,2025-11-28,13:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1047,CUS-186,Karen Hu,karen.hu56@outlook.com,408-555-6992,SVC-007,STF-001,2025-11-28,11:30,completed,Combo booking with friend
+APT-1048,CUS-155,Lan Do,lan.do15@email.com,408-555-4893,SVC-002,STF-005,2025-11-28,10:30,completed,Prepaid balance used
+APT-1049,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-024,STF-003,2025-11-29,16:00,no_show,Prefers low music volume
+APT-1050,CUS-063,Jing Hu,jing.hu56@email.com,408-555-8532,SVC-023,STF-003,2025-11-29,15:00,completed,Requested extra hydration
+APT-1051,CUS-142,Kelly Nguyen,kelly.nguyen37@email.com,408-555-6543,SVC-011,STF-005,2025-11-29,11:30,completed,Cancelled within 24hrs - $50 fee
+APT-1052,CUS-167,Catherine Liu,catherine.liu19@email.com,408-555-8179,SVC-012,STF-001,2025-11-29,14:30,completed,Prefers low music volume
+APT-1053,CUS-120,Yvonne Williams,yvonne.williams30@email.com,408-555-8430,SVC-004,STF-005,2025-11-29,10:30,completed,Package deal - session 2 of 5
+APT-1054,CUS-053,Ella Zhang,ella.zhang98@email.com,408-555-8814,SVC-012,STF-001,2025-11-29,11:00,completed,Requested extra hydration
+APT-1055,CUS-190,Fei Brown,fei.brown20@email.com,408-555-9446,SVC-005,STF-001,2025-11-29,13:30,completed,Prepaid balance used
+APT-1056,CUS-149,Betty Garcia,betty.garcia25@email.com,408-555-8218,SVC-024,STF-004,2025-11-29,10:00,completed,Package deal - session 2 of 5
+APT-1057,CUS-059,Nova Lin,nova.lin73@email.com,408-555-8619,SVC-013,STF-002,2025-11-29,15:30,completed,Cancelled within 24hrs - $50 fee
+APT-1058,CUS-185,Sharon Deng,sharon.deng75@email.com,408-555-1828,SVC-018,STF-002,2025-11-30,13:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1059,CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,SVC-017,STF-001,2025-11-30,13:00,cancelled,
+APT-1060,CUS-106,Dorothy Clark,dorothy.clark49@email.com,408-555-7086,SVC-005,STF-005,2025-11-30,14:30,completed,
+APT-1061,CUS-003,Paisley Jackson,paisley.jackson54@outlook.com,408-555-1106,SVC-007,STF-002,2025-11-30,15:00,completed,Combo booking with friend
+APT-1062,CUS-164,Lily Taylor,lily.taylor35@email.com,408-555-7955,SVC-022,STF-005,2025-11-30,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1063,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-018,STF-002,2025-11-30,10:30,completed,Sensitive skin - gentle products
+APT-1064,CUS-138,Nancy Han,nancy.han60@email.com,408-555-1932,SVC-010,STF-001,2025-11-30,11:00,completed,Referred by existing client
+APT-1065,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-004,STF-005,2025-11-30,16:00,completed,Requested extra hydration
+APT-1066,CUS-050,Mei Song,mei.song96@email.com,408-555-8373,SVC-020,STF-002,2025-11-30,10:00,completed,Sensitive skin - gentle products
+APT-1067,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-021,STF-002,2025-12-01,14:00,completed,Birthday treatment
+APT-1068,CUS-097,Riley Tran,riley.tran80@email.com,408-555-9153,SVC-018,STF-002,2025-12-01,10:30,completed,
+APT-1069,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-016,STF-005,2025-12-01,13:30,completed,Package deal - session 2 of 5
+APT-1070,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-004,STF-005,2025-12-01,16:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1071,CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,SVC-019,STF-002,2025-12-01,11:30,completed,
+APT-1072,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-009,STF-005,2025-12-01,13:00,completed,
+APT-1073,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-011,STF-001,2025-12-01,15:30,completed,
+APT-1074,CUS-193,Luna Pan,luna.pan93@icloud.com,408-555-3793,SVC-023,STF-004,2025-12-01,15:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1075,CUS-062,Helen Harris,helen.harris6@email.com,408-555-8018,SVC-019,STF-005,2025-12-01,14:30,completed,Cancelled within 24hrs - $50 fee
+APT-1076,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-013,STF-005,2025-12-01,10:00,completed,
+APT-1077,CUS-199,Monica Hoang,monica.hoang45@email.com,408-555-3399,SVC-011,STF-001,2025-12-02,13:30,completed,Rescheduled from last week
+APT-1078,CUS-126,Victoria Zheng,victoria.zheng73@email.com,408-555-2140,SVC-008,STF-001,2025-12-02,10:00,no_show,Referred by existing client
+APT-1079,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-022,STF-003,2025-12-02,10:30,completed,Combo booking with friend
+APT-1080,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-026,STF-003,2025-12-02,14:00,completed,Sensitive skin - gentle products
+APT-1081,CUS-040,Ella Choi,ella.choi5@icloud.com,408-555-6663,SVC-013,STF-005,2025-12-02,15:00,completed,Birthday treatment
+APT-1082,CUS-082,Wendy Garcia,wendy.garcia45@email.com,408-555-6260,SVC-012,STF-001,2025-12-02,15:30,completed,Follow-up session
+APT-1083,CUS-114,Mila Chen,mila.chen36@email.com,408-555-3370,SVC-012,STF-005,2025-12-02,11:00,completed,
+APT-1084,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-014,STF-002,2025-12-02,11:30,completed,Referred by existing client
+APT-1085,CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,SVC-020,STF-002,2025-12-03,10:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1086,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-025,STF-003,2025-12-03,10:30,cancelled,Requested extra hydration
+APT-1087,CUS-044,Samantha Han,samantha.han79@email.com,408-555-7653,SVC-022,STF-003,2025-12-03,13:30,completed,Follow-up session
+APT-1088,CUS-069,Cynthia Guo,cynthia.guo96@email.com,408-555-4033,SVC-016,STF-001,2025-12-03,15:30,completed,Sensitive skin - gentle products
+APT-1089,CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,SVC-020,STF-001,2025-12-04,13:00,completed,Follow-up session
+APT-1090,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-013,STF-001,2025-12-04,14:30,completed,Package deal - session 2 of 5
+APT-1091,CUS-113,Nicole Zhou,nicole.zhou98@email.com,408-555-4538,SVC-011,STF-002,2025-12-04,10:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1092,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-020,STF-005,2025-12-04,13:30,completed,Package deal - session 2 of 5
+APT-1093,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-013,STF-005,2025-12-04,11:00,completed,Prefers low music volume
+APT-1094,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-026,STF-003,2025-12-04,15:00,completed,Birthday treatment
+APT-1095,CUS-094,Ling Tran,ling.tran41@email.com,408-555-8994,SVC-004,STF-005,2025-12-04,11:30,completed,Cancelled within 24hrs - $50 fee
+APT-1096,CUS-054,Tracy Moore,tracy.moore96@email.com,408-555-4613,SVC-015,STF-005,2025-12-05,16:00,cancelled,
+APT-1097,CUS-105,Paula White,paula.white47@icloud.com,408-555-1228,SVC-022,STF-003,2025-12-05,15:00,completed,Requested extra hydration
+APT-1098,CUS-065,Wendy Kang,wendy.kang58@icloud.com,408-555-7209,SVC-022,STF-003,2025-12-05,10:00,completed,Birthday treatment
+APT-1099,CUS-019,Pamela Davis,pamela.davis28@email.com,408-555-8744,SVC-015,STF-005,2025-12-05,14:30,completed,Birthday treatment
+APT-1100,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-017,STF-005,2025-12-05,13:30,cancelled,Referred by existing client
+APT-1101,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-021,STF-002,2025-12-06,13:30,completed,Package deal - session 2 of 5
+APT-1102,CUS-111,Lily Jackson,lily.jackson83@email.com,408-555-7523,SVC-004,STF-001,2025-12-06,15:00,completed,Late arrival - 15 min
+APT-1103,CUS-192,Emery Lin,emery.lin54@email.com,408-555-1436,SVC-017,STF-002,2025-12-06,10:30,completed,Requested extra hydration
+APT-1104,CUS-115,Aaliyah Kim,aaliyah.kim76@email.com,408-555-3854,SVC-012,STF-002,2025-12-06,15:30,completed,Prepaid balance used
+APT-1105,CUS-177,Irene Taylor,irene.taylor37@email.com,408-555-5105,SVC-017,STF-001,2025-12-06,14:00,no_show,Prefers low music volume
+APT-1106,CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,SVC-010,STF-002,2025-12-06,14:30,no_show,
+APT-1107,CUS-187,Christina Nakamura,christina.nakamura71@icloud.com,408-555-9261,SVC-005,STF-001,2025-12-06,11:00,completed,First-time client
+APT-1108,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-016,STF-001,2025-12-06,16:00,completed,Rescheduled from last week
+APT-1109,CUS-082,Wendy Garcia,wendy.garcia45@email.com,408-555-6260,SVC-003,STF-001,2025-12-06,13:00,completed,
+APT-1110,CUS-006,Diana Pan,diana.pan13@email.com,408-555-8428,SVC-011,STF-005,2025-12-06,10:00,completed,
+APT-1111,CUS-104,Gloria Sato,gloria.sato15@email.com,408-555-2233,SVC-021,STF-001,2025-12-07,11:30,completed,Referred by existing client
+APT-1112,CUS-102,Emery Luo,emery.luo81@gmail.com,408-555-6061,SVC-001,STF-005,2025-12-07,15:00,cancelled,Rescheduled from last week
+APT-1113,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-001,STF-005,2025-12-07,11:00,completed,
+APT-1114,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-004,STF-005,2025-12-07,15:30,completed,Package deal - session 3 of 5
+APT-1115,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-007,STF-002,2025-12-07,14:30,completed,Prefers low music volume
+APT-1116,CUS-136,Laura King,laura.king64@email.com,408-555-8354,SVC-021,STF-001,2025-12-07,13:00,completed,Birthday treatment
+APT-1117,CUS-151,Helen Yoon,helen.yoon11@email.com,408-555-5469,SVC-004,STF-001,2025-12-07,16:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1118,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-023,STF-004,2025-12-07,13:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1119,CUS-035,Nova Hu,nova.hu46@email.com,408-555-7658,SVC-011,STF-001,2025-12-07,10:00,completed,
+APT-1120,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-013,STF-002,2025-12-08,11:00,completed,Cancelled within 24hrs - $50 fee
+APT-1121,CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,SVC-021,STF-005,2025-12-08,15:00,completed,
+APT-1122,CUS-126,Victoria Zheng,victoria.zheng73@email.com,408-555-2140,SVC-010,STF-001,2025-12-08,14:00,completed,Rescheduled from last week
+APT-1123,CUS-159,Samantha Zhang,samantha.zhang46@email.com,408-555-6649,SVC-002,STF-005,2025-12-08,15:30,no_show,Prefers low music volume
+APT-1124,CUS-035,Nova Hu,nova.hu46@email.com,408-555-7658,SVC-007,STF-005,2025-12-08,13:00,no_show,Late arrival - 15 min
+APT-1125,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-016,STF-002,2025-12-08,10:30,completed,Rescheduled from last week
+APT-1126,CUS-058,Irene Cao,irene.cao84@gmail.com,408-555-1508,SVC-018,STF-001,2025-12-09,11:00,completed,Prepaid balance used
+APT-1127,CUS-191,Riley Jang,riley.jang76@email.com,408-555-9351,SVC-025,STF-004,2025-12-09,10:30,completed,
+APT-1128,CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,SVC-004,STF-001,2025-12-09,10:00,completed,Package deal - session 3 of 5
+APT-1129,CUS-139,Wendy Young,wendy.young77@email.com,408-555-8581,SVC-025,STF-003,2025-12-09,11:30,completed,Cancelled within 24hrs - $50 fee
+APT-1130,CUS-056,Diana Scott,diana.scott55@icloud.com,408-555-3977,SVC-014,STF-001,2025-12-09,16:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1131,CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,SVC-015,STF-001,2025-12-09,15:00,cancelled,
+APT-1132,CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,SVC-025,STF-004,2025-12-09,14:00,completed,Prepaid balance used
+APT-1133,CUS-146,Madeline Davis,madeline.davis25@yahoo.com,408-555-3538,SVC-012,STF-002,2025-12-10,13:30,completed,
+APT-1134,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-023,STF-003,2025-12-10,15:30,completed,Late arrival - 15 min
+APT-1135,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-004,STF-001,2025-12-10,14:00,completed,Referred by existing client
+APT-1136,CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,SVC-009,STF-005,2025-12-10,11:00,completed,
+APT-1137,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-005,STF-005,2025-12-10,13:00,cancelled,Birthday treatment
+APT-1138,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-021,STF-001,2025-12-10,10:30,completed,Rescheduled from last week
+APT-1139,CUS-020,Vivian Bui,vivian.bui60@email.com,408-555-1887,SVC-021,STF-002,2025-12-10,16:00,completed,Birthday treatment
+APT-1140,CUS-132,Cynthia Thompson,cynthia.thompson55@email.com,408-555-7843,SVC-024,STF-004,2025-12-10,15:00,cancelled,Package deal - session 3 of 5
+APT-1141,CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,SVC-011,STF-002,2025-12-10,10:00,cancelled,
+APT-1142,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-009,STF-001,2025-12-11,16:00,completed,Cancelled within 24hrs - $50 fee
+APT-1143,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-005,STF-002,2025-12-11,13:30,completed,Package deal - session 2 of 5
+APT-1144,CUS-175,Mei Jones,mei.jones88@email.com,408-555-3102,SVC-025,STF-003,2025-12-11,10:30,completed,Rescheduled from last week
+APT-1145,CUS-005,Ling Guo,ling.guo49@outlook.com,408-555-6925,SVC-004,STF-005,2025-12-11,14:00,completed,Rescheduled from last week
+APT-1146,CUS-001,Aurora Lin,aurora.lin4@email.com,408-555-5012,SVC-014,STF-001,2025-12-11,15:00,completed,
+APT-1147,CUS-167,Catherine Liu,catherine.liu19@email.com,408-555-8179,SVC-010,STF-001,2025-12-11,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1148,CUS-093,Sandy Hill,sandy.hill20@outlook.com,408-555-6546,SVC-009,STF-001,2025-12-11,14:30,completed,
+APT-1149,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-003,STF-005,2025-12-12,14:00,completed,Prefers low music volume
+APT-1150,CUS-020,Vivian Bui,vivian.bui60@email.com,408-555-1887,SVC-005,STF-002,2025-12-12,13:00,completed,Rescheduled from last week
+APT-1151,CUS-003,Paisley Jackson,paisley.jackson54@outlook.com,408-555-1106,SVC-001,STF-005,2025-12-12,11:30,completed,Referred by existing client
+APT-1152,CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,SVC-005,STF-002,2025-12-12,16:00,completed,
+APT-1153,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-005,STF-001,2025-12-13,10:30,completed,Combo booking with friend
+APT-1154,CUS-167,Catherine Liu,catherine.liu19@email.com,408-555-8179,SVC-006,STF-002,2025-12-13,16:00,completed,
+APT-1155,CUS-106,Dorothy Clark,dorothy.clark49@email.com,408-555-7086,SVC-020,STF-002,2025-12-13,13:30,cancelled,
+APT-1156,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-025,STF-003,2025-12-13,15:00,completed,Package deal - session 3 of 5
+APT-1157,CUS-110,Pamela Li,pamela.li89@email.com,408-555-8264,SVC-011,STF-005,2025-12-13,11:00,completed,
+APT-1158,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-018,STF-002,2025-12-13,15:30,completed,Follow-up session
+APT-1159,CUS-200,Samantha Miller,samantha.miller28@outlook.com,408-555-5450,SVC-023,STF-001,2025-12-13,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1160,CUS-156,Yuki Zhou,yuki.zhou15@email.com,408-555-9189,SVC-017,STF-001,2025-12-13,14:30,completed,
+APT-1161,CUS-062,Helen Harris,helen.harris6@email.com,408-555-8018,SVC-016,STF-002,2025-12-13,14:00,completed,Combo booking with friend
+APT-1162,CUS-146,Madeline Davis,madeline.davis25@yahoo.com,408-555-3538,SVC-014,STF-001,2025-12-15,13:30,completed,Prefers low music volume
+APT-1163,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-003,STF-001,2025-12-15,16:00,completed,Sensitive skin - gentle products
+APT-1164,CUS-056,Diana Scott,diana.scott55@icloud.com,408-555-3977,SVC-002,STF-005,2025-12-15,11:00,no_show,Birthday treatment
+APT-1165,CUS-130,Alice Deng,alice.deng99@outlook.com,408-555-5742,SVC-010,STF-005,2025-12-15,14:00,completed,Referred by existing client
+APT-1166,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-017,STF-005,2025-12-16,14:00,no_show,
+APT-1167,CUS-138,Nancy Han,nancy.han60@email.com,408-555-1932,SVC-011,STF-002,2025-12-16,10:30,completed,
+APT-1168,CUS-080,Sarah Ma,sarah.ma30@email.com,408-555-1339,SVC-023,STF-003,2025-12-16,15:00,no_show,Requested extra hydration
+APT-1169,CUS-015,Aria Sun,aria.sun11@email.com,408-555-2133,SVC-008,STF-001,2025-12-16,11:00,completed,Rescheduled from last week
+APT-1170,CUS-157,Gloria Do,gloria.do1@email.com,408-555-4941,SVC-020,STF-001,2025-12-16,14:30,completed,
+APT-1171,CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,SVC-001,STF-005,2025-12-16,10:00,completed,
+APT-1172,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-012,STF-002,2025-12-16,16:00,completed,Sensitive skin - gentle products
+APT-1173,CUS-008,Aurora White,aurora.white29@email.com,408-555-1916,SVC-011,STF-005,2025-12-17,13:30,completed,
+APT-1174,CUS-068,Sakura Martin,sakura.martin68@email.com,408-555-6419,SVC-023,STF-005,2025-12-17,11:00,completed,Prefers low music volume
+APT-1175,CUS-117,Fei Jang,fei.jang59@email.com,408-555-1510,SVC-017,STF-001,2025-12-17,13:00,completed,Prepaid balance used
+APT-1176,CUS-043,Betty Bui,betty.bui42@email.com,408-555-5844,SVC-012,STF-001,2025-12-17,10:30,completed,Prepaid balance used
+APT-1177,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-024,STF-003,2025-12-17,14:00,completed,
+APT-1178,CUS-094,Ling Tran,ling.tran41@email.com,408-555-8994,SVC-013,STF-005,2025-12-18,10:00,completed,
+APT-1179,CUS-142,Kelly Nguyen,kelly.nguyen37@email.com,408-555-6543,SVC-026,STF-004,2025-12-18,11:30,completed,Referred by existing client
+APT-1180,CUS-058,Irene Cao,irene.cao84@gmail.com,408-555-1508,SVC-011,STF-001,2025-12-18,16:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1181,CUS-020,Vivian Bui,vivian.bui60@email.com,408-555-1887,SVC-019,STF-002,2025-12-18,14:30,completed,
+APT-1182,CUS-120,Yvonne Williams,yvonne.williams30@email.com,408-555-8430,SVC-010,STF-005,2025-12-19,11:30,completed,
+APT-1183,CUS-142,Kelly Nguyen,kelly.nguyen37@email.com,408-555-6543,SVC-015,STF-001,2025-12-19,15:00,completed,Prepaid balance used
+APT-1184,CUS-078,Anna Xu,anna.xu8@outlook.com,408-555-5728,SVC-024,STF-004,2025-12-19,10:00,completed,Prepaid balance used
+APT-1185,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-025,STF-004,2025-12-19,14:00,completed,Cancelled within 24hrs - $50 fee
+APT-1186,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-026,STF-003,2025-12-19,15:30,completed,Referred by existing client
+APT-1187,CUS-086,Sharon Song,sharon.song40@email.com,408-555-7684,SVC-001,STF-005,2025-12-20,11:30,completed,Follow-up session
+APT-1188,CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,SVC-007,STF-002,2025-12-20,15:00,completed,Prefers low music volume
+APT-1189,CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,SVC-005,STF-005,2025-12-20,13:30,completed,Requested extra hydration
+APT-1190,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-014,STF-005,2025-12-20,10:00,completed,
+APT-1191,CUS-075,Riley Zhu,riley.zhu98@yahoo.com,408-555-5335,SVC-009,STF-005,2025-12-21,11:00,cancelled,Birthday treatment
+APT-1192,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-011,STF-001,2025-12-21,14:00,completed,
+APT-1193,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-005,STF-005,2025-12-21,10:30,completed,
+APT-1194,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-006,STF-002,2025-12-21,10:00,completed,
+APT-1195,CUS-138,Nancy Han,nancy.han60@email.com,408-555-1932,SVC-012,STF-005,2025-12-21,11:30,completed,Follow-up session
+APT-1196,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-009,STF-005,2025-12-21,13:30,completed,Follow-up session
+APT-1197,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-023,STF-003,2025-12-21,15:00,completed,Package deal - session 2 of 5
+APT-1198,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-003,STF-005,2025-12-21,13:00,no_show,Birthday treatment
+APT-1199,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-015,STF-001,2025-12-22,10:00,completed,
+APT-1200,CUS-004,Amanda Sato,amanda.sato14@gmail.com,408-555-6881,SVC-002,STF-005,2025-12-22,13:00,no_show,
+APT-1201,CUS-051,Sharon Kang,sharon.kang57@outlook.com,408-555-4841,SVC-013,STF-001,2025-12-22,15:30,completed,
+APT-1202,CUS-150,Catherine Wei,catherine.wei78@outlook.com,408-555-1854,SVC-019,STF-001,2025-12-22,11:00,completed,
+APT-1203,CUS-017,Ivy Nguyen,ivy.nguyen57@email.com,408-555-8397,SVC-007,STF-005,2025-12-22,16:00,completed,
+APT-1204,CUS-024,Aaliyah Brown,aaliyah.brown37@email.com,408-555-8973,SVC-026,STF-004,2025-12-22,11:30,completed,Rescheduled from last week
+APT-1205,CUS-013,Xin Han,xin.han65@email.com,408-555-5889,SVC-006,STF-005,2025-12-22,13:30,completed,Birthday treatment
+APT-1206,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-001,STF-002,2025-12-22,10:30,completed,Package deal - session 3 of 5
+APT-1207,CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,SVC-020,STF-002,2025-12-23,11:00,completed,Follow-up session
+APT-1208,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-014,STF-005,2025-12-23,13:00,completed,
+APT-1209,CUS-072,Min Johnson,min.johnson44@gmail.com,408-555-5136,SVC-013,STF-001,2025-12-23,15:30,completed,Late arrival - 15 min
+APT-1210,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-021,STF-005,2025-12-23,14:30,completed,
+APT-1211,CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,SVC-026,STF-004,2025-12-23,10:30,completed,Prefers low music volume
+APT-1212,CUS-007,Paisley Scott,paisley.scott10@email.com,408-555-3803,SVC-011,STF-002,2025-12-24,15:30,completed,Sensitive skin - gentle products
+APT-1213,CUS-015,Aria Sun,aria.sun11@email.com,408-555-2133,SVC-026,STF-004,2025-12-24,15:00,completed,Prepaid balance used
+APT-1214,CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,SVC-006,STF-001,2025-12-24,13:30,completed,Sensitive skin - gentle products
+APT-1215,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-026,STF-004,2025-12-24,14:00,completed,Requested extra hydration
+APT-1216,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-026,STF-004,2025-12-24,11:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1217,CUS-152,Mei Watanabe,mei.watanabe4@email.com,408-555-7495,SVC-011,STF-005,2025-12-24,10:30,completed,Prepaid balance used
+APT-1218,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-018,STF-001,2025-12-25,13:30,completed,
+APT-1219,CUS-015,Aria Sun,aria.sun11@email.com,408-555-2133,SVC-008,STF-002,2025-12-25,15:30,completed,Prefers low music volume
+APT-1220,CUS-001,Aurora Lin,aurora.lin4@email.com,408-555-5012,SVC-011,STF-005,2025-12-25,11:00,completed,
+APT-1221,CUS-088,Mila Anderson,mila.anderson96@email.com,408-555-2143,SVC-023,STF-003,2025-12-25,11:30,completed,Package deal - session 2 of 5
+APT-1222,CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,SVC-012,STF-005,2025-12-26,10:00,completed,Birthday treatment
+APT-1223,CUS-151,Helen Yoon,helen.yoon11@email.com,408-555-5469,SVC-004,STF-001,2025-12-26,11:00,completed,
+APT-1224,CUS-188,Riley Guo,riley.guo17@email.com,408-555-7453,SVC-014,STF-005,2025-12-26,15:30,no_show,Package deal - session 2 of 5
+APT-1225,CUS-045,Ivy Yamamoto,ivy.yamamoto60@email.com,408-555-4501,SVC-023,STF-005,2025-12-26,10:30,completed,Combo booking with friend
+APT-1226,CUS-180,Hazel Jackson,hazel.jackson38@email.com,408-555-5949,SVC-019,STF-002,2025-12-27,13:30,no_show,Prepaid balance used
+APT-1227,CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,SVC-006,STF-002,2025-12-27,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1228,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-004,STF-005,2025-12-27,11:00,completed,
+APT-1229,CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,SVC-012,STF-005,2025-12-27,14:00,completed,
+APT-1230,CUS-182,Irene Vo,irene.vo17@email.com,408-555-9437,SVC-022,STF-003,2025-12-27,15:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1231,CUS-054,Tracy Moore,tracy.moore96@email.com,408-555-4613,SVC-008,STF-005,2025-12-27,16:00,completed,
+APT-1232,CUS-185,Sharon Deng,sharon.deng75@email.com,408-555-1828,SVC-001,STF-001,2025-12-27,14:30,completed,Referred by existing client
+APT-1233,CUS-043,Betty Bui,betty.bui42@email.com,408-555-5844,SVC-014,STF-002,2025-12-27,10:30,completed,Cancelled within 24hrs - $50 fee
+APT-1234,CUS-097,Riley Tran,riley.tran80@email.com,408-555-9153,SVC-004,STF-005,2025-12-27,10:00,completed,Prepaid balance used
+APT-1235,CUS-167,Catherine Liu,catherine.liu19@email.com,408-555-8179,SVC-025,STF-004,2025-12-27,13:00,completed,
+APT-1236,CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,SVC-003,STF-001,2025-12-28,13:00,cancelled,
+APT-1237,CUS-141,Frances Sun,frances.sun65@email.com,408-555-1641,SVC-003,STF-001,2025-12-28,10:00,no_show,Prefers low music volume
+APT-1238,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-001,STF-002,2025-12-28,13:30,completed,Combo booking with friend
+APT-1239,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-006,STF-001,2025-12-28,16:00,completed,First-time client
+APT-1240,CUS-013,Xin Han,xin.han65@email.com,408-555-5889,SVC-013,STF-002,2025-12-29,15:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1241,CUS-001,Aurora Lin,aurora.lin4@email.com,408-555-5012,SVC-014,STF-001,2025-12-29,16:00,cancelled,Combo booking with friend
+APT-1242,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-001,STF-001,2025-12-29,13:00,completed,
+APT-1243,CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,SVC-004,STF-001,2025-12-29,15:30,completed,Prefers low music volume
+APT-1244,CUS-170,Dorothy Choi,dorothy.choi91@email.com,408-555-5678,SVC-009,STF-001,2025-12-29,11:00,completed,
+APT-1245,CUS-095,Rebecca Ma,rebecca.ma56@email.com,408-555-2646,SVC-013,STF-001,2025-12-29,10:30,completed,Sensitive skin - gentle products
+APT-1246,CUS-113,Nicole Zhou,nicole.zhou98@email.com,408-555-4538,SVC-015,STF-001,2025-12-29,10:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1247,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-017,STF-002,2025-12-30,16:00,completed,Prefers low music volume
+APT-1248,CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,SVC-008,STF-002,2025-12-30,10:30,completed,
+APT-1249,CUS-129,Christine Yoon,christine.yoon87@email.com,408-555-8972,SVC-019,STF-005,2025-12-30,15:30,completed,Combo booking with friend
+APT-1250,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-004,STF-005,2025-12-30,13:30,completed,
+APT-1251,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-026,STF-003,2025-12-30,14:00,completed,
+APT-1252,CUS-175,Mei Jones,mei.jones88@email.com,408-555-3102,SVC-014,STF-001,2025-12-30,13:00,cancelled,
+APT-1253,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-011,STF-005,2025-12-30,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1254,CUS-143,Harper Pham,harper.pham37@yahoo.com,408-555-6461,SVC-013,STF-002,2025-12-30,15:00,cancelled,Late arrival - 15 min
+APT-1255,CUS-004,Amanda Sato,amanda.sato14@gmail.com,408-555-6881,SVC-026,STF-004,2025-12-30,11:00,completed,Referred by existing client
+APT-1256,CUS-029,Xin Choi,xin.choi17@email.com,408-555-2127,SVC-014,STF-001,2025-12-30,10:00,completed,Prepaid balance used
+APT-1257,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-016,STF-002,2025-12-31,10:30,completed,
+APT-1258,CUS-071,Rachel Martin,rachel.martin38@email.com,408-555-3068,SVC-013,STF-001,2025-12-31,16:00,completed,Birthday treatment
+APT-1259,CUS-010,Samantha Clark,samantha.clark55@email.com,408-555-7543,SVC-013,STF-005,2025-12-31,15:30,completed,Requested extra hydration
+APT-1260,CUS-013,Xin Han,xin.han65@email.com,408-555-5889,SVC-024,STF-004,2025-12-31,13:00,completed,Package deal - session 3 of 5
+APT-1261,CUS-006,Diana Pan,diana.pan13@email.com,408-555-8428,SVC-011,STF-005,2025-12-31,14:00,completed,Sensitive skin - gentle products
+APT-1262,CUS-126,Victoria Zheng,victoria.zheng73@email.com,408-555-2140,SVC-023,STF-003,2025-12-31,14:30,no_show,Requested extra hydration
+APT-1263,CUS-035,Nova Hu,nova.hu46@email.com,408-555-7658,SVC-010,STF-005,2025-12-31,11:00,completed,Package deal - session 2 of 5
+APT-1264,CUS-069,Cynthia Guo,cynthia.guo96@email.com,408-555-4033,SVC-024,STF-004,2025-12-31,11:30,completed,First-time client
+APT-1265,CUS-114,Mila Chen,mila.chen36@email.com,408-555-3370,SVC-007,STF-005,2025-12-31,15:00,completed,Prefers low music volume
+APT-1266,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-017,STF-005,2025-12-31,13:30,cancelled,Late arrival - 15 min
+APT-1267,CUS-200,Samantha Miller,samantha.miller28@outlook.com,408-555-5450,SVC-017,STF-005,2026-01-01,13:00,completed,First-time client
+APT-1268,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-002,STF-001,2026-01-01,15:00,completed,Package deal - session 3 of 5
+APT-1269,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-007,STF-001,2026-01-01,14:00,cancelled,Late arrival - 15 min
+APT-1270,CUS-032,Rachel Ma,rachel.ma82@email.com,408-555-5533,SVC-022,STF-001,2026-01-01,11:00,completed,Combo booking with friend
+APT-1271,CUS-192,Emery Lin,emery.lin54@email.com,408-555-1436,SVC-023,STF-001,2026-01-02,11:00,completed,
+APT-1272,CUS-042,Elena Wei,elena.wei47@email.com,408-555-6409,SVC-019,STF-002,2026-01-02,14:30,completed,Requested extra hydration
+APT-1273,CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,SVC-008,STF-005,2026-01-02,15:00,completed,Referred by existing client
+APT-1274,CUS-132,Cynthia Thompson,cynthia.thompson55@email.com,408-555-7843,SVC-001,STF-005,2026-01-02,13:30,no_show,
+APT-1275,CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,SVC-005,STF-005,2026-01-02,16:00,completed,
+APT-1276,CUS-058,Irene Cao,irene.cao84@gmail.com,408-555-1508,SVC-009,STF-002,2026-01-02,10:30,no_show,Sensitive skin - gentle products
+APT-1277,CUS-109,Qian Dang,qian.dang76@email.com,408-555-3531,SVC-013,STF-005,2026-01-02,14:00,completed,First-time client
+APT-1278,CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,SVC-021,STF-002,2026-01-03,13:00,completed,
+APT-1279,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-003,STF-001,2026-01-03,15:00,completed,Package deal - session 2 of 5
+APT-1280,CUS-071,Rachel Martin,rachel.martin38@email.com,408-555-3068,SVC-009,STF-005,2026-01-03,14:00,no_show,Follow-up session
+APT-1281,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-005,STF-002,2026-01-03,10:30,completed,
+APT-1282,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-013,STF-005,2026-01-03,10:00,completed,
+APT-1283,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-016,STF-005,2026-01-03,16:00,completed,Referred by existing client
+APT-1284,CUS-104,Gloria Sato,gloria.sato15@email.com,408-555-2233,SVC-013,STF-005,2026-01-03,11:00,completed,Prepaid balance used
+APT-1285,CUS-044,Samantha Han,samantha.han79@email.com,408-555-7653,SVC-022,STF-004,2026-01-04,11:30,completed,
+APT-1286,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-005,STF-005,2026-01-04,15:00,completed,Cancelled within 24hrs - $50 fee
+APT-1287,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-006,STF-005,2026-01-04,14:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1288,CUS-058,Irene Cao,irene.cao84@gmail.com,408-555-1508,SVC-024,STF-004,2026-01-04,13:30,completed,Package deal - session 2 of 5
+APT-1289,CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,SVC-009,STF-002,2026-01-04,13:00,completed,
+APT-1290,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-002,STF-005,2026-01-04,11:00,completed,Combo booking with friend
+APT-1291,CUS-175,Mei Jones,mei.jones88@email.com,408-555-3102,SVC-013,STF-002,2026-01-05,14:30,completed,
+APT-1292,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-007,STF-001,2026-01-05,11:30,no_show,Rescheduled from last week
+APT-1293,CUS-037,Aaliyah Hu,aaliyah.hu49@email.com,408-555-8711,SVC-011,STF-005,2026-01-05,15:00,completed,
+APT-1294,CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,SVC-011,STF-005,2026-01-05,10:30,completed,
+APT-1295,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-025,STF-003,2026-01-06,14:30,completed,
+APT-1296,CUS-034,Lily Clark,lily.clark71@yahoo.com,408-555-1685,SVC-020,STF-002,2026-01-06,13:00,completed,Referred by existing client
+APT-1297,CUS-123,Vivian Wu,vivian.wu37@email.com,408-555-6761,SVC-013,STF-001,2026-01-06,11:30,completed,Package deal - session 3 of 5
+APT-1298,CUS-004,Amanda Sato,amanda.sato14@gmail.com,408-555-6881,SVC-011,STF-005,2026-01-06,11:00,completed,
+APT-1299,CUS-151,Helen Yoon,helen.yoon11@email.com,408-555-5469,SVC-010,STF-001,2026-01-07,10:00,cancelled,Follow-up session
+APT-1300,CUS-117,Fei Jang,fei.jang59@email.com,408-555-1510,SVC-024,STF-004,2026-01-07,11:30,completed,Referred by existing client
+APT-1301,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-005,STF-001,2026-01-07,15:30,cancelled,Package deal - session 3 of 5
+APT-1302,CUS-043,Betty Bui,betty.bui42@email.com,408-555-5844,SVC-026,STF-004,2026-01-07,13:30,completed,
+APT-1303,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-024,STF-003,2026-01-07,11:00,completed,
+APT-1304,CUS-094,Ling Tran,ling.tran41@email.com,408-555-8994,SVC-023,STF-003,2026-01-07,10:30,completed,Sensitive skin - gentle products
+APT-1305,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-018,STF-002,2026-01-07,16:00,completed,
+APT-1306,CUS-170,Dorothy Choi,dorothy.choi91@email.com,408-555-5678,SVC-004,STF-005,2026-01-07,15:00,completed,
+APT-1307,CUS-107,Riley Cao,riley.cao83@icloud.com,408-555-5951,SVC-015,STF-002,2026-01-07,14:00,completed,Prefers low music volume
+APT-1308,CUS-156,Yuki Zhou,yuki.zhou15@email.com,408-555-9189,SVC-023,STF-003,2026-01-08,11:00,cancelled,
+APT-1309,CUS-159,Samantha Zhang,samantha.zhang46@email.com,408-555-6649,SVC-004,STF-001,2026-01-08,11:30,completed,Prefers low music volume
+APT-1310,CUS-051,Sharon Kang,sharon.kang57@outlook.com,408-555-4841,SVC-020,STF-001,2026-01-08,10:00,completed,Late arrival - 15 min
+APT-1311,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-012,STF-005,2026-01-08,13:00,completed,
+APT-1312,CUS-141,Frances Sun,frances.sun65@email.com,408-555-1641,SVC-016,STF-005,2026-01-08,15:30,completed,Prefers low music volume
+APT-1313,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-008,STF-001,2026-01-08,13:30,completed,
+APT-1314,CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,SVC-022,STF-003,2026-01-08,15:00,no_show,Late arrival - 15 min
+APT-1315,CUS-020,Vivian Bui,vivian.bui60@email.com,408-555-1887,SVC-024,STF-004,2026-01-08,16:00,cancelled,Requested extra hydration
+APT-1316,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-009,STF-002,2026-01-08,14:00,completed,
+APT-1317,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-022,STF-003,2026-01-09,10:00,completed,Rescheduled from last week
+APT-1318,CUS-160,Susan Huang,susan.huang46@email.com,408-555-3868,SVC-009,STF-005,2026-01-09,13:00,completed,Package deal - session 2 of 5
+APT-1319,CUS-047,Madeline Xu,madeline.xu59@email.com,408-555-4185,SVC-004,STF-002,2026-01-09,13:30,no_show,Sensitive skin - gentle products
+APT-1320,CUS-099,Vivian Lee,vivian.lee59@email.com,408-555-4263,SVC-023,STF-004,2026-01-09,15:00,completed,
+APT-1321,CUS-029,Xin Choi,xin.choi17@email.com,408-555-2127,SVC-005,STF-005,2026-01-09,11:30,completed,
+APT-1322,CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,SVC-014,STF-005,2026-01-09,14:30,completed,Prepaid balance used
+APT-1323,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-015,STF-001,2026-01-09,16:00,completed,Package deal - session 3 of 5
+APT-1324,CUS-157,Gloria Do,gloria.do1@email.com,408-555-4941,SVC-001,STF-005,2026-01-09,15:30,cancelled,
+APT-1325,CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,SVC-004,STF-005,2026-01-09,14:00,completed,
+APT-1326,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-021,STF-001,2026-01-09,11:00,completed,Late arrival - 15 min
+APT-1327,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-012,STF-005,2026-01-10,15:30,completed,
+APT-1328,CUS-143,Harper Pham,harper.pham37@yahoo.com,408-555-6461,SVC-020,STF-001,2026-01-10,16:00,completed,
+APT-1329,CUS-130,Alice Deng,alice.deng99@outlook.com,408-555-5742,SVC-016,STF-005,2026-01-10,11:30,cancelled,
+APT-1330,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-008,STF-001,2026-01-10,13:30,completed,Late arrival - 15 min
+APT-1331,CUS-058,Irene Cao,irene.cao84@gmail.com,408-555-1508,SVC-018,STF-002,2026-01-10,13:00,completed,Requested extra hydration
+APT-1332,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-015,STF-002,2026-01-10,14:00,completed,
+APT-1333,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-015,STF-001,2026-01-10,14:30,no_show,
+APT-1334,CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,SVC-013,STF-002,2026-01-10,10:00,completed,
+APT-1335,CUS-024,Aaliyah Brown,aaliyah.brown37@email.com,408-555-8973,SVC-026,STF-004,2026-01-10,10:30,completed,Follow-up session
+APT-1336,CUS-131,Ling Pan,ling.pan65@email.com,408-555-6802,SVC-018,STF-001,2026-01-10,15:00,completed,Package deal - session 2 of 5
+APT-1337,CUS-184,Cynthia Cheng,cynthia.cheng98@icloud.com,408-555-9171,SVC-022,STF-003,2026-01-11,11:30,completed,
+APT-1338,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-022,STF-003,2026-01-11,14:30,completed,Follow-up session
+APT-1339,CUS-141,Frances Sun,frances.sun65@email.com,408-555-1641,SVC-017,STF-001,2026-01-11,13:30,completed,
+APT-1340,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-005,STF-005,2026-01-11,15:30,completed,Referred by existing client
+APT-1341,CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,SVC-013,STF-001,2026-01-12,13:00,cancelled,First-time client
+APT-1342,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-025,STF-004,2026-01-12,15:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1343,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-015,STF-005,2026-01-12,11:30,no_show,
+APT-1344,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-001,STF-002,2026-01-12,15:00,completed,Referred by existing client
+APT-1345,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-020,STF-002,2026-01-13,15:30,completed,Birthday treatment
+APT-1346,CUS-108,Christine Zhu,christine.zhu31@email.com,408-555-3222,SVC-020,STF-005,2026-01-13,14:30,completed,Sensitive skin - gentle products
+APT-1347,CUS-102,Emery Luo,emery.luo81@gmail.com,408-555-6061,SVC-011,STF-005,2026-01-13,15:00,completed,
+APT-1348,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-014,STF-002,2026-01-13,11:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1349,CUS-180,Hazel Jackson,hazel.jackson38@email.com,408-555-5949,SVC-018,STF-005,2026-01-13,13:30,completed,Cancelled within 24hrs - $50 fee
+APT-1350,CUS-162,Cynthia Han,cynthia.han66@email.com,408-555-9897,SVC-007,STF-001,2026-01-13,13:00,completed,Follow-up session
+APT-1351,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-012,STF-005,2026-01-13,10:30,completed,
+APT-1352,CUS-129,Christine Yoon,christine.yoon87@email.com,408-555-8972,SVC-018,STF-002,2026-01-13,14:00,completed,
+APT-1353,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-012,STF-002,2026-01-13,10:00,completed,Referred by existing client
+APT-1354,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-024,STF-004,2026-01-13,11:30,completed,Referred by existing client
+APT-1355,CUS-193,Luna Pan,luna.pan93@icloud.com,408-555-3793,SVC-026,STF-003,2026-01-14,10:00,completed,Sensitive skin - gentle products
+APT-1356,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-002,STF-005,2026-01-14,15:00,completed,Cancelled within 24hrs - $50 fee
+APT-1357,CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,SVC-012,STF-005,2026-01-14,10:30,completed,Cancelled within 24hrs - $50 fee
+APT-1358,CUS-058,Irene Cao,irene.cao84@gmail.com,408-555-1508,SVC-024,STF-004,2026-01-14,16:00,completed,Late arrival - 15 min
+APT-1359,CUS-179,Amy Liu,amy.liu11@outlook.com,408-555-4453,SVC-010,STF-005,2026-01-14,11:30,completed,Birthday treatment
+APT-1360,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-014,STF-005,2026-01-14,15:30,no_show,Package deal - session 2 of 5
+APT-1361,CUS-142,Kelly Nguyen,kelly.nguyen37@email.com,408-555-6543,SVC-002,STF-001,2026-01-14,14:30,completed,Combo booking with friend
+APT-1362,CUS-200,Samantha Miller,samantha.miller28@outlook.com,408-555-5450,SVC-015,STF-005,2026-01-14,13:00,cancelled,Package deal - session 3 of 5
+APT-1363,CUS-140,Luna Hill,luna.hill25@email.com,408-555-8792,SVC-024,STF-004,2026-01-14,14:00,completed,First-time client
+APT-1364,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-015,STF-001,2026-01-14,13:30,completed,
+APT-1365,CUS-072,Min Johnson,min.johnson44@gmail.com,408-555-5136,SVC-018,STF-001,2026-01-15,15:00,completed,Sensitive skin - gentle products
+APT-1366,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-011,STF-002,2026-01-15,10:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1367,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-020,STF-001,2026-01-15,14:00,cancelled,Combo booking with friend
+APT-1368,CUS-078,Anna Xu,anna.xu8@outlook.com,408-555-5728,SVC-016,STF-005,2026-01-15,10:00,completed,
+APT-1369,CUS-182,Irene Vo,irene.vo17@email.com,408-555-9437,SVC-011,STF-002,2026-01-15,11:30,no_show,Late arrival - 15 min
+APT-1370,CUS-024,Aaliyah Brown,aaliyah.brown37@email.com,408-555-8973,SVC-012,STF-001,2026-01-16,15:00,completed,Package deal - session 2 of 5
+APT-1371,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-012,STF-001,2026-01-16,11:00,no_show,Combo booking with friend
+APT-1372,CUS-136,Laura King,laura.king64@email.com,408-555-8354,SVC-016,STF-005,2026-01-16,14:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1373,CUS-089,Janet Chen,janet.chen37@email.com,408-555-9022,SVC-015,STF-001,2026-01-16,16:00,completed,Combo booking with friend
+APT-1374,CUS-066,Frances Kang,frances.kang77@email.com,408-555-5526,SVC-018,STF-002,2026-01-17,10:00,completed,Late arrival - 15 min
+APT-1375,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-012,STF-002,2026-01-17,13:30,completed,Prefers low music volume
+APT-1376,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-010,STF-005,2026-01-17,14:00,completed,Late arrival - 15 min
+APT-1377,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-004,STF-001,2026-01-17,10:30,no_show,Cancelled within 24hrs - $50 fee
+APT-1378,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-001,STF-005,2026-01-17,11:30,completed,First-time client
+APT-1379,CUS-007,Paisley Scott,paisley.scott10@email.com,408-555-3803,SVC-015,STF-005,2026-01-18,10:30,completed,
+APT-1380,CUS-014,Jessica Robinson,jessica.robinson42@email.com,408-555-2832,SVC-006,STF-005,2026-01-18,11:30,completed,Prepaid balance used
+APT-1381,CUS-059,Nova Lin,nova.lin73@email.com,408-555-8619,SVC-009,STF-002,2026-01-18,15:00,completed,Birthday treatment
+APT-1382,CUS-111,Lily Jackson,lily.jackson83@email.com,408-555-7523,SVC-011,STF-001,2026-01-18,14:00,completed,Cancelled within 24hrs - $50 fee
+APT-1383,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-021,STF-002,2026-01-18,13:30,completed,Prepaid balance used
+APT-1384,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-023,STF-004,2026-01-18,10:00,completed,Late arrival - 15 min
+APT-1385,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-010,STF-005,2026-01-18,16:00,completed,
+APT-1386,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-008,STF-001,2026-01-19,14:30,completed,Cancelled within 24hrs - $50 fee
+APT-1387,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-021,STF-001,2026-01-19,14:00,completed,Package deal - session 3 of 5
+APT-1388,CUS-003,Paisley Jackson,paisley.jackson54@outlook.com,408-555-1106,SVC-018,STF-005,2026-01-19,15:30,completed,
+APT-1389,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-019,STF-002,2026-01-19,10:00,completed,
+APT-1390,CUS-079,Janet Martinez,janet.martinez70@email.com,408-555-2317,SVC-007,STF-005,2026-01-19,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1391,CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,SVC-017,STF-001,2026-01-19,10:30,completed,Combo booking with friend
+APT-1392,CUS-075,Riley Zhu,riley.zhu98@yahoo.com,408-555-5335,SVC-022,STF-001,2026-01-20,13:00,completed,Prepaid balance used
+APT-1393,CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,SVC-011,STF-001,2026-01-20,11:30,completed,Requested extra hydration
+APT-1394,CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,SVC-010,STF-002,2026-01-20,10:30,cancelled,Package deal - session 2 of 5
+APT-1395,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-020,STF-002,2026-01-20,11:00,completed,
+APT-1396,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-019,STF-002,2026-01-20,13:30,completed,Referred by existing client
+APT-1397,CUS-044,Samantha Han,samantha.han79@email.com,408-555-7653,SVC-001,STF-001,2026-01-20,16:00,completed,Referred by existing client
+APT-1398,CUS-071,Rachel Martin,rachel.martin38@email.com,408-555-3068,SVC-012,STF-001,2026-01-20,10:00,completed,Prefers low music volume
+APT-1399,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-015,STF-001,2026-01-20,15:30,completed,Cancelled within 24hrs - $50 fee
+APT-1400,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-006,STF-005,2026-01-20,14:30,completed,Sensitive skin - gentle products
+APT-1401,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-018,STF-001,2026-01-20,14:00,completed,
+APT-1402,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-002,STF-002,2026-01-21,10:30,completed,Cancelled within 24hrs - $50 fee
+APT-1403,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-021,STF-002,2026-01-21,10:00,completed,Requested extra hydration
+APT-1404,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-019,STF-002,2026-01-21,15:00,completed,Rescheduled from last week
+APT-1405,CUS-129,Christine Yoon,christine.yoon87@email.com,408-555-8972,SVC-017,STF-001,2026-01-21,15:30,completed,
+APT-1406,CUS-170,Dorothy Choi,dorothy.choi91@email.com,408-555-5678,SVC-008,STF-005,2026-01-21,14:00,completed,Combo booking with friend
+APT-1407,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-006,STF-005,2026-01-21,13:00,completed,
+APT-1408,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-019,STF-005,2026-01-21,13:30,completed,
+APT-1409,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-024,STF-004,2026-01-21,11:30,completed,Requested extra hydration
+APT-1410,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-016,STF-001,2026-01-21,11:00,completed,Requested extra hydration
+APT-1411,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-016,STF-005,2026-01-22,16:00,cancelled,
+APT-1412,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-004,STF-005,2026-01-22,11:30,completed,Sensitive skin - gentle products
+APT-1413,CUS-190,Fei Brown,fei.brown20@email.com,408-555-9446,SVC-009,STF-002,2026-01-22,15:00,completed,Birthday treatment
+APT-1414,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-013,STF-001,2026-01-22,13:30,completed,
+APT-1415,CUS-155,Lan Do,lan.do15@email.com,408-555-4893,SVC-001,STF-002,2026-01-23,13:00,completed,
+APT-1416,CUS-059,Nova Lin,nova.lin73@email.com,408-555-8619,SVC-003,STF-002,2026-01-23,14:00,completed,
+APT-1417,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-006,STF-001,2026-01-23,11:30,completed,
+APT-1418,CUS-170,Dorothy Choi,dorothy.choi91@email.com,408-555-5678,SVC-008,STF-002,2026-01-23,15:30,completed,
+APT-1419,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-022,STF-003,2026-01-23,11:00,completed,
+APT-1420,CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,SVC-014,STF-001,2026-01-23,14:30,completed,Prepaid balance used
+APT-1421,CUS-152,Mei Watanabe,mei.watanabe4@email.com,408-555-7495,SVC-006,STF-001,2026-01-23,15:00,completed,Prepaid balance used
+APT-1422,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-002,STF-001,2026-01-23,16:00,cancelled,Late arrival - 15 min
+APT-1423,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-006,STF-001,2026-01-24,15:30,completed,
+APT-1424,CUS-150,Catherine Wei,catherine.wei78@outlook.com,408-555-1854,SVC-025,STF-003,2026-01-24,10:00,completed,Sensitive skin - gentle products
+APT-1425,CUS-043,Betty Bui,betty.bui42@email.com,408-555-5844,SVC-024,STF-004,2026-01-24,13:00,cancelled,Combo booking with friend
+APT-1426,CUS-059,Nova Lin,nova.lin73@email.com,408-555-8619,SVC-013,STF-002,2026-01-24,10:30,completed,First-time client
+APT-1427,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-017,STF-005,2026-01-24,14:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1428,CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,SVC-020,STF-002,2026-01-24,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1429,CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,SVC-003,STF-002,2026-01-24,15:00,completed,Combo booking with friend
+APT-1430,CUS-139,Wendy Young,wendy.young77@email.com,408-555-8581,SVC-001,STF-005,2026-01-24,13:30,completed,Referred by existing client
+APT-1431,CUS-197,Jade Scott,jade.scott89@icloud.com,408-555-4150,SVC-013,STF-001,2026-01-25,10:00,completed,Prepaid balance used
+APT-1432,CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,SVC-014,STF-001,2026-01-25,15:00,completed,Requested extra hydration
+APT-1433,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-010,STF-002,2026-01-25,14:00,completed,Sensitive skin - gentle products
+APT-1434,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-001,STF-005,2026-01-25,11:30,completed,Prepaid balance used
+APT-1435,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-004,STF-002,2026-01-25,15:30,completed,First-time client
+APT-1436,CUS-177,Irene Taylor,irene.taylor37@email.com,408-555-5105,SVC-026,STF-004,2026-01-25,14:30,completed,
+APT-1437,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-012,STF-002,2026-01-26,16:00,no_show,Birthday treatment
+APT-1438,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-007,STF-002,2026-01-26,15:30,completed,Prefers low music volume
+APT-1439,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-012,STF-002,2026-01-26,13:00,completed,Follow-up session
+APT-1440,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-012,STF-005,2026-01-26,15:00,completed,
+APT-1441,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-004,STF-005,2026-01-26,14:00,completed,
+APT-1442,CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,SVC-007,STF-002,2026-01-26,14:30,completed,Cancelled within 24hrs - $50 fee
+APT-1443,CUS-158,Kelly Zhou,kelly.zhou68@email.com,408-555-9316,SVC-023,STF-003,2026-01-26,11:30,completed,Birthday treatment
+APT-1444,CUS-057,Monica Kang,monica.kang97@email.com,408-555-7906,SVC-012,STF-001,2026-01-27,10:00,completed,Birthday treatment
+APT-1445,CUS-103,Denise Dang,denise.dang23@outlook.com,408-555-9697,SVC-020,STF-002,2026-01-27,10:30,completed,Combo booking with friend
+APT-1446,CUS-015,Aria Sun,aria.sun11@email.com,408-555-2133,SVC-025,STF-004,2026-01-27,11:00,completed,Rescheduled from last week
+APT-1447,CUS-003,Paisley Jackson,paisley.jackson54@outlook.com,408-555-1106,SVC-007,STF-005,2026-01-27,14:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1448,CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,SVC-026,STF-004,2026-01-27,13:00,completed,Requested extra hydration
+APT-1449,CUS-158,Kelly Zhou,kelly.zhou68@email.com,408-555-9316,SVC-006,STF-005,2026-01-27,11:30,completed,
+APT-1450,CUS-041,Natalie Thompson,natalie.thompson25@icloud.com,408-555-1027,SVC-003,STF-005,2026-01-27,16:00,completed,Package deal - session 3 of 5
+APT-1451,CUS-172,Alice Song,alice.song92@email.com,408-555-3852,SVC-013,STF-002,2026-01-27,14:00,completed,
+APT-1452,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-023,STF-001,2026-01-27,15:30,completed,Follow-up session
+APT-1453,CUS-104,Gloria Sato,gloria.sato15@email.com,408-555-2233,SVC-019,STF-001,2026-01-28,15:00,completed,Late arrival - 15 min
+APT-1454,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-018,STF-001,2026-01-28,15:30,completed,
+APT-1455,CUS-132,Cynthia Thompson,cynthia.thompson55@email.com,408-555-7843,SVC-009,STF-005,2026-01-28,13:30,completed,Prepaid balance used
+APT-1456,CUS-065,Wendy Kang,wendy.kang58@icloud.com,408-555-7209,SVC-023,STF-003,2026-01-28,16:00,completed,Prefers low music volume
+APT-1457,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-008,STF-005,2026-01-28,14:00,no_show,Rescheduled from last week
+APT-1458,CUS-175,Mei Jones,mei.jones88@email.com,408-555-3102,SVC-015,STF-005,2026-01-28,11:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1459,CUS-018,Rebecca Lewis,rebecca.lewis29@gmail.com,408-555-4750,SVC-013,STF-005,2026-01-28,10:30,no_show,Requested extra hydration
+APT-1460,CUS-081,Laura Garcia,laura.garcia67@email.com,408-555-5557,SVC-014,STF-005,2026-01-28,13:00,completed,
+APT-1461,CUS-180,Hazel Jackson,hazel.jackson38@email.com,408-555-5949,SVC-009,STF-001,2026-01-28,11:30,completed,Package deal - session 2 of 5
+APT-1462,CUS-091,Sandy Huang,sandy.huang41@email.com,408-555-7246,SVC-007,STF-005,2026-01-29,15:00,completed,First-time client
+APT-1463,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-024,STF-003,2026-01-29,11:00,completed,Sensitive skin - gentle products
+APT-1464,CUS-053,Ella Zhang,ella.zhang98@email.com,408-555-8814,SVC-008,STF-001,2026-01-29,14:30,completed,Combo booking with friend
+APT-1465,CUS-092,Wei Li,wei.li17@email.com,408-555-6439,SVC-005,STF-005,2026-01-29,13:30,completed,
+APT-1466,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-009,STF-002,2026-01-30,16:00,no_show,Late arrival - 15 min
+APT-1467,CUS-072,Min Johnson,min.johnson44@gmail.com,408-555-5136,SVC-013,STF-001,2026-01-30,14:30,completed,
+APT-1468,CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,SVC-026,STF-004,2026-01-30,10:00,cancelled,
+APT-1469,CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,SVC-022,STF-004,2026-01-30,15:00,completed,
+APT-1470,CUS-179,Amy Liu,amy.liu11@outlook.com,408-555-4453,SVC-017,STF-002,2026-01-30,14:00,completed,
+APT-1471,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-007,STF-002,2026-01-30,11:30,completed,Package deal - session 3 of 5
+APT-1472,CUS-157,Gloria Do,gloria.do1@email.com,408-555-4941,SVC-009,STF-001,2026-01-30,11:00,completed,Sensitive skin - gentle products
+APT-1473,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-020,STF-002,2026-01-30,13:00,completed,Referred by existing client
+APT-1474,CUS-054,Tracy Moore,tracy.moore96@email.com,408-555-4613,SVC-014,STF-005,2026-01-30,10:30,completed,Birthday treatment
+APT-1475,CUS-185,Sharon Deng,sharon.deng75@email.com,408-555-1828,SVC-009,STF-005,2026-01-31,14:30,completed,Birthday treatment
+APT-1476,CUS-051,Sharon Kang,sharon.kang57@outlook.com,408-555-4841,SVC-005,STF-005,2026-01-31,11:00,completed,Prefers low music volume
+APT-1477,CUS-003,Paisley Jackson,paisley.jackson54@outlook.com,408-555-1106,SVC-006,STF-002,2026-01-31,15:30,completed,Late arrival - 15 min
+APT-1478,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-024,STF-004,2026-01-31,11:30,completed,Sensitive skin - gentle products
+APT-1479,CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,SVC-019,STF-001,2026-01-31,14:00,completed,
+APT-1480,CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,SVC-007,STF-005,2026-01-31,10:00,completed,
+APT-1481,CUS-106,Dorothy Clark,dorothy.clark49@email.com,408-555-7086,SVC-004,STF-001,2026-02-01,13:00,completed,Combo booking with friend
+APT-1482,CUS-051,Sharon Kang,sharon.kang57@outlook.com,408-555-4841,SVC-019,STF-002,2026-02-01,13:30,completed,
+APT-1483,CUS-200,Samantha Miller,samantha.miller28@outlook.com,408-555-5450,SVC-010,STF-001,2026-02-01,15:30,completed,Prefers low music volume
+APT-1484,CUS-199,Monica Hoang,monica.hoang45@email.com,408-555-3399,SVC-024,STF-004,2026-02-01,16:00,completed,Combo booking with friend
+APT-1485,CUS-074,Melissa Taylor,melissa.taylor49@email.com,408-555-8253,SVC-015,STF-005,2026-02-01,11:00,completed,
+APT-1486,CUS-164,Lily Taylor,lily.taylor35@email.com,408-555-7955,SVC-026,STF-004,2026-02-01,10:00,completed,Combo booking with friend
+APT-1487,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-010,STF-005,2026-02-02,14:00,completed,Birthday treatment
+APT-1488,CUS-070,Mila Yoon,mila.yoon13@email.com,408-555-5853,SVC-015,STF-005,2026-02-02,10:30,cancelled,Prepaid balance used
+APT-1489,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-014,STF-001,2026-02-02,15:30,cancelled,
+APT-1490,CUS-170,Dorothy Choi,dorothy.choi91@email.com,408-555-5678,SVC-009,STF-005,2026-02-02,11:00,completed,
+APT-1491,CUS-054,Tracy Moore,tracy.moore96@email.com,408-555-4613,SVC-006,STF-002,2026-02-02,14:30,completed,Prefers low music volume
+APT-1492,CUS-141,Frances Sun,frances.sun65@email.com,408-555-1641,SVC-002,STF-001,2026-02-02,15:00,completed,
+APT-1493,CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,SVC-009,STF-002,2026-02-02,16:00,completed,Birthday treatment
+APT-1494,CUS-080,Sarah Ma,sarah.ma30@email.com,408-555-1339,SVC-008,STF-001,2026-02-02,13:00,completed,
+APT-1495,CUS-092,Wei Li,wei.li17@email.com,408-555-6439,SVC-011,STF-005,2026-02-03,15:00,completed,Cancelled within 24hrs - $50 fee
+APT-1496,CUS-070,Mila Yoon,mila.yoon13@email.com,408-555-5853,SVC-018,STF-002,2026-02-03,11:00,no_show,Cancelled within 24hrs - $50 fee
+APT-1497,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-019,STF-002,2026-02-03,10:00,completed,Prepaid balance used
+APT-1498,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-017,STF-005,2026-02-03,16:00,completed,Package deal - session 3 of 5
+APT-1499,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-018,STF-001,2026-02-03,13:30,completed,Follow-up session
+APT-1500,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-025,STF-004,2026-02-04,14:00,completed,Prefers low music volume
+APT-1501,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-001,STF-005,2026-02-04,13:00,completed,Prefers low music volume
+APT-1502,CUS-077,Hazel Lewis,hazel.lewis85@email.com,408-555-4241,SVC-001,STF-005,2026-02-04,11:00,completed,Combo booking with friend
+APT-1503,CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,SVC-026,STF-003,2026-02-04,15:30,completed,Referred by existing client
+APT-1504,CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,SVC-014,STF-002,2026-02-04,10:00,completed,Birthday treatment
+APT-1505,CUS-097,Riley Tran,riley.tran80@email.com,408-555-9153,SVC-008,STF-001,2026-02-04,16:00,completed,Requested extra hydration
+APT-1506,CUS-035,Nova Hu,nova.hu46@email.com,408-555-7658,SVC-010,STF-001,2026-02-05,15:30,completed,Rescheduled from last week
+APT-1507,CUS-070,Mila Yoon,mila.yoon13@email.com,408-555-5853,SVC-023,STF-003,2026-02-05,13:00,completed,
+APT-1508,CUS-039,Willow Anderson,willow.anderson52@email.com,408-555-9785,SVC-002,STF-005,2026-02-05,16:00,completed,
+APT-1509,CUS-073,Maria Liang,maria.liang73@email.com,408-555-2395,SVC-009,STF-001,2026-02-05,15:00,completed,
+APT-1510,CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,SVC-003,STF-001,2026-02-05,11:30,completed,Package deal - session 2 of 5
+APT-1511,CUS-108,Christine Zhu,christine.zhu31@email.com,408-555-3222,SVC-010,STF-005,2026-02-05,10:30,completed,Package deal - session 3 of 5
+APT-1512,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-023,STF-004,2026-02-05,10:00,completed,
+APT-1513,CUS-015,Aria Sun,aria.sun11@email.com,408-555-2133,SVC-009,STF-005,2026-02-05,13:30,completed,Prefers low music volume
+APT-1514,CUS-197,Jade Scott,jade.scott89@icloud.com,408-555-4150,SVC-023,STF-003,2026-02-06,11:30,completed,Rescheduled from last week
+APT-1515,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-024,STF-004,2026-02-06,13:00,completed,
+APT-1516,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-022,STF-005,2026-02-06,14:00,completed,Follow-up session
+APT-1517,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-006,STF-005,2026-02-06,10:00,completed,Cancelled within 24hrs - $50 fee
+APT-1518,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-004,STF-001,2026-02-06,14:30,completed,First-time client
+APT-1519,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-001,STF-001,2026-02-07,10:00,completed,
+APT-1520,CUS-102,Emery Luo,emery.luo81@gmail.com,408-555-6061,SVC-026,STF-003,2026-02-07,11:30,no_show,Prepaid balance used
+APT-1521,CUS-177,Irene Taylor,irene.taylor37@email.com,408-555-5105,SVC-016,STF-005,2026-02-07,10:30,completed,
+APT-1522,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-006,STF-002,2026-02-07,15:30,completed,Package deal - session 2 of 5
+APT-1523,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-021,STF-001,2026-02-07,13:30,completed,
+APT-1524,CUS-180,Hazel Jackson,hazel.jackson38@email.com,408-555-5949,SVC-018,STF-002,2026-02-07,14:30,completed,Requested extra hydration
+APT-1525,CUS-186,Karen Hu,karen.hu56@outlook.com,408-555-6992,SVC-005,STF-001,2026-02-08,16:00,completed,Rescheduled from last week
+APT-1526,CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,SVC-010,STF-002,2026-02-08,13:30,completed,Prepaid balance used
+APT-1527,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-018,STF-002,2026-02-08,14:30,completed,Sensitive skin - gentle products
+APT-1528,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-018,STF-001,2026-02-08,11:30,completed,Rescheduled from last week
+APT-1529,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-009,STF-002,2026-02-08,10:00,completed,Late arrival - 15 min
+APT-1530,CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,SVC-024,STF-003,2026-02-08,15:30,completed,Package deal - session 3 of 5
+APT-1531,CUS-199,Monica Hoang,monica.hoang45@email.com,408-555-3399,SVC-020,STF-001,2026-02-08,15:00,completed,Cancelled within 24hrs - $50 fee
+APT-1532,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-007,STF-002,2026-02-08,11:00,completed,Cancelled within 24hrs - $50 fee
+APT-1533,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-004,STF-001,2026-02-09,15:30,completed,
+APT-1534,CUS-034,Lily Clark,lily.clark71@yahoo.com,408-555-1685,SVC-006,STF-005,2026-02-09,13:00,completed,Prefers low music volume
+APT-1535,CUS-050,Mei Song,mei.song96@email.com,408-555-8373,SVC-004,STF-001,2026-02-09,13:30,completed,Birthday treatment
+APT-1536,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-016,STF-002,2026-02-09,14:00,completed,Sensitive skin - gentle products
+APT-1537,CUS-013,Xin Han,xin.han65@email.com,408-555-5889,SVC-012,STF-001,2026-02-09,15:00,completed,
+APT-1538,CUS-164,Lily Taylor,lily.taylor35@email.com,408-555-7955,SVC-002,STF-001,2026-02-10,16:00,completed,Referred by existing client
+APT-1539,CUS-095,Rebecca Ma,rebecca.ma56@email.com,408-555-2646,SVC-026,STF-004,2026-02-10,14:30,cancelled,Sensitive skin - gentle products
+APT-1540,CUS-188,Riley Guo,riley.guo17@email.com,408-555-7453,SVC-003,STF-005,2026-02-10,10:30,completed,First-time client
+APT-1541,CUS-133,Ellie Nakamura,ellie.nakamura12@email.com,408-555-2734,SVC-004,STF-001,2026-02-10,15:30,completed,Birthday treatment
+APT-1542,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-007,STF-002,2026-02-10,14:00,completed,
+APT-1543,CUS-043,Betty Bui,betty.bui42@email.com,408-555-5844,SVC-026,STF-003,2026-02-11,15:00,completed,Package deal - session 2 of 5
+APT-1544,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-006,STF-002,2026-02-11,14:00,completed,Package deal - session 3 of 5
+APT-1545,CUS-081,Laura Garcia,laura.garcia67@email.com,408-555-5557,SVC-018,STF-005,2026-02-11,10:30,completed,Package deal - session 3 of 5
+APT-1546,CUS-106,Dorothy Clark,dorothy.clark49@email.com,408-555-7086,SVC-025,STF-004,2026-02-11,13:30,cancelled,Package deal - session 2 of 5
+APT-1547,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-018,STF-001,2026-02-11,14:30,completed,Sensitive skin - gentle products
+APT-1548,CUS-093,Sandy Hill,sandy.hill20@outlook.com,408-555-6546,SVC-015,STF-002,2026-02-11,11:30,completed,
+APT-1549,CUS-073,Maria Liang,maria.liang73@email.com,408-555-2395,SVC-020,STF-001,2026-02-11,15:30,completed,Follow-up session
+APT-1550,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-010,STF-005,2026-02-11,10:00,completed,Package deal - session 2 of 5
+APT-1551,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-002,STF-002,2026-02-12,13:00,completed,Sensitive skin - gentle products
+APT-1552,CUS-094,Ling Tran,ling.tran41@email.com,408-555-8994,SVC-019,STF-001,2026-02-12,15:00,completed,Follow-up session
+APT-1553,CUS-024,Aaliyah Brown,aaliyah.brown37@email.com,408-555-8973,SVC-019,STF-002,2026-02-12,15:30,cancelled,
+APT-1554,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-006,STF-002,2026-02-12,11:00,cancelled,Prepaid balance used
+APT-1555,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-025,STF-003,2026-02-13,15:30,completed,Package deal - session 3 of 5
+APT-1556,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-014,STF-005,2026-02-13,13:00,completed,Requested extra hydration
+APT-1557,CUS-192,Emery Lin,emery.lin54@email.com,408-555-1436,SVC-021,STF-005,2026-02-13,10:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1558,CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,SVC-002,STF-001,2026-02-13,14:00,completed,Package deal - session 2 of 5
+APT-1559,CUS-057,Monica Kang,monica.kang97@email.com,408-555-7906,SVC-014,STF-001,2026-02-14,11:30,completed,
+APT-1560,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-003,STF-002,2026-02-14,11:00,completed,Cancelled within 24hrs - $50 fee
+APT-1561,CUS-103,Denise Dang,denise.dang23@outlook.com,408-555-9697,SVC-009,STF-001,2026-02-14,10:00,completed,
+APT-1562,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-005,STF-002,2026-02-14,14:00,completed,Birthday treatment
+APT-1563,CUS-167,Catherine Liu,catherine.liu19@email.com,408-555-8179,SVC-019,STF-001,2026-02-14,16:00,completed,Late arrival - 15 min
+APT-1564,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-008,STF-001,2026-02-14,13:00,completed,Package deal - session 2 of 5
+APT-1565,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-019,STF-001,2026-02-14,13:30,completed,Referred by existing client
+APT-1566,CUS-094,Ling Tran,ling.tran41@email.com,408-555-8994,SVC-012,STF-001,2026-02-14,15:00,completed,
+APT-1567,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-008,STF-001,2026-02-15,13:30,completed,
+APT-1568,CUS-029,Xin Choi,xin.choi17@email.com,408-555-2127,SVC-024,STF-003,2026-02-15,15:30,no_show,
+APT-1569,CUS-074,Melissa Taylor,melissa.taylor49@email.com,408-555-8253,SVC-001,STF-001,2026-02-15,14:30,completed,Follow-up session
+APT-1570,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-016,STF-001,2026-02-15,11:00,completed,Cancelled within 24hrs - $50 fee
+APT-1571,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-007,STF-002,2026-02-15,11:30,completed,Cancelled within 24hrs - $50 fee
+APT-1572,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-009,STF-001,2026-02-16,15:30,completed,Combo booking with friend
+APT-1573,CUS-070,Mila Yoon,mila.yoon13@email.com,408-555-5853,SVC-002,STF-002,2026-02-16,11:00,no_show,
+APT-1574,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-022,STF-003,2026-02-16,10:00,cancelled,Package deal - session 3 of 5
+APT-1575,CUS-005,Ling Guo,ling.guo49@outlook.com,408-555-6925,SVC-010,STF-005,2026-02-16,14:00,completed,Requested extra hydration
+APT-1576,CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,SVC-017,STF-005,2026-02-16,13:00,completed,Package deal - session 2 of 5
+APT-1577,CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,SVC-020,STF-002,2026-02-16,13:30,completed,Late arrival - 15 min
+APT-1578,CUS-118,Jing Johnson,jing.johnson10@email.com,408-555-6277,SVC-018,STF-005,2026-02-16,14:30,completed,Requested extra hydration
+APT-1579,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-012,STF-001,2026-02-17,13:00,completed,Late arrival - 15 min
+APT-1580,CUS-071,Rachel Martin,rachel.martin38@email.com,408-555-3068,SVC-026,STF-003,2026-02-17,13:30,completed,Birthday treatment
+APT-1581,CUS-008,Aurora White,aurora.white29@email.com,408-555-1916,SVC-018,STF-005,2026-02-17,14:30,completed,Package deal - session 2 of 5
+APT-1582,CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,SVC-022,STF-003,2026-02-17,14:00,completed,Late arrival - 15 min
+APT-1583,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-020,STF-005,2026-02-17,15:30,completed,Referred by existing client
+APT-1584,CUS-062,Helen Harris,helen.harris6@email.com,408-555-8018,SVC-019,STF-001,2026-02-17,10:30,no_show,Combo booking with friend
+APT-1585,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-015,STF-002,2026-02-17,10:00,completed,
+APT-1586,CUS-149,Betty Garcia,betty.garcia25@email.com,408-555-8218,SVC-018,STF-002,2026-02-17,11:00,completed,
+APT-1587,CUS-041,Natalie Thompson,natalie.thompson25@icloud.com,408-555-1027,SVC-011,STF-001,2026-02-18,15:00,completed,
+APT-1588,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-011,STF-005,2026-02-18,11:00,completed,
+APT-1589,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-011,STF-005,2026-02-18,14:00,completed,Referred by existing client
+APT-1590,CUS-078,Anna Xu,anna.xu8@outlook.com,408-555-5728,SVC-015,STF-005,2026-02-18,15:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1591,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-004,STF-001,2026-02-18,13:30,completed,Combo booking with friend
+APT-1592,CUS-158,Kelly Zhou,kelly.zhou68@email.com,408-555-9316,SVC-009,STF-002,2026-02-18,13:00,completed,Combo booking with friend
+APT-1593,CUS-200,Samantha Miller,samantha.miller28@outlook.com,408-555-5450,SVC-016,STF-001,2026-02-19,11:30,cancelled,Prefers low music volume
+APT-1594,CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,SVC-006,STF-005,2026-02-19,10:00,completed,
+APT-1595,CUS-042,Elena Wei,elena.wei47@email.com,408-555-6409,SVC-007,STF-001,2026-02-19,13:30,completed,
+APT-1596,CUS-070,Mila Yoon,mila.yoon13@email.com,408-555-5853,SVC-014,STF-001,2026-02-19,10:30,completed,First-time client
+APT-1597,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-007,STF-001,2026-02-19,15:00,cancelled,Rescheduled from last week
+APT-1598,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-013,STF-005,2026-02-20,13:30,completed,Prepaid balance used
+APT-1599,CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,SVC-018,STF-002,2026-02-20,14:30,cancelled,
+APT-1600,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-015,STF-005,2026-02-20,11:30,completed,Requested extra hydration
+APT-1601,CUS-133,Ellie Nakamura,ellie.nakamura12@email.com,408-555-2734,SVC-018,STF-002,2026-02-20,14:00,completed,Cancelled within 24hrs - $50 fee
+APT-1602,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-017,STF-005,2026-02-20,15:00,no_show,First-time client
+APT-1603,CUS-075,Riley Zhu,riley.zhu98@yahoo.com,408-555-5335,SVC-015,STF-002,2026-02-20,10:00,completed,Follow-up session
+APT-1604,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-006,STF-002,2026-02-20,13:00,completed,
+APT-1605,CUS-200,Samantha Miller,samantha.miller28@outlook.com,408-555-5450,SVC-019,STF-005,2026-02-21,15:00,completed,
+APT-1606,CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,SVC-014,STF-001,2026-02-21,11:00,completed,Rescheduled from last week
+APT-1607,CUS-152,Mei Watanabe,mei.watanabe4@email.com,408-555-7495,SVC-023,STF-004,2026-02-21,14:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1608,CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,SVC-021,STF-005,2026-02-21,16:00,completed,
+APT-1609,CUS-024,Aaliyah Brown,aaliyah.brown37@email.com,408-555-8973,SVC-004,STF-005,2026-02-21,10:00,completed,
+APT-1610,CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,SVC-023,STF-003,2026-02-21,13:30,completed,Late arrival - 15 min
+APT-1611,CUS-157,Gloria Do,gloria.do1@email.com,408-555-4941,SVC-006,STF-001,2026-02-21,13:00,completed,
+APT-1612,CUS-086,Sharon Song,sharon.song40@email.com,408-555-7684,SVC-019,STF-005,2026-02-21,14:00,cancelled,
+APT-1613,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-025,STF-004,2026-02-21,11:30,completed,Follow-up session
+APT-1614,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-009,STF-001,2026-02-22,13:00,completed,Prefers low music volume
+APT-1615,CUS-140,Luna Hill,luna.hill25@email.com,408-555-8792,SVC-026,STF-003,2026-02-22,11:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1616,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-016,STF-002,2026-02-22,10:30,completed,Combo booking with friend
+APT-1617,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-001,STF-001,2026-02-22,15:30,completed,Combo booking with friend
+APT-1618,CUS-161,Victoria Luo,victoria.luo9@email.com,408-555-8498,SVC-018,STF-005,2026-02-22,15:00,completed,
+APT-1619,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-002,STF-005,2026-02-22,10:00,completed,
+APT-1620,CUS-171,Skylar Johnson,skylar.johnson12@email.com,408-555-6236,SVC-019,STF-005,2026-02-22,16:00,completed,
+APT-1621,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-010,STF-002,2026-02-23,10:30,completed,Combo booking with friend
+APT-1622,CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,SVC-026,STF-004,2026-02-23,14:00,no_show,Prepaid balance used
+APT-1623,CUS-093,Sandy Hill,sandy.hill20@outlook.com,408-555-6546,SVC-002,STF-001,2026-02-23,11:00,completed,Package deal - session 3 of 5
+APT-1624,CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,SVC-003,STF-005,2026-02-23,15:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1625,CUS-054,Tracy Moore,tracy.moore96@email.com,408-555-4613,SVC-023,STF-003,2026-02-24,10:30,completed,Prepaid balance used
+APT-1626,CUS-187,Christina Nakamura,christina.nakamura71@icloud.com,408-555-9261,SVC-021,STF-002,2026-02-24,13:00,completed,Combo booking with friend
+APT-1627,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-010,STF-002,2026-02-24,13:30,cancelled,Sensitive skin - gentle products
+APT-1628,CUS-160,Susan Huang,susan.huang46@email.com,408-555-3868,SVC-012,STF-005,2026-02-24,14:00,completed,Prefers low music volume
+APT-1629,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-024,STF-004,2026-02-24,15:30,completed,
+APT-1630,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-007,STF-005,2026-02-25,11:30,no_show,Referred by existing client
+APT-1631,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-011,STF-001,2026-02-25,13:00,completed,First-time client
+APT-1632,CUS-003,Paisley Jackson,paisley.jackson54@outlook.com,408-555-1106,SVC-021,STF-001,2026-02-25,16:00,completed,
+APT-1633,CUS-079,Janet Martinez,janet.martinez70@email.com,408-555-2317,SVC-010,STF-002,2026-02-25,10:00,completed,
+APT-1634,CUS-030,Alice Young,alice.young84@email.com,408-555-5905,SVC-022,STF-003,2026-02-25,14:30,completed,Prepaid balance used
+APT-1635,CUS-158,Kelly Zhou,kelly.zhou68@email.com,408-555-9316,SVC-001,STF-005,2026-02-25,14:00,completed,Package deal - session 2 of 5
+APT-1636,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-016,STF-005,2026-02-25,15:00,completed,
+APT-1637,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-005,STF-005,2026-02-25,13:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1638,CUS-143,Harper Pham,harper.pham37@yahoo.com,408-555-6461,SVC-018,STF-001,2026-02-26,14:00,completed,Package deal - session 2 of 5
+APT-1639,CUS-091,Sandy Huang,sandy.huang41@email.com,408-555-7246,SVC-003,STF-005,2026-02-26,10:00,completed,
+APT-1640,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-013,STF-005,2026-02-26,15:00,cancelled,Prepaid balance used
+APT-1641,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-020,STF-001,2026-02-26,13:00,completed,Follow-up session
+APT-1642,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-011,STF-005,2026-02-26,14:30,completed,
+APT-1643,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-008,STF-001,2026-02-26,13:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1644,CUS-078,Anna Xu,anna.xu8@outlook.com,408-555-5728,SVC-006,STF-001,2026-02-26,11:00,completed,First-time client
+APT-1645,CUS-129,Christine Yoon,christine.yoon87@email.com,408-555-8972,SVC-005,STF-001,2026-02-27,14:30,cancelled,Late arrival - 15 min
+APT-1646,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-005,STF-005,2026-02-27,15:00,completed,Late arrival - 15 min
+APT-1647,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-005,STF-001,2026-02-27,10:00,completed,Birthday treatment
+APT-1648,CUS-183,Cindy Zheng,cindy.zheng13@icloud.com,408-555-7850,SVC-017,STF-001,2026-02-27,16:00,completed,
+APT-1649,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-025,STF-004,2026-02-28,15:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1650,CUS-074,Melissa Taylor,melissa.taylor49@email.com,408-555-8253,SVC-009,STF-002,2026-02-28,10:30,completed,
+APT-1651,CUS-070,Mila Yoon,mila.yoon13@email.com,408-555-5853,SVC-005,STF-001,2026-02-28,13:30,completed,Combo booking with friend
+APT-1652,CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,SVC-017,STF-001,2026-02-28,14:30,completed,Cancelled within 24hrs - $50 fee
+APT-1653,CUS-082,Wendy Garcia,wendy.garcia45@email.com,408-555-6260,SVC-009,STF-001,2026-02-28,10:00,completed,Follow-up session
+APT-1654,CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,SVC-008,STF-001,2026-02-28,14:00,completed,Package deal - session 2 of 5
+APT-1655,CUS-139,Wendy Young,wendy.young77@email.com,408-555-8581,SVC-015,STF-001,2026-02-28,13:00,completed,
+APT-1656,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-013,STF-001,2026-02-28,11:00,completed,
+APT-1657,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-020,STF-005,2026-02-28,15:00,completed,Rescheduled from last week
+APT-1658,CUS-146,Madeline Davis,madeline.davis25@yahoo.com,408-555-3538,SVC-005,STF-001,2026-03-01,13:30,completed,Rescheduled from last week
+APT-1659,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-015,STF-001,2026-03-01,11:30,completed,Rescheduled from last week
+APT-1660,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-008,STF-005,2026-03-01,15:00,completed,Combo booking with friend
+APT-1661,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-012,STF-002,2026-03-01,10:30,completed,Package deal - session 2 of 5
+APT-1662,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-015,STF-002,2026-03-01,14:00,completed,
+APT-1663,CUS-090,Evelyn Jackson,evelyn.jackson49@email.com,408-555-6272,SVC-016,STF-002,2026-03-01,15:30,completed,Package deal - session 3 of 5
+APT-1664,CUS-143,Harper Pham,harper.pham37@yahoo.com,408-555-6461,SVC-021,STF-001,2026-03-02,15:30,completed,Rescheduled from last week
+APT-1665,CUS-103,Denise Dang,denise.dang23@outlook.com,408-555-9697,SVC-019,STF-002,2026-03-02,11:00,completed,Cancelled within 24hrs - $50 fee
+APT-1666,CUS-041,Natalie Thompson,natalie.thompson25@icloud.com,408-555-1027,SVC-016,STF-002,2026-03-02,15:00,completed,Prepaid balance used
+APT-1667,CUS-111,Lily Jackson,lily.jackson83@email.com,408-555-7523,SVC-026,STF-004,2026-03-02,10:30,completed,Package deal - session 2 of 5
+APT-1668,CUS-140,Luna Hill,luna.hill25@email.com,408-555-8792,SVC-023,STF-003,2026-03-02,11:30,completed,
+APT-1669,CUS-190,Fei Brown,fei.brown20@email.com,408-555-9446,SVC-023,STF-003,2026-03-02,13:30,completed,Prepaid balance used
+APT-1670,CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,SVC-015,STF-001,2026-03-02,10:00,completed,Rescheduled from last week
+APT-1671,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-010,STF-005,2026-03-02,16:00,completed,
+APT-1672,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-019,STF-005,2026-03-03,15:30,completed,
+APT-1673,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-005,STF-005,2026-03-03,14:00,completed,Follow-up session
+APT-1674,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-020,STF-002,2026-03-03,13:30,completed,Package deal - session 2 of 5
+APT-1675,CUS-077,Hazel Lewis,hazel.lewis85@email.com,408-555-4241,SVC-019,STF-002,2026-03-03,14:30,completed,Referred by existing client
+APT-1676,CUS-184,Cynthia Cheng,cynthia.cheng98@icloud.com,408-555-9171,SVC-012,STF-005,2026-03-03,15:00,completed,Combo booking with friend
+APT-1677,CUS-131,Ling Pan,ling.pan65@email.com,408-555-6802,SVC-013,STF-005,2026-03-03,16:00,cancelled,
+APT-1678,CUS-141,Frances Sun,frances.sun65@email.com,408-555-1641,SVC-002,STF-001,2026-03-03,10:00,completed,Package deal - session 3 of 5
+APT-1679,CUS-029,Xin Choi,xin.choi17@email.com,408-555-2127,SVC-010,STF-005,2026-03-03,13:00,completed,Prepaid balance used
+APT-1680,CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,SVC-021,STF-001,2026-03-03,11:30,completed,Birthday treatment
+APT-1681,CUS-099,Vivian Lee,vivian.lee59@email.com,408-555-4263,SVC-012,STF-005,2026-03-04,15:00,completed,
+APT-1682,CUS-035,Nova Hu,nova.hu46@email.com,408-555-7658,SVC-001,STF-001,2026-03-04,11:30,completed,Prefers low music volume
+APT-1683,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-014,STF-005,2026-03-04,11:00,completed,
+APT-1684,CUS-165,Diana Yamamoto,diana.yamamoto85@icloud.com,408-555-7981,SVC-026,STF-004,2026-03-04,14:30,completed,Combo booking with friend
+APT-1685,CUS-109,Qian Dang,qian.dang76@email.com,408-555-3531,SVC-020,STF-001,2026-03-04,10:30,completed,Cancelled within 24hrs - $50 fee
+APT-1686,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-013,STF-001,2026-03-04,14:00,completed,Combo booking with friend
+APT-1687,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-019,STF-002,2026-03-04,13:00,completed,Late arrival - 15 min
+APT-1688,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-023,STF-003,2026-03-05,14:00,completed,
+APT-1689,CUS-037,Aaliyah Hu,aaliyah.hu49@email.com,408-555-8711,SVC-024,STF-004,2026-03-05,15:00,no_show,Sensitive skin - gentle products
+APT-1690,CUS-120,Yvonne Williams,yvonne.williams30@email.com,408-555-8430,SVC-017,STF-001,2026-03-05,13:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1691,CUS-162,Cynthia Han,cynthia.han66@email.com,408-555-9897,SVC-024,STF-004,2026-03-05,10:00,completed,Cancelled within 24hrs - $50 fee
+APT-1692,CUS-149,Betty Garcia,betty.garcia25@email.com,408-555-8218,SVC-010,STF-002,2026-03-05,14:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1693,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-015,STF-002,2026-03-05,13:00,completed,Package deal - session 2 of 5
+APT-1694,CUS-192,Emery Lin,emery.lin54@email.com,408-555-1436,SVC-010,STF-005,2026-03-06,13:30,completed,
+APT-1695,CUS-162,Cynthia Han,cynthia.han66@email.com,408-555-9897,SVC-016,STF-002,2026-03-06,13:00,completed,Follow-up session
+APT-1696,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-020,STF-001,2026-03-06,15:30,completed,
+APT-1697,CUS-130,Alice Deng,alice.deng99@outlook.com,408-555-5742,SVC-003,STF-005,2026-03-06,11:00,completed,
+APT-1698,CUS-158,Kelly Zhou,kelly.zhou68@email.com,408-555-9316,SVC-009,STF-001,2026-03-06,10:00,completed,
+APT-1699,CUS-155,Lan Do,lan.do15@email.com,408-555-4893,SVC-006,STF-005,2026-03-06,16:00,completed,Rescheduled from last week
+APT-1700,CUS-095,Rebecca Ma,rebecca.ma56@email.com,408-555-2646,SVC-026,STF-003,2026-03-06,15:00,completed,Requested extra hydration
+APT-1701,CUS-040,Ella Choi,ella.choi5@icloud.com,408-555-6663,SVC-016,STF-005,2026-03-07,11:00,completed,Birthday treatment
+APT-1702,CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,SVC-022,STF-003,2026-03-07,15:00,completed,First-time client
+APT-1703,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-024,STF-004,2026-03-07,10:00,completed,Sensitive skin - gentle products
+APT-1704,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-004,STF-001,2026-03-07,13:30,completed,Prefers low music volume
+APT-1705,CUS-078,Anna Xu,anna.xu8@outlook.com,408-555-5728,SVC-016,STF-005,2026-03-07,15:30,completed,Cancelled within 24hrs - $50 fee
+APT-1706,CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,SVC-013,STF-005,2026-03-07,10:30,completed,Sensitive skin - gentle products
+APT-1707,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-017,STF-005,2026-03-07,13:00,completed,Rescheduled from last week
+APT-1708,CUS-157,Gloria Do,gloria.do1@email.com,408-555-4941,SVC-021,STF-005,2026-03-08,15:00,completed,Sensitive skin - gentle products
+APT-1709,CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,SVC-009,STF-005,2026-03-08,10:00,completed,Requested extra hydration
+APT-1710,CUS-188,Riley Guo,riley.guo17@email.com,408-555-7453,SVC-022,STF-003,2026-03-08,10:30,completed,Package deal - session 2 of 5
+APT-1711,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-023,STF-005,2026-03-08,13:30,completed,
+APT-1712,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-001,STF-005,2026-03-08,14:00,completed,
+APT-1713,CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,SVC-004,STF-005,2026-03-08,11:30,completed,Follow-up session
+APT-1714,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-007,STF-005,2026-03-09,11:30,completed,
+APT-1715,CUS-023,Emily Bui,emily.bui63@email.com,408-555-7570,SVC-020,STF-001,2026-03-09,10:00,completed,Prepaid balance used
+APT-1716,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-004,STF-005,2026-03-09,15:30,completed,Rescheduled from last week
+APT-1717,CUS-170,Dorothy Choi,dorothy.choi91@email.com,408-555-5678,SVC-003,STF-005,2026-03-09,10:30,cancelled,Sensitive skin - gentle products
+APT-1718,CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,SVC-022,STF-004,2026-03-09,15:00,completed,
+APT-1719,CUS-200,Samantha Miller,samantha.miller28@outlook.com,408-555-5450,SVC-003,STF-001,2026-03-09,13:00,completed,Birthday treatment
+APT-1720,CUS-126,Victoria Zheng,victoria.zheng73@email.com,408-555-2140,SVC-007,STF-002,2026-03-10,10:00,completed,Prefers low music volume
+APT-1721,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-005,STF-002,2026-03-10,13:00,completed,Combo booking with friend
+APT-1722,CUS-165,Diana Yamamoto,diana.yamamoto85@icloud.com,408-555-7981,SVC-004,STF-005,2026-03-10,15:30,completed,
+APT-1723,CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,SVC-003,STF-001,2026-03-10,11:00,completed,Rescheduled from last week
+APT-1724,CUS-005,Ling Guo,ling.guo49@outlook.com,408-555-6925,SVC-016,STF-001,2026-03-10,11:30,completed,
+APT-1725,CUS-171,Skylar Johnson,skylar.johnson12@email.com,408-555-6236,SVC-013,STF-001,2026-03-10,16:00,completed,Birthday treatment
+APT-1726,CUS-001,Aurora Lin,aurora.lin4@email.com,408-555-5012,SVC-013,STF-005,2026-03-11,10:00,completed,Prefers low music volume
+APT-1727,CUS-032,Rachel Ma,rachel.ma82@email.com,408-555-5533,SVC-019,STF-002,2026-03-11,15:00,no_show,Package deal - session 2 of 5
+APT-1728,CUS-175,Mei Jones,mei.jones88@email.com,408-555-3102,SVC-010,STF-002,2026-03-11,14:30,completed,
+APT-1729,CUS-094,Ling Tran,ling.tran41@email.com,408-555-8994,SVC-018,STF-005,2026-03-11,15:30,completed,Rescheduled from last week
+APT-1730,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-025,STF-004,2026-03-11,11:30,completed,Cancelled within 24hrs - $50 fee
+APT-1731,CUS-011,Christine Liang,christine.liang81@icloud.com,408-555-2040,SVC-013,STF-005,2026-03-11,14:00,completed,Birthday treatment
+APT-1732,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-021,STF-002,2026-03-11,16:00,completed,Rescheduled from last week
+APT-1733,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-007,STF-001,2026-03-11,10:30,completed,Prepaid balance used
+APT-1734,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-026,STF-004,2026-03-12,14:30,no_show,
+APT-1735,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-002,STF-001,2026-03-12,14:00,completed,Birthday treatment
+APT-1736,CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,SVC-007,STF-005,2026-03-12,10:30,completed,Rescheduled from last week
+APT-1737,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-018,STF-001,2026-03-12,13:00,completed,
+APT-1738,CUS-010,Samantha Clark,samantha.clark55@email.com,408-555-7543,SVC-024,STF-003,2026-03-12,11:30,completed,Prefers low music volume
+APT-1739,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-015,STF-002,2026-03-13,10:00,cancelled,
+APT-1740,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-004,STF-002,2026-03-13,11:30,completed,Requested extra hydration
+APT-1741,CUS-017,Ivy Nguyen,ivy.nguyen57@email.com,408-555-8397,SVC-026,STF-003,2026-03-13,11:00,completed,Birthday treatment
+APT-1742,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-004,STF-005,2026-03-13,16:00,completed,
+APT-1743,CUS-083,Teresa Vo,teresa.vo98@email.com,408-555-8451,SVC-026,STF-003,2026-03-13,10:30,completed,
+APT-1744,CUS-086,Sharon Song,sharon.song40@email.com,408-555-7684,SVC-003,STF-001,2026-03-13,13:30,completed,Referred by existing client
+APT-1745,CUS-044,Samantha Han,samantha.han79@email.com,408-555-7653,SVC-023,STF-003,2026-03-13,14:30,completed,Requested extra hydration
+APT-1746,CUS-149,Betty Garcia,betty.garcia25@email.com,408-555-8218,SVC-002,STF-001,2026-03-13,15:00,completed,Combo booking with friend
+APT-1747,CUS-023,Emily Bui,emily.bui63@email.com,408-555-7570,SVC-023,STF-003,2026-03-14,11:00,cancelled,Referred by existing client
+APT-1748,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-016,STF-005,2026-03-14,10:00,completed,Sensitive skin - gentle products
+APT-1749,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-015,STF-002,2026-03-14,14:30,cancelled,Combo booking with friend
+APT-1750,CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,SVC-006,STF-005,2026-03-14,10:30,completed,
+APT-1751,CUS-161,Victoria Luo,victoria.luo9@email.com,408-555-8498,SVC-026,STF-004,2026-03-14,15:30,completed,Cancelled within 24hrs - $50 fee
+APT-1752,CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,SVC-007,STF-001,2026-03-14,14:00,completed,
+APT-1753,CUS-159,Samantha Zhang,samantha.zhang46@email.com,408-555-6649,SVC-012,STF-005,2026-03-14,15:00,no_show,Late arrival - 15 min
+APT-1754,CUS-041,Natalie Thompson,natalie.thompson25@icloud.com,408-555-1027,SVC-022,STF-005,2026-03-16,16:00,completed,Package deal - session 3 of 5
+APT-1755,CUS-073,Maria Liang,maria.liang73@email.com,408-555-2395,SVC-007,STF-002,2026-03-16,11:30,completed,Rescheduled from last week
+APT-1756,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-004,STF-005,2026-03-16,13:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1757,CUS-008,Aurora White,aurora.white29@email.com,408-555-1916,SVC-016,STF-002,2026-03-16,10:00,completed,Requested extra hydration
+APT-1758,CUS-185,Sharon Deng,sharon.deng75@email.com,408-555-1828,SVC-015,STF-002,2026-03-16,10:30,completed,First-time client
+APT-1759,CUS-192,Emery Lin,emery.lin54@email.com,408-555-1436,SVC-022,STF-004,2026-03-16,14:30,completed,
+APT-1760,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-008,STF-001,2026-03-16,14:00,completed,First-time client
+APT-1761,CUS-097,Riley Tran,riley.tran80@email.com,408-555-9153,SVC-008,STF-001,2026-03-16,15:30,completed,
+APT-1762,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-005,STF-001,2026-03-16,15:00,completed,
+APT-1763,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-012,STF-001,2026-03-16,13:30,completed,Package deal - session 3 of 5
+APT-1764,CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,SVC-009,STF-001,2026-03-17,11:30,cancelled,Rescheduled from last week
+APT-1765,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-011,STF-001,2026-03-17,13:30,completed,
+APT-1766,CUS-164,Lily Taylor,lily.taylor35@email.com,408-555-7955,SVC-020,STF-005,2026-03-17,11:00,completed,Cancelled within 24hrs - $50 fee
+APT-1767,CUS-059,Nova Lin,nova.lin73@email.com,408-555-8619,SVC-003,STF-002,2026-03-17,10:00,completed,First-time client
+APT-1768,CUS-152,Mei Watanabe,mei.watanabe4@email.com,408-555-7495,SVC-016,STF-005,2026-03-17,15:30,completed,Referred by existing client
+APT-1769,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-008,STF-001,2026-03-17,13:00,completed,Requested extra hydration
+APT-1770,CUS-109,Qian Dang,qian.dang76@email.com,408-555-3531,SVC-017,STF-002,2026-03-18,11:00,completed,
+APT-1771,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-016,STF-001,2026-03-18,15:30,completed,
+APT-1772,CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,SVC-024,STF-004,2026-03-18,10:00,completed,Package deal - session 3 of 5
+APT-1773,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-008,STF-005,2026-03-18,14:00,completed,Prefers low music volume
+APT-1774,CUS-172,Alice Song,alice.song92@email.com,408-555-3852,SVC-010,STF-001,2026-03-18,15:00,completed,Prepaid balance used
+APT-1775,CUS-192,Emery Lin,emery.lin54@email.com,408-555-1436,SVC-019,STF-001,2026-03-18,14:30,completed,
+APT-1776,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-013,STF-001,2026-03-18,11:30,cancelled,Rescheduled from last week
+APT-1777,CUS-001,Aurora Lin,aurora.lin4@email.com,408-555-5012,SVC-021,STF-001,2026-03-18,13:30,cancelled,Package deal - session 2 of 5
+APT-1778,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-020,STF-005,2026-03-19,14:00,completed,
+APT-1779,CUS-132,Cynthia Thompson,cynthia.thompson55@email.com,408-555-7843,SVC-022,STF-003,2026-03-19,13:00,completed,Birthday treatment
+APT-1780,CUS-094,Ling Tran,ling.tran41@email.com,408-555-8994,SVC-015,STF-002,2026-03-19,15:00,completed,
+APT-1781,CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,SVC-018,STF-002,2026-03-19,11:30,completed,First-time client
+APT-1782,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-011,STF-001,2026-03-19,16:00,completed,Prefers low music volume
+APT-1783,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-025,STF-004,2026-03-19,13:30,no_show,First-time client
+APT-1784,CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,SVC-012,STF-002,2026-03-20,11:30,confirmed,
+APT-1785,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-023,STF-003,2026-03-20,13:30,confirmed,Follow-up session
+APT-1786,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-020,STF-002,2026-03-20,15:30,confirmed,
+APT-1787,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-015,STF-001,2026-03-20,13:00,in_progress,
+APT-1788,CUS-074,Melissa Taylor,melissa.taylor49@email.com,408-555-8253,SVC-003,STF-001,2026-03-20,14:30,completed,
+APT-1789,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-005,STF-005,2026-03-20,15:00,confirmed,
+APT-1790,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-014,STF-005,2026-03-20,16:00,confirmed,
+APT-1791,CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,SVC-012,STF-002,2026-03-20,11:00,confirmed,
+APT-1792,CUS-075,Riley Zhu,riley.zhu98@yahoo.com,408-555-5335,SVC-007,STF-001,2026-03-20,10:00,confirmed,Requested extra hydration
+APT-1793,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-021,STF-002,2026-03-20,14:00,confirmed,Package deal - session 2 of 5
+APT-1794,CUS-034,Lily Clark,lily.clark71@yahoo.com,408-555-1685,SVC-026,STF-004,2026-03-21,15:30,confirmed,Requested extra hydration
+APT-1795,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-012,STF-005,2026-03-21,15:00,confirmed,
+APT-1796,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-012,STF-001,2026-03-21,16:00,cancelled,Combo booking with friend
+APT-1797,CUS-183,Cindy Zheng,cindy.zheng13@icloud.com,408-555-7850,SVC-018,STF-001,2026-03-21,14:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1798,CUS-030,Alice Young,alice.young84@email.com,408-555-5905,SVC-002,STF-005,2026-03-21,11:30,confirmed,Rescheduled from last week
+APT-1799,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-012,STF-001,2026-03-21,11:00,confirmed,
+APT-1800,CUS-171,Skylar Johnson,skylar.johnson12@email.com,408-555-6236,SVC-011,STF-005,2026-03-21,13:00,confirmed,Rescheduled from last week
+APT-1801,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-025,STF-003,2026-03-22,15:00,confirmed,Package deal - session 2 of 5
+APT-1802,CUS-040,Ella Choi,ella.choi5@icloud.com,408-555-6663,SVC-001,STF-005,2026-03-22,13:00,confirmed,Late arrival - 15 min
+APT-1803,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-021,STF-002,2026-03-22,10:30,confirmed,Follow-up session
+APT-1804,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-019,STF-002,2026-03-22,10:00,confirmed,Rescheduled from last week
+APT-1805,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-023,STF-003,2026-03-22,11:30,confirmed,
+APT-1806,CUS-103,Denise Dang,denise.dang23@outlook.com,408-555-9697,SVC-020,STF-005,2026-03-23,16:00,confirmed,
+APT-1807,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-002,STF-002,2026-03-23,15:00,confirmed,Late arrival - 15 min
+APT-1808,CUS-057,Monica Kang,monica.kang97@email.com,408-555-7906,SVC-026,STF-004,2026-03-23,10:30,confirmed,
+APT-1809,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-018,STF-005,2026-03-23,13:00,confirmed,
+APT-1810,CUS-132,Cynthia Thompson,cynthia.thompson55@email.com,408-555-7843,SVC-013,STF-001,2026-03-23,10:00,confirmed,Combo booking with friend
+APT-1811,CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,SVC-001,STF-001,2026-03-24,10:00,confirmed,Rescheduled from last week
+APT-1812,CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,SVC-003,STF-001,2026-03-24,13:30,confirmed,Referred by existing client
+APT-1813,CUS-114,Mila Chen,mila.chen36@email.com,408-555-3370,SVC-010,STF-001,2026-03-24,14:00,confirmed,Referred by existing client
+APT-1814,CUS-187,Christina Nakamura,christina.nakamura71@icloud.com,408-555-9261,SVC-014,STF-001,2026-03-24,11:00,confirmed,
+APT-1815,CUS-037,Aaliyah Hu,aaliyah.hu49@email.com,408-555-8711,SVC-007,STF-001,2026-03-24,15:30,cancelled,Late arrival - 15 min
+APT-1816,CUS-017,Ivy Nguyen,ivy.nguyen57@email.com,408-555-8397,SVC-019,STF-002,2026-03-24,11:30,confirmed,Referred by existing client
+APT-1817,CUS-164,Lily Taylor,lily.taylor35@email.com,408-555-7955,SVC-009,STF-002,2026-03-24,14:30,confirmed,Prepaid balance used
+APT-1818,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-005,STF-001,2026-03-24,15:00,confirmed,Follow-up session
+APT-1819,CUS-007,Paisley Scott,paisley.scott10@email.com,408-555-3803,SVC-026,STF-003,2026-03-25,14:30,confirmed,Prefers low music volume
+APT-1820,CUS-032,Rachel Ma,rachel.ma82@email.com,408-555-5533,SVC-021,STF-002,2026-03-25,10:00,confirmed,
+APT-1821,CUS-126,Victoria Zheng,victoria.zheng73@email.com,408-555-2140,SVC-023,STF-003,2026-03-25,13:00,confirmed,Sensitive skin - gentle products
+APT-1822,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-003,STF-002,2026-03-25,15:00,confirmed,Prefers low music volume
+APT-1823,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-014,STF-005,2026-03-25,11:30,confirmed,Prefers low music volume
+APT-1824,CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,SVC-004,STF-001,2026-03-25,16:00,confirmed,
+APT-1825,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-006,STF-002,2026-03-25,14:00,confirmed,Rescheduled from last week
+APT-1826,CUS-178,Wendy Martinez,wendy.martinez83@yahoo.com,408-555-3804,SVC-005,STF-001,2026-03-25,10:30,confirmed,Package deal - session 3 of 5
+APT-1827,CUS-132,Cynthia Thompson,cynthia.thompson55@email.com,408-555-7843,SVC-007,STF-005,2026-03-26,16:00,confirmed,
+APT-1828,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-025,STF-003,2026-03-26,13:30,confirmed,Package deal - session 2 of 5
+APT-1829,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-026,STF-004,2026-03-26,10:00,confirmed,Package deal - session 3 of 5
+APT-1830,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-018,STF-002,2026-03-26,13:00,confirmed,
+APT-1831,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-017,STF-001,2026-03-26,11:00,confirmed,Referred by existing client
+APT-1832,CUS-088,Mila Anderson,mila.anderson96@email.com,408-555-2143,SVC-006,STF-001,2026-03-26,14:30,confirmed,Requested extra hydration
+APT-1833,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-026,STF-004,2026-03-26,15:00,confirmed,Late arrival - 15 min
+APT-1834,CUS-090,Evelyn Jackson,evelyn.jackson49@email.com,408-555-6272,SVC-010,STF-005,2026-03-27,15:00,confirmed,Rescheduled from last week
+APT-1835,CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,SVC-017,STF-005,2026-03-27,16:00,confirmed,Follow-up session
+APT-1836,CUS-008,Aurora White,aurora.white29@email.com,408-555-1916,SVC-024,STF-004,2026-03-27,10:30,confirmed,
+APT-1837,CUS-177,Irene Taylor,irene.taylor37@email.com,408-555-5105,SVC-008,STF-001,2026-03-27,14:00,confirmed,
+APT-1838,CUS-109,Qian Dang,qian.dang76@email.com,408-555-3531,SVC-023,STF-004,2026-03-27,11:30,confirmed,
+APT-1839,CUS-199,Monica Hoang,monica.hoang45@email.com,408-555-3399,SVC-016,STF-005,2026-03-27,10:00,confirmed,
+APT-1840,CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,SVC-026,STF-004,2026-03-27,13:30,confirmed,Prefers low music volume
+APT-1841,CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,SVC-009,STF-001,2026-03-27,15:30,confirmed,
+APT-1842,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-004,STF-005,2026-03-27,13:00,cancelled,First-time client
+APT-1843,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-006,STF-005,2026-03-27,14:30,confirmed,
+APT-1844,CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,SVC-019,STF-002,2026-03-28,13:00,confirmed,First-time client
+APT-1845,CUS-073,Maria Liang,maria.liang73@email.com,408-555-2395,SVC-006,STF-005,2026-03-28,15:30,confirmed,
+APT-1846,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-017,STF-005,2026-03-28,13:30,confirmed,Prepaid balance used
+APT-1847,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-015,STF-005,2026-03-28,15:00,confirmed,Package deal - session 3 of 5
+APT-1848,CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,SVC-014,STF-001,2026-03-28,10:30,confirmed,
+APT-1849,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-011,STF-001,2026-03-28,16:00,confirmed,
+APT-1850,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-025,STF-004,2026-03-28,14:30,confirmed,
+APT-1851,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-011,STF-002,2026-03-28,14:00,confirmed,Rescheduled from last week
+APT-1852,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-024,STF-004,2026-03-28,11:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1853,CUS-105,Paula White,paula.white47@icloud.com,408-555-1228,SVC-010,STF-005,2026-03-28,10:00,confirmed,
+APT-1854,CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,SVC-005,STF-002,2026-03-29,14:30,confirmed,
+APT-1855,CUS-190,Fei Brown,fei.brown20@email.com,408-555-9446,SVC-006,STF-001,2026-03-29,13:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1856,CUS-104,Gloria Sato,gloria.sato15@email.com,408-555-2233,SVC-004,STF-001,2026-03-29,11:00,confirmed,Prefers low music volume
+APT-1857,CUS-072,Min Johnson,min.johnson44@gmail.com,408-555-5136,SVC-025,STF-004,2026-03-29,10:00,confirmed,Sensitive skin - gentle products
+APT-1858,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-026,STF-004,2026-03-29,15:30,cancelled,Package deal - session 3 of 5
+APT-1859,CUS-155,Lan Do,lan.do15@email.com,408-555-4893,SVC-013,STF-005,2026-03-29,11:30,confirmed,
+APT-1860,CUS-197,Jade Scott,jade.scott89@icloud.com,408-555-4150,SVC-015,STF-001,2026-03-29,16:00,confirmed,Prefers low music volume
+APT-1861,CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,SVC-021,STF-005,2026-03-29,14:00,confirmed,
+APT-1862,CUS-018,Rebecca Lewis,rebecca.lewis29@gmail.com,408-555-4750,SVC-016,STF-005,2026-03-29,10:30,cancelled,Birthday treatment
+APT-1863,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-005,STF-001,2026-03-29,13:00,confirmed,
+APT-1864,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-018,STF-002,2026-03-30,15:00,confirmed,Cancelled within 24hrs - $50 fee
+APT-1865,CUS-005,Ling Guo,ling.guo49@outlook.com,408-555-6925,SVC-025,STF-003,2026-03-30,14:30,confirmed,
+APT-1866,CUS-099,Vivian Lee,vivian.lee59@email.com,408-555-4263,SVC-015,STF-001,2026-03-30,15:30,confirmed,Rescheduled from last week
+APT-1867,CUS-010,Samantha Clark,samantha.clark55@email.com,408-555-7543,SVC-002,STF-001,2026-03-30,11:30,confirmed,Follow-up session
+APT-1868,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-006,STF-002,2026-03-30,11:00,confirmed,Birthday treatment
+APT-1869,CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,SVC-025,STF-003,2026-03-30,13:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-1870,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-018,STF-002,2026-03-30,16:00,confirmed,
+APT-1871,CUS-130,Alice Deng,alice.deng99@outlook.com,408-555-5742,SVC-002,STF-002,2026-03-30,13:00,confirmed,Birthday treatment
+APT-1872,CUS-158,Kelly Zhou,kelly.zhou68@email.com,408-555-9316,SVC-022,STF-003,2026-03-30,14:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1873,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-021,STF-002,2026-03-31,10:00,confirmed,Package deal - session 3 of 5
+APT-1874,CUS-092,Wei Li,wei.li17@email.com,408-555-6439,SVC-014,STF-001,2026-03-31,11:00,confirmed,Requested extra hydration
+APT-1875,CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,SVC-021,STF-001,2026-03-31,13:30,confirmed,
+APT-1876,CUS-079,Janet Martinez,janet.martinez70@email.com,408-555-2317,SVC-004,STF-001,2026-03-31,15:00,confirmed,Package deal - session 2 of 5
+APT-1877,CUS-010,Samantha Clark,samantha.clark55@email.com,408-555-7543,SVC-015,STF-005,2026-03-31,14:00,confirmed,Late arrival - 15 min
+APT-1878,CUS-108,Christine Zhu,christine.zhu31@email.com,408-555-3222,SVC-009,STF-001,2026-03-31,14:30,confirmed,
+APT-1879,CUS-082,Wendy Garcia,wendy.garcia45@email.com,408-555-6260,SVC-013,STF-002,2026-03-31,13:00,confirmed,
+APT-1880,CUS-126,Victoria Zheng,victoria.zheng73@email.com,408-555-2140,SVC-004,STF-005,2026-03-31,16:00,confirmed,Prefers low music volume
+APT-1881,CUS-163,Ivy Suzuki,ivy.suzuki35@outlook.com,408-555-8159,SVC-026,STF-003,2026-04-01,16:00,confirmed,First-time client
+APT-1882,CUS-074,Melissa Taylor,melissa.taylor49@email.com,408-555-8253,SVC-009,STF-001,2026-04-01,13:30,cancelled,Birthday treatment
+APT-1883,CUS-160,Susan Huang,susan.huang46@email.com,408-555-3868,SVC-024,STF-004,2026-04-01,11:00,confirmed,Prepaid balance used
+APT-1884,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-019,STF-002,2026-04-01,13:00,confirmed,Late arrival - 15 min
+APT-1885,CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,SVC-014,STF-001,2026-04-01,15:00,confirmed,Follow-up session
+APT-1886,CUS-130,Alice Deng,alice.deng99@outlook.com,408-555-5742,SVC-026,STF-004,2026-04-01,11:30,confirmed,Package deal - session 2 of 5
+APT-1887,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-014,STF-002,2026-04-01,10:30,confirmed,Rescheduled from last week
+APT-1888,CUS-172,Alice Song,alice.song92@email.com,408-555-3852,SVC-025,STF-004,2026-04-01,15:30,confirmed,Late arrival - 15 min
+APT-1889,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-024,STF-004,2026-04-02,11:00,confirmed,Package deal - session 3 of 5
+APT-1890,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-005,STF-001,2026-04-02,15:30,confirmed,Follow-up session
+APT-1891,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-014,STF-001,2026-04-02,14:30,confirmed,
+APT-1892,CUS-163,Ivy Suzuki,ivy.suzuki35@outlook.com,408-555-8159,SVC-007,STF-005,2026-04-02,11:30,confirmed,Follow-up session
+APT-1893,CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,SVC-006,STF-001,2026-04-02,13:30,confirmed,Birthday treatment
+APT-1894,CUS-062,Helen Harris,helen.harris6@email.com,408-555-8018,SVC-004,STF-001,2026-04-02,14:00,confirmed,Follow-up session
+APT-1895,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-016,STF-002,2026-04-02,15:00,confirmed,
+APT-1896,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-006,STF-001,2026-04-02,16:00,confirmed,Sensitive skin - gentle products
+APT-1897,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-018,STF-001,2026-04-02,13:00,confirmed,Prefers low music volume
+APT-1898,CUS-006,Diana Pan,diana.pan13@email.com,408-555-8428,SVC-002,STF-005,2026-04-02,10:30,confirmed,Combo booking with friend
+APT-1899,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-008,STF-001,2026-04-03,10:30,confirmed,
+APT-1900,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-022,STF-004,2026-04-03,14:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1901,CUS-024,Aaliyah Brown,aaliyah.brown37@email.com,408-555-8973,SVC-008,STF-002,2026-04-03,13:30,confirmed,Package deal - session 2 of 5
+APT-1902,CUS-085,Nicole Jung,nicole.jung71@outlook.com,408-555-8178,SVC-019,STF-002,2026-04-03,16:00,confirmed,Requested extra hydration
+APT-1903,CUS-109,Qian Dang,qian.dang76@email.com,408-555-3531,SVC-007,STF-001,2026-04-03,11:30,confirmed,Sensitive skin - gentle products
+APT-1904,CUS-113,Nicole Zhou,nicole.zhou98@email.com,408-555-4538,SVC-014,STF-001,2026-04-03,15:00,confirmed,Prefers low music volume
+APT-1905,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-012,STF-002,2026-04-04,13:30,confirmed,Follow-up session
+APT-1906,CUS-006,Diana Pan,diana.pan13@email.com,408-555-8428,SVC-021,STF-005,2026-04-04,10:30,confirmed,
+APT-1907,CUS-177,Irene Taylor,irene.taylor37@email.com,408-555-5105,SVC-026,STF-004,2026-04-04,16:00,confirmed,Birthday treatment
+APT-1908,CUS-080,Sarah Ma,sarah.ma30@email.com,408-555-1339,SVC-021,STF-005,2026-04-04,14:00,confirmed,
+APT-1909,CUS-137,Denise King,denise.king41@gmail.com,408-555-8682,SVC-008,STF-005,2026-04-04,11:30,confirmed,Birthday treatment
+APT-1910,CUS-066,Frances Kang,frances.kang77@email.com,408-555-5526,SVC-010,STF-001,2026-04-04,15:00,confirmed,Requested extra hydration
+APT-1911,CUS-077,Hazel Lewis,hazel.lewis85@email.com,408-555-4241,SVC-007,STF-005,2026-04-04,15:30,confirmed,Rescheduled from last week
+APT-1912,CUS-162,Cynthia Han,cynthia.han66@email.com,408-555-9897,SVC-011,STF-005,2026-04-04,11:00,confirmed,Referred by existing client
+APT-1913,CUS-184,Cynthia Cheng,cynthia.cheng98@icloud.com,408-555-9171,SVC-014,STF-005,2026-04-05,10:30,confirmed,
+APT-1914,CUS-179,Amy Liu,amy.liu11@outlook.com,408-555-4453,SVC-009,STF-002,2026-04-05,14:30,confirmed,Combo booking with friend
+APT-1915,CUS-187,Christina Nakamura,christina.nakamura71@icloud.com,408-555-9261,SVC-018,STF-002,2026-04-05,15:30,confirmed,
+APT-1916,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-002,STF-005,2026-04-05,14:00,confirmed,Rescheduled from last week
+APT-1917,CUS-165,Diana Yamamoto,diana.yamamoto85@icloud.com,408-555-7981,SVC-005,STF-001,2026-04-05,15:00,confirmed,Follow-up session
+APT-1918,CUS-081,Laura Garcia,laura.garcia67@email.com,408-555-5557,SVC-019,STF-001,2026-04-05,11:00,confirmed,Late arrival - 15 min
+APT-1919,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-019,STF-005,2026-04-06,16:00,confirmed,First-time client
+APT-1920,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-014,STF-001,2026-04-06,11:00,confirmed,Birthday treatment
+APT-1921,CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,SVC-008,STF-001,2026-04-06,14:00,confirmed,Cancelled within 24hrs - $50 fee
+APT-1922,CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,SVC-020,STF-002,2026-04-06,13:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1923,CUS-180,Hazel Jackson,hazel.jackson38@email.com,408-555-5949,SVC-006,STF-001,2026-04-06,11:30,confirmed,Combo booking with friend
+APT-1924,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-005,STF-001,2026-04-06,15:00,confirmed,Prepaid balance used
+APT-1925,CUS-031,Maria Jung,maria.jung37@email.com,408-555-6617,SVC-001,STF-005,2026-04-06,10:30,confirmed,Rescheduled from last week
+APT-1926,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-016,STF-001,2026-04-06,15:30,confirmed,First-time client
+APT-1927,CUS-069,Cynthia Guo,cynthia.guo96@email.com,408-555-4033,SVC-010,STF-005,2026-04-06,10:00,confirmed,Referred by existing client
+APT-1928,CUS-038,Rebecca Cao,rebecca.cao4@email.com,408-555-7528,SVC-001,STF-001,2026-04-07,11:30,confirmed,Combo booking with friend
+APT-1929,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-008,STF-001,2026-04-07,15:30,confirmed,Rescheduled from last week
+APT-1930,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-001,STF-002,2026-04-07,16:00,confirmed,Birthday treatment
+APT-1931,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-007,STF-005,2026-04-07,13:00,confirmed,Combo booking with friend
+APT-1932,CUS-066,Frances Kang,frances.kang77@email.com,408-555-5526,SVC-003,STF-001,2026-04-07,13:30,confirmed,Package deal - session 2 of 5
+APT-1933,CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,SVC-016,STF-005,2026-04-07,14:00,cancelled,Combo booking with friend
+APT-1934,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-001,STF-001,2026-04-07,10:30,confirmed,Follow-up session
+APT-1935,CUS-102,Emery Luo,emery.luo81@gmail.com,408-555-6061,SVC-022,STF-003,2026-04-07,15:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1936,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-009,STF-001,2026-04-07,10:00,confirmed,Package deal - session 2 of 5
+APT-1937,CUS-120,Yvonne Williams,yvonne.williams30@email.com,408-555-8430,SVC-005,STF-001,2026-04-07,14:30,confirmed,Referred by existing client
+APT-1938,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-009,STF-005,2026-04-08,13:00,cancelled,Follow-up session
+APT-1939,CUS-068,Sakura Martin,sakura.martin68@email.com,408-555-6419,SVC-020,STF-005,2026-04-08,10:30,cancelled,Late arrival - 15 min
+APT-1940,CUS-043,Betty Bui,betty.bui42@email.com,408-555-5844,SVC-011,STF-005,2026-04-08,13:30,confirmed,
+APT-1941,CUS-143,Harper Pham,harper.pham37@yahoo.com,408-555-6461,SVC-022,STF-003,2026-04-08,10:00,confirmed,First-time client
+APT-1942,CUS-039,Willow Anderson,willow.anderson52@email.com,408-555-9785,SVC-002,STF-001,2026-04-08,15:30,confirmed,Sensitive skin - gentle products
+APT-1943,CUS-114,Mila Chen,mila.chen36@email.com,408-555-3370,SVC-012,STF-005,2026-04-09,14:30,confirmed,Rescheduled from last week
+APT-1944,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-004,STF-005,2026-04-09,14:00,confirmed,
+APT-1945,CUS-090,Evelyn Jackson,evelyn.jackson49@email.com,408-555-6272,SVC-003,STF-001,2026-04-09,10:30,confirmed,
+APT-1946,CUS-192,Emery Lin,emery.lin54@email.com,408-555-1436,SVC-017,STF-005,2026-04-09,16:00,confirmed,Prepaid balance used
+APT-1947,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-019,STF-005,2026-04-09,10:00,confirmed,Prepaid balance used
+APT-1948,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-011,STF-001,2026-04-10,14:00,confirmed,
+APT-1949,CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,SVC-012,STF-002,2026-04-10,10:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1950,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-015,STF-005,2026-04-10,11:30,confirmed,Rescheduled from last week
+APT-1951,CUS-161,Victoria Luo,victoria.luo9@email.com,408-555-8498,SVC-009,STF-002,2026-04-10,14:30,confirmed,
+APT-1952,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-020,STF-005,2026-04-10,13:30,confirmed,Prepaid balance used
+APT-1953,CUS-015,Aria Sun,aria.sun11@email.com,408-555-2133,SVC-024,STF-003,2026-04-11,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-1954,CUS-066,Frances Kang,frances.kang77@email.com,408-555-5526,SVC-006,STF-001,2026-04-11,10:00,confirmed,Birthday treatment
+APT-1955,CUS-023,Emily Bui,emily.bui63@email.com,408-555-7570,SVC-001,STF-005,2026-04-11,13:00,confirmed,Birthday treatment
+APT-1956,CUS-073,Maria Liang,maria.liang73@email.com,408-555-2395,SVC-021,STF-002,2026-04-11,13:30,confirmed,
+APT-1957,CUS-077,Hazel Lewis,hazel.lewis85@email.com,408-555-4241,SVC-016,STF-005,2026-04-11,14:00,confirmed,Follow-up session
+APT-1958,CUS-100,Paisley Shin,paisley.shin3@email.com,408-555-7484,SVC-016,STF-001,2026-04-12,11:00,confirmed,
+APT-1959,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-014,STF-005,2026-04-12,13:30,confirmed,Referred by existing client
+APT-1960,CUS-162,Cynthia Han,cynthia.han66@email.com,408-555-9897,SVC-014,STF-001,2026-04-12,10:30,confirmed,Rescheduled from last week
+APT-1961,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-008,STF-005,2026-04-12,15:30,confirmed,Prefers low music volume
+APT-1962,CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,SVC-021,STF-002,2026-04-12,13:00,confirmed,Rescheduled from last week
+APT-1963,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-003,STF-005,2026-04-12,15:00,confirmed,
+APT-1964,CUS-033,Elena Johnson,elena.johnson71@email.com,408-555-1158,SVC-022,STF-004,2026-04-12,11:30,confirmed,Late arrival - 15 min
+APT-1965,CUS-110,Pamela Li,pamela.li89@email.com,408-555-8264,SVC-010,STF-002,2026-04-12,14:00,confirmed,
+APT-1966,CUS-091,Sandy Huang,sandy.huang41@email.com,408-555-7246,SVC-009,STF-002,2026-04-13,10:30,confirmed,
+APT-1967,CUS-030,Alice Young,alice.young84@email.com,408-555-5905,SVC-024,STF-004,2026-04-13,15:00,confirmed,
+APT-1968,CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,SVC-002,STF-001,2026-04-13,14:00,confirmed,Follow-up session
+APT-1969,CUS-081,Laura Garcia,laura.garcia67@email.com,408-555-5557,SVC-019,STF-002,2026-04-13,15:30,confirmed,Rescheduled from last week
+APT-1970,CUS-160,Susan Huang,susan.huang46@email.com,408-555-3868,SVC-026,STF-004,2026-04-13,10:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1971,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-024,STF-004,2026-04-13,11:30,confirmed,
+APT-1972,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-018,STF-001,2026-04-13,13:00,confirmed,
+APT-1973,CUS-044,Samantha Han,samantha.han79@email.com,408-555-7653,SVC-021,STF-002,2026-04-13,11:00,confirmed,Combo booking with friend
+APT-1974,CUS-004,Amanda Sato,amanda.sato14@gmail.com,408-555-6881,SVC-007,STF-001,2026-04-14,14:30,confirmed,First-time client
+APT-1975,CUS-007,Paisley Scott,paisley.scott10@email.com,408-555-3803,SVC-007,STF-002,2026-04-14,13:00,confirmed,Requested extra hydration
+APT-1976,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-021,STF-005,2026-04-14,13:30,confirmed,
+APT-1977,CUS-078,Anna Xu,anna.xu8@outlook.com,408-555-5728,SVC-025,STF-004,2026-04-14,14:00,confirmed,
+APT-1978,CUS-030,Alice Young,alice.young84@email.com,408-555-5905,SVC-006,STF-005,2026-04-14,16:00,confirmed,Rescheduled from last week
+APT-1979,CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,SVC-016,STF-001,2026-04-14,11:00,confirmed,Requested extra hydration
+APT-1980,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-010,STF-002,2026-04-14,10:00,confirmed,
+APT-1981,CUS-086,Sharon Song,sharon.song40@email.com,408-555-7684,SVC-001,STF-001,2026-04-14,10:30,confirmed,Referred by existing client
+APT-1982,CUS-107,Riley Cao,riley.cao83@icloud.com,408-555-5951,SVC-016,STF-005,2026-04-14,15:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-1983,CUS-186,Karen Hu,karen.hu56@outlook.com,408-555-6992,SVC-020,STF-005,2026-04-15,10:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-1984,CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,SVC-017,STF-001,2026-04-15,14:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-1985,CUS-017,Ivy Nguyen,ivy.nguyen57@email.com,408-555-8397,SVC-009,STF-005,2026-04-15,14:00,confirmed,Prefers low music volume
+APT-1986,CUS-030,Alice Young,alice.young84@email.com,408-555-5905,SVC-016,STF-005,2026-04-15,15:30,confirmed,Rescheduled from last week
+APT-1987,CUS-179,Amy Liu,amy.liu11@outlook.com,408-555-4453,SVC-014,STF-001,2026-04-15,13:00,confirmed,First-time client
+APT-1988,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-012,STF-002,2026-04-15,15:00,confirmed,Prepaid balance used
+APT-1989,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-024,STF-004,2026-04-16,13:30,confirmed,
+APT-1990,CUS-160,Susan Huang,susan.huang46@email.com,408-555-3868,SVC-007,STF-001,2026-04-16,15:30,confirmed,Prefers low music volume
+APT-1991,CUS-034,Lily Clark,lily.clark71@yahoo.com,408-555-1685,SVC-006,STF-001,2026-04-16,14:30,confirmed,
+APT-1992,CUS-107,Riley Cao,riley.cao83@icloud.com,408-555-5951,SVC-016,STF-001,2026-04-16,11:00,confirmed,
+APT-1993,CUS-005,Ling Guo,ling.guo49@outlook.com,408-555-6925,SVC-012,STF-005,2026-04-16,15:00,confirmed,
+APT-1994,CUS-045,Ivy Yamamoto,ivy.yamamoto60@email.com,408-555-4501,SVC-017,STF-001,2026-04-16,16:00,confirmed,Referred by existing client
+APT-1995,CUS-030,Alice Young,alice.young84@email.com,408-555-5905,SVC-020,STF-001,2026-04-16,11:30,confirmed,Prefers low music volume
+APT-1996,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-011,STF-005,2026-04-16,13:00,confirmed,Cancelled within 24hrs - $50 fee
+APT-1997,CUS-069,Cynthia Guo,cynthia.guo96@email.com,408-555-4033,SVC-005,STF-005,2026-04-16,14:00,confirmed,Combo booking with friend
+APT-1998,CUS-011,Christine Liang,christine.liang81@icloud.com,408-555-2040,SVC-017,STF-001,2026-04-17,10:30,confirmed,First-time client
+APT-1999,CUS-093,Sandy Hill,sandy.hill20@outlook.com,408-555-6546,SVC-006,STF-005,2026-04-17,10:00,confirmed,Late arrival - 15 min
+APT-2000,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-024,STF-004,2026-04-17,14:30,confirmed,Package deal - session 3 of 5
+APT-2001,CUS-086,Sharon Song,sharon.song40@email.com,408-555-7684,SVC-005,STF-001,2026-04-17,15:00,confirmed,Referred by existing client
+APT-2002,CUS-197,Jade Scott,jade.scott89@icloud.com,408-555-4150,SVC-025,STF-003,2026-04-17,14:00,confirmed,Prefers low music volume
+APT-2003,CUS-088,Mila Anderson,mila.anderson96@email.com,408-555-2143,SVC-010,STF-002,2026-04-17,15:30,confirmed,Package deal - session 3 of 5
+APT-2004,CUS-184,Cynthia Cheng,cynthia.cheng98@icloud.com,408-555-9171,SVC-025,STF-004,2026-04-17,13:30,confirmed,Requested extra hydration
+APT-2005,CUS-039,Willow Anderson,willow.anderson52@email.com,408-555-9785,SVC-025,STF-004,2026-04-17,13:00,confirmed,Requested extra hydration
+APT-2006,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-026,STF-004,2026-04-17,11:00,cancelled,Rescheduled from last week
+APT-2007,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-011,STF-001,2026-04-18,16:00,cancelled,
+APT-2008,CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,SVC-025,STF-003,2026-04-18,13:30,cancelled,
+APT-2009,CUS-015,Aria Sun,aria.sun11@email.com,408-555-2133,SVC-021,STF-005,2026-04-18,10:00,confirmed,Late arrival - 15 min
+APT-2010,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-014,STF-002,2026-04-18,14:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-2011,CUS-078,Anna Xu,anna.xu8@outlook.com,408-555-5728,SVC-024,STF-004,2026-04-18,10:30,cancelled,
+APT-2012,CUS-136,Laura King,laura.king64@email.com,408-555-8354,SVC-020,STF-005,2026-04-18,15:00,confirmed,Rescheduled from last week
+APT-2013,CUS-165,Diana Yamamoto,diana.yamamoto85@icloud.com,408-555-7981,SVC-007,STF-005,2026-04-18,13:00,confirmed,Combo booking with friend
+APT-2014,CUS-167,Catherine Liu,catherine.liu19@email.com,408-555-8179,SVC-015,STF-005,2026-04-18,15:30,confirmed,Birthday treatment
+APT-2015,CUS-185,Sharon Deng,sharon.deng75@email.com,408-555-1828,SVC-024,STF-004,2026-04-19,10:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-2016,CUS-073,Maria Liang,maria.liang73@email.com,408-555-2395,SVC-007,STF-001,2026-04-19,10:00,confirmed,Late arrival - 15 min
+APT-2017,CUS-088,Mila Anderson,mila.anderson96@email.com,408-555-2143,SVC-025,STF-004,2026-04-19,15:00,confirmed,Cancelled within 24hrs - $50 fee
+APT-2018,CUS-152,Mei Watanabe,mei.watanabe4@email.com,408-555-7495,SVC-009,STF-001,2026-04-19,13:30,confirmed,Referred by existing client
+APT-2019,CUS-130,Alice Deng,alice.deng99@outlook.com,408-555-5742,SVC-004,STF-005,2026-04-19,11:30,confirmed,Sensitive skin - gentle products
+APT-2020,CUS-161,Victoria Luo,victoria.luo9@email.com,408-555-8498,SVC-017,STF-001,2026-04-19,14:30,confirmed,
+APT-2021,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-023,STF-004,2026-04-20,13:00,confirmed,Cancelled within 24hrs - $50 fee
+APT-2022,CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,SVC-008,STF-001,2026-04-20,15:30,confirmed,Prepaid balance used
+APT-2023,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-005,STF-005,2026-04-20,10:00,confirmed,Requested extra hydration
+APT-2024,CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,SVC-011,STF-002,2026-04-20,14:30,confirmed,Package deal - session 3 of 5
+APT-2025,CUS-117,Fei Jang,fei.jang59@email.com,408-555-1510,SVC-004,STF-001,2026-04-20,11:00,confirmed,Referred by existing client
+APT-2026,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-003,STF-001,2026-04-20,10:30,confirmed,Prefers low music volume
+APT-2027,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-015,STF-001,2026-04-20,16:00,confirmed,Birthday treatment
+APT-2028,CUS-177,Irene Taylor,irene.taylor37@email.com,408-555-5105,SVC-016,STF-005,2026-04-21,15:00,confirmed,
+APT-2029,CUS-037,Aaliyah Hu,aaliyah.hu49@email.com,408-555-8711,SVC-017,STF-001,2026-04-21,16:00,confirmed,
+APT-2030,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-017,STF-005,2026-04-21,14:00,confirmed,First-time client
+APT-2031,CUS-117,Fei Jang,fei.jang59@email.com,408-555-1510,SVC-016,STF-001,2026-04-21,13:00,confirmed,Cancelled within 24hrs - $50 fee
+APT-2032,CUS-095,Rebecca Ma,rebecca.ma56@email.com,408-555-2646,SVC-004,STF-002,2026-04-21,14:30,confirmed,
+APT-2033,CUS-095,Rebecca Ma,rebecca.ma56@email.com,408-555-2646,SVC-019,STF-001,2026-04-21,11:30,confirmed,
+APT-2034,CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,SVC-010,STF-005,2026-04-21,13:30,confirmed,Prefers low music volume
+APT-2035,CUS-008,Aurora White,aurora.white29@email.com,408-555-1916,SVC-026,STF-003,2026-04-21,15:30,confirmed,Referred by existing client
+APT-2036,CUS-190,Fei Brown,fei.brown20@email.com,408-555-9446,SVC-016,STF-001,2026-04-22,13:00,confirmed,
+APT-2037,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-014,STF-002,2026-04-22,16:00,confirmed,Rescheduled from last week
+APT-2038,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-026,STF-004,2026-04-22,11:30,confirmed,Combo booking with friend
+APT-2039,CUS-034,Lily Clark,lily.clark71@yahoo.com,408-555-1685,SVC-025,STF-003,2026-04-22,11:00,confirmed,Rescheduled from last week
+APT-2040,CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,SVC-013,STF-001,2026-04-23,14:30,confirmed,Rescheduled from last week
+APT-2041,CUS-189,Anna Wei,anna.wei78@email.com,408-555-9193,SVC-009,STF-005,2026-04-23,11:00,confirmed,
+APT-2042,CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,SVC-021,STF-002,2026-04-23,13:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-2043,CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,SVC-004,STF-005,2026-04-23,10:30,confirmed,Combo booking with friend
+APT-2044,CUS-139,Wendy Young,wendy.young77@email.com,408-555-8581,SVC-019,STF-002,2026-04-23,14:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-2045,CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,SVC-017,STF-005,2026-04-23,13:00,confirmed,Cancelled within 24hrs - $50 fee
+APT-2046,CUS-047,Madeline Xu,madeline.xu59@email.com,408-555-4185,SVC-001,STF-001,2026-04-23,15:00,confirmed,Prepaid balance used
+APT-2047,CUS-114,Mila Chen,mila.chen36@email.com,408-555-3370,SVC-003,STF-005,2026-04-23,11:30,confirmed,Birthday treatment
+APT-2048,CUS-151,Helen Yoon,helen.yoon11@email.com,408-555-5469,SVC-002,STF-002,2026-04-23,16:00,cancelled,Package deal - session 2 of 5
+APT-2049,CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,SVC-018,STF-001,2026-04-24,10:00,confirmed,Sensitive skin - gentle products
+APT-2050,CUS-197,Jade Scott,jade.scott89@icloud.com,408-555-4150,SVC-003,STF-001,2026-04-24,15:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-2051,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-006,STF-001,2026-04-24,13:30,confirmed,Birthday treatment
+APT-2052,CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,SVC-011,STF-001,2026-04-24,14:00,confirmed,Sensitive skin - gentle products
+APT-2053,CUS-097,Riley Tran,riley.tran80@email.com,408-555-9153,SVC-004,STF-001,2026-04-24,11:00,confirmed,Combo booking with friend
+APT-2054,CUS-151,Helen Yoon,helen.yoon11@email.com,408-555-5469,SVC-008,STF-002,2026-04-24,16:00,confirmed,Birthday treatment
+APT-2055,CUS-030,Alice Young,alice.young84@email.com,408-555-5905,SVC-009,STF-001,2026-04-24,15:30,confirmed,Referred by existing client
+APT-2056,CUS-005,Ling Guo,ling.guo49@outlook.com,408-555-6925,SVC-009,STF-002,2026-04-25,14:30,confirmed,
+APT-2057,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-025,STF-004,2026-04-25,10:00,confirmed,Follow-up session
+APT-2058,CUS-146,Madeline Davis,madeline.davis25@yahoo.com,408-555-3538,SVC-014,STF-002,2026-04-25,14:00,confirmed,Late arrival - 15 min
+APT-2059,CUS-053,Ella Zhang,ella.zhang98@email.com,408-555-8814,SVC-026,STF-004,2026-04-25,11:30,confirmed,
+APT-2060,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-006,STF-001,2026-04-26,14:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-2061,CUS-065,Wendy Kang,wendy.kang58@icloud.com,408-555-7209,SVC-022,STF-003,2026-04-26,15:00,confirmed,First-time client
+APT-2062,CUS-150,Catherine Wei,catherine.wei78@outlook.com,408-555-1854,SVC-017,STF-001,2026-04-26,14:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-2063,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-003,STF-001,2026-04-26,10:00,confirmed,
+APT-2064,CUS-036,Laura Bui,laura.bui4@outlook.com,408-555-7745,SVC-024,STF-004,2026-04-26,15:30,confirmed,Referred by existing client
+APT-2065,CUS-054,Tracy Moore,tracy.moore96@email.com,408-555-4613,SVC-020,STF-002,2026-04-26,11:30,confirmed,Package deal - session 2 of 5
+APT-2066,CUS-163,Ivy Suzuki,ivy.suzuki35@outlook.com,408-555-8159,SVC-009,STF-005,2026-04-26,13:00,confirmed,Sensitive skin - gentle products
+APT-2067,CUS-063,Jing Hu,jing.hu56@email.com,408-555-8532,SVC-022,STF-005,2026-04-26,11:00,confirmed,Rescheduled from last week
+APT-2068,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-006,STF-002,2026-04-27,13:30,confirmed,Prefers low music volume
+APT-2069,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-013,STF-002,2026-04-27,10:00,confirmed,
+APT-2070,CUS-138,Nancy Han,nancy.han60@email.com,408-555-1932,SVC-001,STF-005,2026-04-27,11:00,confirmed,Rescheduled from last week
+APT-2071,CUS-173,Sarah Nakamura,sarah.nakamura71@email.com,408-555-8657,SVC-004,STF-001,2026-04-27,15:30,confirmed,Combo booking with friend
+APT-2072,CUS-092,Wei Li,wei.li17@email.com,408-555-6439,SVC-013,STF-001,2026-04-27,13:00,confirmed,
+APT-2073,CUS-032,Rachel Ma,rachel.ma82@email.com,408-555-5533,SVC-015,STF-001,2026-04-27,11:30,confirmed,
+APT-2074,CUS-057,Monica Kang,monica.kang97@email.com,408-555-7906,SVC-024,STF-003,2026-04-27,14:30,confirmed,Package deal - session 3 of 5
+APT-2075,CUS-050,Mei Song,mei.song96@email.com,408-555-8373,SVC-003,STF-005,2026-04-27,14:00,confirmed,Requested extra hydration
+APT-2076,CUS-181,Ellie Yang,ellie.yang21@email.com,408-555-8933,SVC-023,STF-003,2026-04-28,14:30,confirmed,Birthday treatment
+APT-2077,CUS-029,Xin Choi,xin.choi17@email.com,408-555-2127,SVC-009,STF-002,2026-04-28,13:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-2078,CUS-050,Mei Song,mei.song96@email.com,408-555-8373,SVC-022,STF-004,2026-04-28,10:00,confirmed,Combo booking with friend
+APT-2079,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-006,STF-001,2026-04-28,13:00,confirmed,
+APT-2080,CUS-033,Elena Johnson,elena.johnson71@email.com,408-555-1158,SVC-009,STF-005,2026-04-28,11:30,confirmed,Late arrival - 15 min
+APT-2081,CUS-165,Diana Yamamoto,diana.yamamoto85@icloud.com,408-555-7981,SVC-022,STF-005,2026-04-29,13:00,confirmed,Package deal - session 2 of 5
+APT-2082,CUS-111,Lily Jackson,lily.jackson83@email.com,408-555-7523,SVC-014,STF-001,2026-04-29,11:30,confirmed,Rescheduled from last week
+APT-2083,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-012,STF-002,2026-04-29,10:00,confirmed,Requested extra hydration
+APT-2084,CUS-013,Xin Han,xin.han65@email.com,408-555-5889,SVC-009,STF-005,2026-04-29,16:00,confirmed,Package deal - session 2 of 5
+APT-2085,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-013,STF-001,2026-04-29,13:30,confirmed,Prepaid balance used
+APT-2086,CUS-007,Paisley Scott,paisley.scott10@email.com,408-555-3803,SVC-024,STF-003,2026-04-29,14:30,confirmed,
+APT-2087,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-007,STF-001,2026-04-29,15:30,confirmed,
+APT-2088,CUS-008,Aurora White,aurora.white29@email.com,408-555-1916,SVC-016,STF-002,2026-04-29,15:00,confirmed,Package deal - session 2 of 5
+APT-2089,CUS-065,Wendy Kang,wendy.kang58@icloud.com,408-555-7209,SVC-008,STF-001,2026-04-29,10:30,confirmed,Package deal - session 2 of 5
+APT-2090,CUS-149,Betty Garcia,betty.garcia25@email.com,408-555-8218,SVC-004,STF-001,2026-04-30,10:00,confirmed,
+APT-2091,CUS-097,Riley Tran,riley.tran80@email.com,408-555-9153,SVC-011,STF-005,2026-04-30,13:30,confirmed,
+APT-2092,CUS-016,Dorothy Thomas,dorothy.thomas78@email.com,408-555-4470,SVC-026,STF-004,2026-04-30,15:00,confirmed,Referred by existing client
+APT-2093,CUS-017,Ivy Nguyen,ivy.nguyen57@email.com,408-555-8397,SVC-004,STF-005,2026-04-30,11:30,confirmed,Follow-up session
+APT-2094,CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,SVC-013,STF-001,2026-04-30,16:00,confirmed,Requested extra hydration
+APT-2095,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-026,STF-004,2026-04-30,13:00,confirmed,Birthday treatment
+APT-2096,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-026,STF-004,2026-04-30,15:30,confirmed,
+APT-2097,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-021,STF-005,2026-04-30,14:30,confirmed,Rescheduled from last week
+APT-2098,CUS-133,Ellie Nakamura,ellie.nakamura12@email.com,408-555-2734,SVC-011,STF-002,2026-04-30,14:00,confirmed,
+APT-2099,CUS-153,Sarah Tanaka,sarah.tanaka13@email.com,408-555-6493,SVC-023,STF-001,2026-04-30,10:30,confirmed,First-time client
+APT-2100,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-008,STF-001,2026-05-01,11:00,confirmed,
+APT-2101,CUS-080,Sarah Ma,sarah.ma30@email.com,408-555-1339,SVC-019,STF-002,2026-05-01,15:00,cancelled,Package deal - session 3 of 5
+APT-2102,CUS-139,Wendy Young,wendy.young77@email.com,408-555-8581,SVC-025,STF-003,2026-05-01,13:00,confirmed,Combo booking with friend
+APT-2103,CUS-088,Mila Anderson,mila.anderson96@email.com,408-555-2143,SVC-010,STF-001,2026-05-01,13:30,confirmed,Prepaid balance used
+APT-2104,CUS-169,Paula Tanaka,paula.tanaka84@gmail.com,408-555-1424,SVC-022,STF-003,2026-05-01,11:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-2105,CUS-014,Jessica Robinson,jessica.robinson42@email.com,408-555-2832,SVC-014,STF-001,2026-05-01,14:00,cancelled,First-time client
+APT-2106,CUS-088,Mila Anderson,mila.anderson96@email.com,408-555-2143,SVC-007,STF-005,2026-05-01,15:30,confirmed,Rescheduled from last week
+APT-2107,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-023,STF-003,2026-05-01,14:30,confirmed,Package deal - session 2 of 5
+APT-2108,CUS-057,Monica Kang,monica.kang97@email.com,408-555-7906,SVC-001,STF-005,2026-05-02,13:00,confirmed,Rescheduled from last week
+APT-2109,CUS-160,Susan Huang,susan.huang46@email.com,408-555-3868,SVC-007,STF-001,2026-05-02,14:00,confirmed,Package deal - session 2 of 5
+APT-2110,CUS-190,Fei Brown,fei.brown20@email.com,408-555-9446,SVC-013,STF-001,2026-05-02,13:30,confirmed,
+APT-2111,CUS-093,Sandy Hill,sandy.hill20@outlook.com,408-555-6546,SVC-001,STF-001,2026-05-02,11:00,confirmed,
+APT-2112,CUS-037,Aaliyah Hu,aaliyah.hu49@email.com,408-555-8711,SVC-010,STF-002,2026-05-02,10:00,confirmed,Package deal - session 3 of 5
+APT-2113,CUS-012,Karen Lin,karen.lin88@email.com,408-555-5371,SVC-001,STF-001,2026-05-02,11:30,confirmed,Requested extra hydration
+APT-2114,CUS-068,Sakura Martin,sakura.martin68@email.com,408-555-6419,SVC-024,STF-003,2026-05-02,15:30,confirmed,Requested extra hydration
+APT-2115,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-007,STF-001,2026-05-02,15:00,confirmed,
+APT-2116,CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,SVC-022,STF-003,2026-05-04,11:00,confirmed,Combo booking with friend
+APT-2117,CUS-112,Wendy Deng,wendy.deng83@email.com,408-555-1349,SVC-023,STF-001,2026-05-04,14:00,confirmed,
+APT-2118,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-007,STF-002,2026-05-04,10:30,confirmed,Package deal - session 2 of 5
+APT-2119,CUS-154,Susan Garcia,susan.garcia58@email.com,408-555-2298,SVC-014,STF-005,2026-05-04,13:30,confirmed,
+APT-2120,CUS-196,Harper Yamamoto,harper.yamamoto85@email.com,408-555-7173,SVC-020,STF-002,2026-05-04,15:00,confirmed,Follow-up session
+APT-2121,CUS-039,Willow Anderson,willow.anderson52@email.com,408-555-9785,SVC-011,STF-001,2026-05-04,16:00,confirmed,Sensitive skin - gentle products
+APT-2122,CUS-033,Elena Johnson,elena.johnson71@email.com,408-555-1158,SVC-017,STF-005,2026-05-04,11:30,confirmed,First-time client
+APT-2123,CUS-187,Christina Nakamura,christina.nakamura71@icloud.com,408-555-9261,SVC-003,STF-005,2026-05-04,15:30,confirmed,Combo booking with friend
+APT-2124,CUS-017,Ivy Nguyen,ivy.nguyen57@email.com,408-555-8397,SVC-006,STF-002,2026-05-04,13:00,confirmed,Late arrival - 15 min
+APT-2125,CUS-096,Gloria Ito,gloria.ito48@email.com,408-555-5000,SVC-017,STF-005,2026-05-05,14:30,confirmed,Prefers low music volume
+APT-2126,CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,SVC-009,STF-002,2026-05-05,15:00,confirmed,Prepaid balance used
+APT-2127,CUS-167,Catherine Liu,catherine.liu19@email.com,408-555-8179,SVC-002,STF-001,2026-05-05,16:00,confirmed,Rescheduled from last week
+APT-2128,CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,SVC-013,STF-001,2026-05-05,11:00,confirmed,Birthday treatment
+APT-2129,CUS-147,Elena Thomas,elena.thomas5@email.com,408-555-3147,SVC-006,STF-005,2026-05-05,15:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-2130,CUS-022,Rui Zhu,rui.zhu7@email.com,408-555-9856,SVC-005,STF-005,2026-05-05,13:30,confirmed,Late arrival - 15 min
+APT-2131,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-014,STF-002,2026-05-06,11:30,confirmed,Package deal - session 3 of 5
+APT-2132,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-011,STF-001,2026-05-06,15:30,confirmed,Rescheduled from last week
+APT-2133,CUS-060,Christine Song,christine.song40@gmail.com,408-555-6111,SVC-009,STF-005,2026-05-06,10:00,confirmed,
+APT-2134,CUS-076,Ellie Robinson,ellie.robinson61@yahoo.com,408-555-5720,SVC-017,STF-002,2026-05-06,14:30,confirmed,Sensitive skin - gentle products
+APT-2135,CUS-059,Nova Lin,nova.lin73@email.com,408-555-8619,SVC-004,STF-001,2026-05-06,13:00,confirmed,Cancelled within 24hrs - $50 fee
+APT-2136,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-011,STF-001,2026-05-06,14:00,confirmed,Follow-up session
+APT-2137,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-010,STF-001,2026-05-07,16:00,confirmed,Birthday treatment
+APT-2138,CUS-104,Gloria Sato,gloria.sato15@email.com,408-555-2233,SVC-019,STF-002,2026-05-07,13:00,confirmed,Late arrival - 15 min
+APT-2139,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-005,STF-005,2026-05-07,11:30,confirmed,First-time client
+APT-2140,CUS-122,Lisa White,lisa.white8@email.com,408-555-6400,SVC-008,STF-002,2026-05-07,11:00,confirmed,Rescheduled from last week
+APT-2141,CUS-185,Sharon Deng,sharon.deng75@email.com,408-555-1828,SVC-015,STF-001,2026-05-07,14:00,confirmed,First-time client
+APT-2142,CUS-110,Pamela Li,pamela.li89@email.com,408-555-8264,SVC-025,STF-004,2026-05-07,13:30,confirmed,Rescheduled from last week
+APT-2143,CUS-116,Sakura Williams,sakura.williams47@email.com,408-555-2786,SVC-018,STF-001,2026-05-07,15:30,confirmed,
+APT-2144,CUS-079,Janet Martinez,janet.martinez70@email.com,408-555-2317,SVC-024,STF-003,2026-05-07,14:30,confirmed,Package deal - session 3 of 5
+APT-2145,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-008,STF-002,2026-05-07,10:00,confirmed,Birthday treatment
+APT-2146,CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,SVC-007,STF-005,2026-05-08,15:00,confirmed,Birthday treatment
+APT-2147,CUS-049,Nova Thomas,nova.thomas72@email.com,408-555-8251,SVC-016,STF-001,2026-05-08,13:00,confirmed,Rescheduled from last week
+APT-2148,CUS-164,Lily Taylor,lily.taylor35@email.com,408-555-7955,SVC-010,STF-001,2026-05-08,13:30,confirmed,Cancelled within 24hrs - $50 fee
+APT-2149,CUS-046,Aurora Allen,aurora.allen43@yahoo.com,408-555-6085,SVC-002,STF-005,2026-05-08,10:00,confirmed,
+APT-2150,CUS-048,Jasmine Hu,jasmine.hu55@icloud.com,408-555-1822,SVC-007,STF-001,2026-05-08,15:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-2151,CUS-075,Riley Zhu,riley.zhu98@yahoo.com,408-555-5335,SVC-022,STF-003,2026-05-08,14:30,confirmed,Package deal - session 3 of 5
+APT-2152,CUS-133,Ellie Nakamura,ellie.nakamura12@email.com,408-555-2734,SVC-001,STF-001,2026-05-08,10:30,confirmed,Referred by existing client
+APT-2153,CUS-101,Avery Rodriguez,avery.rodriguez37@email.com,408-555-4770,SVC-006,STF-005,2026-05-08,14:00,confirmed,Referred by existing client
+APT-2154,CUS-123,Vivian Wu,vivian.wu37@email.com,408-555-6761,SVC-024,STF-003,2026-05-08,11:30,cancelled,Cancelled within 24hrs - $50 fee
+APT-2155,CUS-053,Ella Zhang,ella.zhang98@email.com,408-555-8814,SVC-010,STF-002,2026-05-08,11:00,confirmed,Prefers low music volume
+APT-2156,CUS-184,Cynthia Cheng,cynthia.cheng98@icloud.com,408-555-9171,SVC-022,STF-003,2026-05-09,15:30,confirmed,
+APT-2157,CUS-115,Aaliyah Kim,aaliyah.kim76@email.com,408-555-3854,SVC-003,STF-005,2026-05-09,16:00,confirmed,Requested extra hydration
+APT-2158,CUS-135,Irene Scott,irene.scott19@yahoo.com,408-555-5193,SVC-011,STF-005,2026-05-09,13:00,confirmed,Rescheduled from last week
+APT-2159,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-019,STF-001,2026-05-09,11:30,confirmed,Rescheduled from last week
+APT-2160,CUS-089,Janet Chen,janet.chen37@email.com,408-555-9022,SVC-023,STF-004,2026-05-09,15:00,confirmed,Birthday treatment
+APT-2161,CUS-179,Amy Liu,amy.liu11@outlook.com,408-555-4453,SVC-019,STF-001,2026-05-10,11:00,confirmed,
+APT-2162,CUS-062,Helen Harris,helen.harris6@email.com,408-555-8018,SVC-006,STF-001,2026-05-10,14:00,confirmed,Follow-up session
+APT-2163,CUS-171,Skylar Johnson,skylar.johnson12@email.com,408-555-6236,SVC-003,STF-005,2026-05-10,11:30,confirmed,First-time client
+APT-2164,CUS-127,Yuki Sato,yuki.sato21@email.com,408-555-6314,SVC-014,STF-005,2026-05-10,16:00,confirmed,Package deal - session 3 of 5
+APT-2165,CUS-020,Vivian Bui,vivian.bui60@email.com,408-555-1887,SVC-025,STF-003,2026-05-10,13:00,confirmed,Package deal - session 2 of 5
+APT-2166,CUS-105,Paula White,paula.white47@icloud.com,408-555-1228,SVC-015,STF-001,2026-05-10,13:30,confirmed,
+APT-2167,CUS-119,Denise Tran,denise.tran77@email.com,408-555-8433,SVC-001,STF-001,2026-05-10,15:00,confirmed,Rescheduled from last week
+APT-2168,CUS-098,Nova Wang,nova.wang60@email.com,408-555-9955,SVC-011,STF-005,2026-05-10,15:30,confirmed,Birthday treatment
+APT-2169,CUS-010,Samantha Clark,samantha.clark55@email.com,408-555-7543,SVC-001,STF-001,2026-05-10,10:30,confirmed,
+APT-2170,CUS-084,Jessica Jackson,jessica.jackson60@email.com,408-555-4073,SVC-022,STF-004,2026-05-10,10:00,confirmed,
+APT-2171,CUS-121,Patricia Nguyen,patricia.nguyen20@email.com,408-555-8770,SVC-009,STF-005,2026-05-11,15:00,confirmed,
+APT-2172,CUS-156,Yuki Zhou,yuki.zhou15@email.com,408-555-9189,SVC-004,STF-001,2026-05-11,11:30,confirmed,Birthday treatment
+APT-2173,CUS-044,Samantha Han,samantha.han79@email.com,408-555-7653,SVC-003,STF-005,2026-05-11,14:30,confirmed,Sensitive skin - gentle products
+APT-2174,CUS-040,Ella Choi,ella.choi5@icloud.com,408-555-6663,SVC-015,STF-001,2026-05-11,11:00,confirmed,
+APT-2175,CUS-177,Irene Taylor,irene.taylor37@email.com,408-555-5105,SVC-010,STF-002,2026-05-12,15:00,confirmed,
+APT-2176,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-013,STF-005,2026-05-12,11:30,cancelled,Package deal - session 3 of 5
+APT-2177,CUS-052,Maria Deng,maria.deng9@email.com,408-555-6421,SVC-003,STF-001,2026-05-12,14:30,confirmed,
+APT-2178,CUS-087,Wei Shin,wei.shin66@email.com,408-555-7807,SVC-007,STF-005,2026-05-12,10:00,confirmed,
+APT-2179,CUS-171,Skylar Johnson,skylar.johnson12@email.com,408-555-6236,SVC-006,STF-005,2026-05-12,14:00,confirmed,Late arrival - 15 min
+APT-2180,CUS-028,Alice Brown,alice.brown41@email.com,408-555-2188,SVC-011,STF-001,2026-05-12,13:30,confirmed,Combo booking with friend
+APT-2181,CUS-054,Tracy Moore,tracy.moore96@email.com,408-555-4613,SVC-018,STF-002,2026-05-12,13:00,confirmed,Requested extra hydration
+APT-2182,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-004,STF-001,2026-05-12,16:00,confirmed,Birthday treatment
+APT-2183,CUS-168,Natalie Harris,natalie.harris5@email.com,408-555-8371,SVC-011,STF-001,2026-05-12,10:30,confirmed,Requested extra hydration
+APT-2184,CUS-018,Rebecca Lewis,rebecca.lewis29@gmail.com,408-555-4750,SVC-007,STF-002,2026-05-13,16:00,confirmed,Prefers low music volume
+APT-2185,CUS-027,Tracy Clark,tracy.clark73@email.com,408-555-5272,SVC-023,STF-003,2026-05-13,13:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-2186,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-020,STF-002,2026-05-13,13:30,confirmed,Birthday treatment
+APT-2187,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-025,STF-004,2026-05-13,10:00,confirmed,Package deal - session 2 of 5
+APT-2188,CUS-129,Christine Yoon,christine.yoon87@email.com,408-555-8972,SVC-019,STF-002,2026-05-14,16:00,confirmed,
+APT-2189,CUS-158,Kelly Zhou,kelly.zhou68@email.com,408-555-9316,SVC-025,STF-004,2026-05-14,14:30,confirmed,Referred by existing client
+APT-2190,CUS-194,Isla Park,isla.park5@email.com,408-555-2800,SVC-008,STF-002,2026-05-14,10:30,confirmed,Package deal - session 3 of 5
+APT-2191,CUS-128,Emery Sun,emery.sun35@email.com,408-555-7947,SVC-010,STF-001,2026-05-14,13:30,confirmed,
+APT-2192,CUS-061,Nancy Lewis,nancy.lewis89@email.com,408-555-4978,SVC-024,STF-004,2026-05-14,10:00,cancelled,Cancelled within 24hrs - $50 fee
+APT-2193,CUS-082,Wendy Garcia,wendy.garcia45@email.com,408-555-6260,SVC-021,STF-002,2026-05-14,13:00,confirmed,Referred by existing client
+APT-2194,CUS-166,Jade Young,jade.young56@gmail.com,408-555-2229,SVC-010,STF-005,2026-05-14,15:30,confirmed,Package deal - session 2 of 5
+APT-2195,CUS-088,Mila Anderson,mila.anderson96@email.com,408-555-2143,SVC-008,STF-001,2026-05-14,11:30,confirmed,Requested extra hydration
+APT-2196,CUS-176,Lisa Smith,lisa.smith65@email.com,408-555-1907,SVC-023,STF-004,2026-05-14,15:00,confirmed,Birthday treatment
+APT-2197,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-011,STF-001,2026-05-14,14:00,confirmed,
+APT-2198,CUS-152,Mei Watanabe,mei.watanabe4@email.com,408-555-7495,SVC-018,STF-005,2026-05-15,14:30,cancelled,Requested extra hydration
+APT-2199,CUS-110,Pamela Li,pamela.li89@email.com,408-555-8264,SVC-024,STF-004,2026-05-15,10:30,confirmed,First-time client
+APT-2200,CUS-063,Jing Hu,jing.hu56@email.com,408-555-8532,SVC-014,STF-001,2026-05-15,11:30,confirmed,Follow-up session
+APT-2201,CUS-148,Emily Johnson,emily.johnson6@email.com,408-555-4891,SVC-015,STF-005,2026-05-15,10:00,confirmed,Prefers low music volume
+APT-2202,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-012,STF-002,2026-05-15,13:30,confirmed,Rescheduled from last week
+APT-2203,CUS-109,Qian Dang,qian.dang76@email.com,408-555-3531,SVC-017,STF-002,2026-05-15,15:30,confirmed,
+APT-2204,CUS-124,Irene White,irene.white48@outlook.com,408-555-4705,SVC-001,STF-005,2026-05-15,14:00,confirmed,
+APT-2205,CUS-195,Nicole Bui,nicole.bui65@email.com,408-555-8726,SVC-010,STF-002,2026-05-15,13:00,confirmed,
+APT-2206,CUS-066,Frances Kang,frances.kang77@email.com,408-555-5526,SVC-013,STF-002,2026-05-15,16:00,confirmed,Birthday treatment
+APT-2207,CUS-144,Ivy Hoang,ivy.hoang17@email.com,408-555-2388,SVC-020,STF-002,2026-05-15,11:00,confirmed,Prefers low music volume
+APT-2208,CUS-129,Christine Yoon,christine.yoon87@email.com,408-555-8972,SVC-024,STF-004,2026-05-16,11:00,confirmed,Referred by existing client
+APT-2209,CUS-102,Emery Luo,emery.luo81@gmail.com,408-555-6061,SVC-024,STF-004,2026-05-16,11:30,confirmed,Prepaid balance used
+APT-2210,CUS-019,Pamela Davis,pamela.davis28@email.com,408-555-8744,SVC-014,STF-005,2026-05-16,10:00,cancelled,
+APT-2211,CUS-145,Wendy Scott,wendy.scott86@email.com,408-555-6928,SVC-006,STF-001,2026-05-16,15:00,confirmed,Sensitive skin - gentle products
+APT-2212,CUS-198,Teresa Xie,teresa.xie89@email.com,408-555-6194,SVC-025,STF-004,2026-05-16,14:00,confirmed,Prefers low music volume
+APT-2213,CUS-009,Amanda Hill,amanda.hill64@email.com,408-555-8517,SVC-012,STF-005,2026-05-17,10:00,confirmed,
+APT-2214,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-020,STF-002,2026-05-17,14:00,confirmed,Sensitive skin - gentle products
+APT-2215,CUS-064,Janet Young,janet.young69@email.com,408-555-8616,SVC-020,STF-002,2026-05-17,15:30,confirmed,
+APT-2216,CUS-004,Amanda Sato,amanda.sato14@gmail.com,408-555-6881,SVC-004,STF-005,2026-05-17,11:30,confirmed,Birthday treatment
+APT-2217,CUS-102,Emery Luo,emery.luo81@gmail.com,408-555-6061,SVC-023,STF-003,2026-05-17,10:30,cancelled,Late arrival - 15 min
+APT-2218,CUS-109,Qian Dang,qian.dang76@email.com,408-555-3531,SVC-006,STF-005,2026-05-17,14:30,confirmed,Follow-up session
+APT-2219,CUS-163,Ivy Suzuki,ivy.suzuki35@outlook.com,408-555-8159,SVC-019,STF-002,2026-05-18,15:00,confirmed,
+APT-2220,CUS-069,Cynthia Guo,cynthia.guo96@email.com,408-555-4033,SVC-024,STF-003,2026-05-18,14:00,confirmed,Follow-up session
+APT-2221,CUS-002,Wendy Lewis,wendy.lewis55@gmail.com,408-555-4582,SVC-006,STF-005,2026-05-18,13:00,confirmed,
+APT-2222,CUS-199,Monica Hoang,monica.hoang45@email.com,408-555-3399,SVC-023,STF-003,2026-05-18,15:30,confirmed,Follow-up session
+APT-2223,CUS-188,Riley Guo,riley.guo17@email.com,408-555-7453,SVC-014,STF-001,2026-05-18,14:30,confirmed,
+APT-2224,CUS-051,Sharon Kang,sharon.kang57@outlook.com,408-555-4841,SVC-016,STF-001,2026-05-18,13:30,cancelled,Rescheduled from last week
+APT-2225,CUS-055,Nova Vo,nova.vo93@icloud.com,408-555-3091,SVC-006,STF-001,2026-05-18,10:00,confirmed,First-time client
+APT-2226,CUS-067,Evelyn Kim,evelyn.kim89@email.com,408-555-9041,SVC-014,STF-002,2026-05-18,16:00,cancelled,
+APT-2227,CUS-071,Rachel Martin,rachel.martin38@email.com,408-555-3068,SVC-003,STF-001,2026-05-19,10:30,confirmed,Prefers low music volume
+APT-2228,CUS-125,Riley Scott,riley.scott72@outlook.com,408-555-1474,SVC-022,STF-004,2026-05-19,13:00,confirmed,Sensitive skin - gentle products
+APT-2229,CUS-193,Luna Pan,luna.pan93@icloud.com,408-555-3793,SVC-001,STF-005,2026-05-19,16:00,confirmed,
+APT-2230,CUS-025,Qian Yang,qian.yang96@email.com,408-555-1821,SVC-007,STF-002,2026-05-19,14:00,confirmed,Combo booking with friend
+APT-2231,CUS-134,Betty Sato,betty.sato29@email.com,408-555-3754,SVC-025,STF-004,2026-05-19,10:00,confirmed,Package deal - session 2 of 5
+APT-2232,CUS-097,Riley Tran,riley.tran80@email.com,408-555-9153,SVC-020,STF-001,2026-05-20,14:00,confirmed,Package deal - session 2 of 5
+APT-2233,CUS-026,Tina Robinson,tina.robinson9@email.com,408-555-4853,SVC-001,STF-002,2026-05-20,13:30,confirmed,
+APT-2234,CUS-007,Paisley Scott,paisley.scott10@email.com,408-555-3803,SVC-020,STF-001,2026-05-20,15:30,confirmed,Requested extra hydration
+APT-2235,CUS-095,Rebecca Ma,rebecca.ma56@email.com,408-555-2646,SVC-015,STF-002,2026-05-20,15:00,confirmed,Prefers low music volume
+APT-2236,CUS-132,Cynthia Thompson,cynthia.thompson55@email.com,408-555-7843,SVC-014,STF-005,2026-05-20,11:00,confirmed,Package deal - session 2 of 5
+APT-2237,CUS-005,Ling Guo,ling.guo49@outlook.com,408-555-6925,SVC-021,STF-002,2026-05-20,10:30,confirmed,Package deal - session 2 of 5
+APT-2238,CUS-174,Paula Miller,paula.miller68@email.com,408-555-7708,SVC-015,STF-001,2026-05-20,16:00,confirmed,Combo booking with friend
+APT-2239,CUS-021,Angela Park,angela.park25@icloud.com,408-555-3296,SVC-012,STF-002,2026-05-20,11:30,cancelled,Prefers low music volume

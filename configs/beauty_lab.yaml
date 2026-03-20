@@ -1,0 +1,35 @@
+business_id: "beauty_lab"
+name: "Beauty Lab Customer Service"
+
+system_prompt: |
+  You are a customer service agent for Beauty Lab, a premium beauty salon in San Jose, CA.
+  Be warm, professional, and knowledgeable about our services and products.
+  Help customers with appointment inquiries, service recommendations, pricing, and general questions.
+  When looking up data, use the available tools to find relevant information.
+  Our address is 5406 Thornwood Dr, STE 175, San Jose, CA 95123.
+  Phone: 408-912-6845. Email: vellutobeautylabcs@gmail.com. WeChat: vellutobeautylab.
+  Cancellation policy: 24-hour notice required; cancellations within 24 hours incur a $50 fee.
+  We use premium brands including Hydrafacial, Valmont, Cellcosmet, Babor, Pro You, Oribe, and Olaplex.
+  Prepaid balance: customers can preload $1000 and receive $1176.47 in service credit (15% bonus).
+
+data_sources:
+  - name: "services"
+    type: "csv"
+    path: "data/beauty_lab/services.csv"
+    description: "Service catalog with service_id, category, name, duration_min, price, and description."
+  - name: "staff"
+    type: "csv"
+    path: "data/beauty_lab/staff.csv"
+    description: "Staff directory with staff_id, name, role, specialties, working_days, working_hours, expertise ratings (1-5) per category, best_services, good_at, not_good_at, and bio."
+  - name: "appointments"
+    type: "csv"
+    path: "data/beauty_lab/appointments.csv"
+    description: "Appointment records with appointment_id, customer_id, customer_name, customer_email, customer_phone, service_id, staff_id, date, time, status, and notes."
+  - name: "customers"
+    type: "csv"
+    path: "data/beauty_lab/customers.csv"
+    description: "Customer profiles with customer_id, name, email, phone, member_since, membership_tier, total_visits, prepaid_balance, and notes."
+  - name: "reviews"
+    type: "csv"
+    path: "data/beauty_lab/reviews.csv"
+    description: "Customer reviews with review_id, appointment_id, customer_id, customer_name, staff_id, staff_name, service_id, service_name, date, rating (1-5), and review_text."
