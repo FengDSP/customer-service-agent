@@ -10,7 +10,7 @@ from agent.logging import log_interaction
 
 load_dotenv()
 
-DEFAULT_MODEL = "claude-3-haiku-20240307"
+DEFAULT_MODEL = "claude-sonnet-4-6"
 
 
 def run_agent_loop(
