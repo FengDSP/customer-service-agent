@@ -17,7 +17,7 @@ def run_agent_loop(
     config: BusinessConfig,
     history: list[dict],
     message: str,
-    session_id: str,
+    customer_id: str,
 ) -> str:
     """Run the agent loop: call LLM, handle tool calls, return final reply."""
     client = anthropic.Anthropic()
@@ -67,7 +67,7 @@ def run_agent_loop(
             all_turns.append({"role": "assistant", "content": response.content})
 
             log_interaction(
-                session_id=session_id,
+                customer_id=customer_id,
                 business_id=config.business_id,
                 turns=all_turns,
                 model=model,
