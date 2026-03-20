@@ -10,8 +10,8 @@ Accepts a customer message and returns a draft reply.
 Request:
 ```json
 {
-  "session_id": "string",
   "business_id": "string",
+  "customer_id": "string",
   "message": "string"
 }
 ```
@@ -19,12 +19,12 @@ Request:
 Response:
 ```json
 {
-  "session_id": "string",
+  "customer_id": "string",
   "reply": "string"
 }
 ```
 
-- `session_id` tracks a multi-turn conversation. The backend maintains conversation history per session.
+- `customer_id` identifies the customer. Each customer has one active session, keyed by `customer_id`.
 - `business_id` determines which business config to load.
 
 ## Agent Loop
@@ -42,12 +42,12 @@ Data access is exposed to the LLM as tool calls. The available tools are determi
 ### CSV Lookup
 Reads from local CSV files. The business config specifies which CSV files are available and what they contain (e.g., orders, products, customers). The tool accepts a query description and returns matching rows.
 
-Tool definition and implementation details will evolve as the agent loop is built.
-
 ## Business Config
 
 Each business has a YAML file in `configs/`. See `docs/business-config.md` for the format.
 
 ## Session Storage
 
-Conversation history is stored in memory for now. Sessions are lost on restart. Persistent storage is out of scope until cloud hosting.
+Conversation histories are persisted to disk as JSONL files at `data/sessions/{business_id}/{customer_id}.jsonl`. Each message (user or assistant) is appended as a JSON line. On server restart, histories are loaded from disk automatically.
+
+An in-memory cache avoids re-reading files on every request within the same server process.

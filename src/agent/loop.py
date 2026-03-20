@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from agent.config import BusinessConfig
 from agent.csv_tool import build_tool_definitions, execute_csv_lookup
 from agent.logging import log_interaction
+from agent.session import append_message
 
 load_dotenv()
 
@@ -24,7 +25,9 @@ def run_agent_loop(
     model = os.getenv("LLM_MODEL", DEFAULT_MODEL)
     tools = build_tool_definitions(config)
 
-    history.append({"role": "user", "content": message})
+    user_msg = {"role": "user", "content": message}
+    history.append(user_msg)
+    append_message(config.business_id, customer_id, user_msg)
 
     messages = list(history)
     all_turns = list(history)
@@ -64,6 +67,7 @@ def run_agent_loop(
             reply_text = _extract_text(response)
             assistant_msg = {"role": "assistant", "content": reply_text}
             history.append(assistant_msg)
+            append_message(config.business_id, customer_id, assistant_msg)
             all_turns.append({"role": "assistant", "content": response.content})
 
             log_interaction(

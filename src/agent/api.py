@@ -26,7 +26,7 @@ def chat(req: ChatRequest):
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=f"Business '{req.business_id}' not found")
 
-    history = get_or_create_session(req.customer_id)
+    history = get_or_create_session(req.business_id, req.customer_id)
 
     try:
         reply = run_agent_loop(config, history, req.message, req.customer_id)
