@@ -13,31 +13,31 @@ def log_interaction(
     usage: dict,
     system_prompt: str,
 ) -> Path:
-    """Log an agent loop invocation to a JSON file."""
-    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    """Append an agent loop invocation as a JSONL line to logs/llm/{business_id}/{customer_id}.jsonl."""
+    business_dir = LOGS_DIR / _safe(business_id)
+    business_dir.mkdir(parents=True, exist_ok=True)
 
-    now = datetime.now()
-    timestamp = now.strftime("%Y%m%d_%H%M%S")
-    safe_customer_id = customer_id.replace("/", "_").replace("\\", "_")
-    filename = f"{timestamp}-{safe_customer_id}.json"
-    log_path = LOGS_DIR / filename
+    log_path = business_dir / f"{_safe(customer_id)}.jsonl"
 
-    serializable_turns = _make_serializable(turns)
-
-    log_data = {
+    log_entry = {
         "customer_id": customer_id,
         "business_id": business_id,
-        "timestamp": now.isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "system_prompt": system_prompt,
-        "turns": serializable_turns,
+        "turns": _make_serializable(turns),
         "model": model,
         "usage": usage,
     }
 
-    with open(log_path, "w") as f:
-        json.dump(log_data, f, indent=2, default=str)
+    with open(log_path, "a") as f:
+        f.write(json.dumps(log_entry, default=str) + "\n")
 
     return log_path
+
+
+def _safe(name: str) -> str:
+    """Sanitize a name for use as a file/directory name."""
+    return name.replace("/", "_").replace("\\", "_").replace("..", "_")
 
 
 def _make_serializable(turns: list[dict]) -> list[dict]:
