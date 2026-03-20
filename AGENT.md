@@ -65,7 +65,7 @@ Agents commit directly and push without waiting for human review.
 - Merge early and often. If a change is atomic and self-contained (e.g., a `.gitignore` update, a new config file, a standalone utility), open a PR and merge it immediately. Do not batch unrelated changes.
 - Push the branch and open a PR at meaningful checkpoints — do not wait until the entire plan is complete.
 - PR description should summarize what was done and link to the plan file.
-- Merge your own PR into `main` once CI passes (or immediately if no CI is set up yet). Do not wait for human review.
+- Merge your own PR into `main` once CI passes (or immediately if no CI is set up yet). Do not wait for human review. Push to remote immediately after merging.
 - The human reviews code asynchronously after merge. If issues are found, they will be addressed in a follow-up plan.
 
 ## Code Practices
