@@ -1,0 +1,9 @@
+order_id,customer_email,status,order_date,total,items
+ORD-1001,alice@example.com,delivered,2026-03-10,59.98,"Blue Widget x2"
+ORD-1002,bob@example.com,shipped,2026-03-15,124.99,"Red Gadget x1, Green Widget x1"
+ORD-1003,alice@example.com,processing,2026-03-18,29.99,"Yellow Widget x1"
+ORD-1004,carol@example.com,cancelled,2026-03-12,89.97,"Blue Widget x3"
+ORD-1005,dave@example.com,delivered,2026-03-08,249.95,"Premium Gadget x1"
+ORD-1006,eve@example.com,shipped,2026-03-17,44.98,"Green Widget x2"
+ORD-1007,bob@example.com,processing,2026-03-19,174.98,"Red Gadget x1, Premium Gadget x1"
+ORD-1008,frank@example.com,delivered,2026-03-05,14.99,"Yellow Widget x1"

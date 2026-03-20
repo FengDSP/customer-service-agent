@@ -1,0 +1,7 @@
+sku,name,price,category,in_stock
+SKU-001,Blue Widget,29.99,Widgets,true
+SKU-002,Red Gadget,99.99,Gadgets,true
+SKU-003,Green Widget,24.99,Widgets,true
+SKU-004,Yellow Widget,14.99,Widgets,false
+SKU-005,Premium Gadget,199.99,Gadgets,true
+SKU-006,Mini Widget,9.99,Widgets,true
