@@ -5,7 +5,7 @@ import anthropic
 from dotenv import load_dotenv
 
 from agent.config import BusinessConfig
-from agent.csv_tool import build_tool_definitions, execute_csv_lookup
+from agent.csv_tool import build_tool_definitions, execute_csv_lookup, execute_grep
 from agent.logging import log_interaction
 from agent.prompt import build_user_prompt
 from agent.session import append_message
@@ -91,6 +91,8 @@ def run_agent_loop(
 def _dispatch_tool(config: BusinessConfig, tool_name: str, args: dict) -> str:
     if tool_name.startswith("lookup_"):
         return execute_csv_lookup(config, tool_name, args)
+    if tool_name == "grep_data":
+        return execute_grep(config, args)
     return json.dumps({"error": f"Unknown tool: {tool_name}"})
 
 
@@ -106,13 +108,26 @@ def _parse_response(text: str) -> dict:
     """Parse JSON response from LLM, with fallback for plain text."""
     text = text.strip()
 
-    # Strip markdown code fences if present
-    if text.startswith("```"):
-        lines = text.split("\n")
-        lines = lines[1:]  # remove opening fence
-        if lines and lines[-1].strip() == "```":
-            lines = lines[:-1]
-        text = "\n".join(lines).strip()
+    # Try to extract JSON from code fences anywhere in the text
+    import re
+    fence_match = re.search(r"```(?:json)?\s*\n(.*?)\n\s*```", text, re.DOTALL)
+    if fence_match:
+        text = fence_match.group(1).strip()
+
+    # Try to find a JSON object in the text
+    if not text.startswith("{"):
+        brace_start = text.find("{")
+        if brace_start != -1:
+            # Find the matching closing brace
+            depth = 0
+            for i in range(brace_start, len(text)):
+                if text[i] == "{":
+                    depth += 1
+                elif text[i] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        text = text[brace_start:i + 1]
+                        break
 
     try:
         data = json.loads(text)
