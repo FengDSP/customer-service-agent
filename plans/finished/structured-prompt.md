@@ -72,32 +72,32 @@ Respond with a JSON object in this exact format:
 ## Tasks
 
 ### Add timestamps to messages
-- [ ] Store timestamps with each message in session history (`{"role": "...", "content": "...", "timestamp": "..."}`)
-- [ ] Update `append_message` and session loading to handle the timestamp field
+- [x] Store timestamps with each message in session history (`{"role": "...", "content": "...", "timestamp": "..."}`)
+- [x] Update `append_message` and session loading to handle the timestamp field
 
 ### Build prompt template
-- [ ] Create `src/agent/prompt.py` with a function that builds the structured user prompt from: customer message, history, config, customer_id, current time
-- [ ] Implement the last-20-messages windowing
-- [ ] For v1, summarize older messages by concatenating them into a brief text block (no separate LLM call yet)
+- [x] Create `src/agent/prompt.py` with a function that builds the structured user prompt from: customer message, history, config, customer_id, current time
+- [x] Implement the last-20-messages windowing
+- [x] For v1, summarize older messages by concatenating them into a brief text block (no separate LLM call yet)
 
 ### Update agent loop
-- [ ] Change the agent loop to send a single structured user message (from the template) instead of raw conversation history
-- [ ] The system prompt stays in the system field (business-specific instructions)
-- [ ] Parse the JSON response to extract `draft_reply` and other fields
-- [ ] Store the full structured response in the session and logs
+- [x] Change the agent loop to send a single structured user message (from the template) instead of raw conversation history
+- [x] The system prompt stays in the system field (business-specific instructions)
+- [x] Parse the JSON response to extract `draft_reply` and other fields
+- [x] Store the full structured response in the session and logs
 
 ### Update API response
-- [ ] Extend `ChatResponse` to include `internal_note`, `confidence`, `needs_human_review`, `suggested_actions`
-- [ ] Keep `reply` as the primary field (mapped from `draft_reply`)
+- [x] Extend `ChatResponse` to include `internal_note`, `confidence`, `needs_human_review`, `suggested_actions`
+- [x] Keep `reply` as the primary field (mapped from `draft_reply`)
 
 ### Update tests
-- [ ] Unit tests for the prompt builder
-- [ ] Update API tests for new response shape
-- [ ] Update e2e test assertions
+- [x] Unit tests for the prompt builder
+- [x] Update API tests for new response shape
+- [x] Update e2e test assertions
 
 ### Update docs
-- [ ] Document the prompt template format in `docs/backend.md`
-- [ ] Document the JSON response schema
+- [x] Document the prompt template format in `docs/backend.md`
+- [x] Document the JSON response schema
 
 ## Notes
 - The system prompt (from business config) remains separate — it defines tone, policies, etc.

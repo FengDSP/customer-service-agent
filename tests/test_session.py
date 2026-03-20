@@ -41,8 +41,11 @@ def test_append_and_reload():
 
     history = get_or_create_session(TEST_BIZ, TEST_CUST)
     assert len(history) == 2
-    assert history[0] == {"role": "user", "content": "hello"}
-    assert history[1] == {"role": "assistant", "content": "hi there"}
+    assert history[0]["role"] == "user"
+    assert history[0]["content"] == "hello"
+    assert "timestamp" in history[0]
+    assert history[1]["role"] == "assistant"
+    assert history[1]["content"] == "hi there"
 
 
 def test_session_file_is_jsonl():

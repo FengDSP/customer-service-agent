@@ -17,6 +17,10 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     customer_id: str
     reply: str
+    internal_note: str = ""
+    confidence: str = "medium"
+    needs_human_review: bool = False
+    suggested_actions: list[str] = []
 
 
 @app.post("/chat", response_model=ChatResponse)
@@ -24,13 +28,22 @@ def chat(req: ChatRequest):
     try:
         config = load_business_config(req.business_id)
     except FileNotFoundError:
-        raise HTTPException(status_code=404, detail=f"Business '{req.business_id}' not found")
+        raise HTTPException(
+            status_code=404, detail=f"Business '{req.business_id}' not found"
+        )
 
     history = get_or_create_session(req.business_id, req.customer_id)
 
     try:
-        reply = run_agent_loop(config, history, req.message, req.customer_id)
+        result = run_agent_loop(config, history, req.message, req.customer_id)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-    return ChatResponse(customer_id=req.customer_id, reply=reply)
+    return ChatResponse(
+        customer_id=req.customer_id,
+        reply=result["draft_reply"],
+        internal_note=result.get("internal_note", ""),
+        confidence=result.get("confidence", "medium"),
+        needs_human_review=result.get("needs_human_review", False),
+        suggested_actions=result.get("suggested_actions", []),
+    )
