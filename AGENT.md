@@ -91,8 +91,8 @@ All LLM API calls made by the backend service (not by the agent harness) are log
 Since agents work in parallel on separate branches, merge conflicts can happen.
 
 - Keep your changes scoped to your plan to minimize conflicts.
-- If your branch falls behind `main`, rebase before opening the PR.
-- If two plans touch the same files, the human will resolve conflicts during merge.
+- Merge latest `main` into your branch every 10 minutes during an active session. Resolve conflicts immediately — if a conflict is non-trivial, note it in your plan and ask the human.
+- If two plans touch the same files, the earlier merge wins. The later agent resolves conflicts on their branch.
 
 ## Cross-Agent Plan Changes
 
