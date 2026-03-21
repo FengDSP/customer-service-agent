@@ -40,11 +40,21 @@ This tells the UI which data sources to show in the right sidebar, filtered to t
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| `POST /messages` | POST | Record a customer message (no agent loop). Body: `{business_id, customer_id, message}`. Used by CLI `--as-customer` mode. |
+| `POST /messages` | POST | Record a customer message (no agent loop). Body: `{business_id, customer_id, message}`. Used by CLI `--as-customer` mode. After recording, notifies SSE clients. |
 | `GET /conversations/{biz}/pending` | GET | List all customers with messages, unreplied first. Returns customer_id, name, last_message, last_timestamp, has_unreplied flag. |
 | `GET /conversations/{biz}/{customer}/context` | GET | Customer context: for each data source in `cs_view_sources`, return the CSV rows matching this customer_id. Returns `{source_name: {columns: [...], rows: [...]}}`. |
 | `POST /conversations/{biz}/{customer}/draft` | POST | Generate a draft reply by running the agent loop on the latest unreplied message. Returns the draft + metadata (confidence, internal note, suggested actions). |
 | `POST /conversations/{biz}/{customer}/send` | POST | Record the approved reply in the session. Body: `{reply}`. |
+| `GET /conversations/{biz}/events` | GET | SSE endpoint. Streams real-time events when new customer messages arrive. Event data: `{customer_id, message, timestamp}`. Uses `asyncio.Queue` per connection; `POST /messages` pushes to all connected queues. |
+
+### Real-time updates (SSE)
+
+When a customer message arrives via `POST /messages`, the backend pushes an SSE event to all connected clients for that business. The frontend uses the browser-native `EventSource` API to listen:
+
+- **Customer list page**: on event, re-fetches the pending list to update order and unreplied indicators.
+- **Chat view page**: on event matching the current customer, appends the new message to the conversation and auto-triggers draft generation.
+
+Implementation: an in-memory dict of `{business_id: list[asyncio.Queue]}`. `POST /messages` pushes to all queues for the business. The SSE endpoint reads from its queue and yields `text/event-stream` lines. Queues are removed on client disconnect.
 
 ### Frontend pages (new)
 
@@ -66,6 +76,7 @@ Add `--as-customer` flag to CLI. When set, just calls `POST /messages` to record
 - [ ] Add `POST /conversations/{biz}/{customer}/draft` — run agent loop, return draft
 - [ ] Add `POST /conversations/{biz}/{customer}/send` — record approved reply in session
 - [ ] Add `--as-customer` flag to CLI
+- [ ] Add `GET /conversations/{biz}/events` SSE endpoint with in-memory pub/sub
 
 ### Frontend
 - [ ] Add "Chat With Customers" nav item to admin layout
@@ -73,7 +84,7 @@ Add `--as-customer` flag to CLI. When set, just calls `POST /messages` to record
 - [ ] Build chat view page (`/admin/chat/[customerId]`) — conversation history display
 - [ ] Build draft area — editable text area with Send button, auto-generates draft on load
 - [ ] Build right sidebar — customer context tables from configured CSV sources
-- [ ] Polling or refresh for new messages (simple: refresh button or periodic fetch)
+- [ ] SSE integration — connect to `/conversations/{biz}/events` via `EventSource`, re-fetch data on events
 
 ### Tests
 - [ ] Unit tests for new backend endpoints
