@@ -128,7 +128,9 @@ def main():
     parser.add_argument("--business", help="Business ID to use")
     parser.add_argument("--customer", help="Customer ID")
     parser.add_argument("--url", default=DEFAULT_URL, help=f"Backend URL (default: {DEFAULT_URL})")
-    parser.add_argument("--list-businesses", action="store_true", help="List available businesses and exit")
+    parser.add_argument(
+        "--list-businesses", action="store_true", help="List available businesses and exit"
+    )
     parser.add_argument(
         "--auto-approve", action="store_true", help="Skip draft review, print replies directly"
     )
