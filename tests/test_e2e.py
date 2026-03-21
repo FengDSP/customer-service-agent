@@ -87,3 +87,66 @@ def test_session_continuity(server):
 def test_llm_logs_created(server):
     log_files = list(LOGS_DIR.rglob("*.jsonl"))
     assert len(log_files) >= 1, f"Expected log files, found {len(log_files)}"
+
+
+# --- CS Worker flow e2e ---
+
+CS_BIZ = "beauty_lab"
+CS_CUST = "e2e-cs-worker"
+
+
+def test_cs_worker_full_flow(server):
+    """E2e: post customer message → appears in pending → generate draft → send reply → verify."""
+
+    # 1. Post a customer message (simulates CLI --as-customer)
+    resp = httpx.post(
+        f"{BASE_URL}/messages",
+        json={"business_id": CS_BIZ, "customer_id": CS_CUST, "message": "When is my next appointment?"},
+        timeout=10.0,
+    )
+    assert resp.status_code == 200
+
+    # 2. Verify customer appears in pending list with unreplied flag
+    resp = httpx.get(f"{BASE_URL}/conversations/{CS_BIZ}/pending", timeout=10.0)
+    assert resp.status_code == 200
+    pending = resp.json()
+    found = [c for c in pending if c["customer_id"] == CS_CUST]
+    assert len(found) == 1, f"Expected {CS_CUST} in pending, got {[c['customer_id'] for c in pending]}"
+    assert found[0]["has_unreplied"] is True
+
+    # 3. Check customer context returns data
+    resp = httpx.get(f"{BASE_URL}/conversations/{CS_BIZ}/{CS_CUST}/context", timeout=10.0)
+    assert resp.status_code == 200
+
+    # 4. Generate a draft reply (hits real LLM)
+    resp = httpx.post(
+        f"{BASE_URL}/conversations/{CS_BIZ}/{CS_CUST}/draft",
+        timeout=60.0,
+    )
+    assert resp.status_code == 200
+    draft = resp.json()
+    assert len(draft["reply"]) > 0
+    assert "confidence" in draft
+
+    # 5. Send the approved reply
+    resp = httpx.post(
+        f"{BASE_URL}/conversations/{CS_BIZ}/{CS_CUST}/send",
+        json={"reply": draft["reply"]},
+        timeout=10.0,
+    )
+    assert resp.status_code == 200
+
+    # 6. Verify reply is recorded in session history
+    resp = httpx.get(f"{BASE_URL}/history/{CS_BIZ}/{CS_CUST}", timeout=10.0)
+    assert resp.status_code == 200
+    history = resp.json()
+    assert len(history) == 2
+    assert history[0]["role"] == "user"
+    assert history[1]["role"] == "assistant"
+    assert history[1]["content"] == draft["reply"]
+
+    # 7. Verify no longer unreplied in pending
+    resp = httpx.get(f"{BASE_URL}/conversations/{CS_BIZ}/pending", timeout=10.0)
+    found = [c for c in resp.json() if c["customer_id"] == CS_CUST]
+    assert len(found) == 1
+    assert found[0]["has_unreplied"] is False
