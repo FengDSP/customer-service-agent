@@ -14,38 +14,39 @@ def build_tool_definitions(config: BusinessConfig) -> list[dict]:
     for ds in config.data_sources:
         csv_path = PROJECT_ROOT / ds.path
         meta = _get_file_metadata(csv_path)
-        tools.append({
-            "name": f"lookup_{ds.name}",
-            "description": (
-                f"Look up data from {ds.name}. {ds.description}\n"
-                f"File: {meta['rows']} rows, {meta['size_human']}.\n"
-                f"Columns: {meta['columns_desc']}\n"
-                f"Filter by column+value or search with a keyword."
-            ),
-            "input_schema": {
-                "type": "object",
-                "properties": {
-                    "column": {
-                        "type": "string",
-                        "description": (
-                            "Column to filter on. One of: "
-                            + ", ".join(meta["columns"])
-                        ),
-                    },
-                    "value": {
-                        "type": "string",
-                        "description": "Value to match (case-insensitive substring match).",
-                    },
-                    "keyword": {
-                        "type": "string",
-                        "description": (
-                            "Search keyword across all columns "
-                            "(use instead of column+value for broad search)."
-                        ),
+        tools.append(
+            {
+                "name": f"lookup_{ds.name}",
+                "description": (
+                    f"Look up data from {ds.name}. {ds.description}\n"
+                    f"File: {meta['rows']} rows, {meta['size_human']}.\n"
+                    f"Columns: {meta['columns_desc']}\n"
+                    f"Filter by column+value or search with a keyword."
+                ),
+                "input_schema": {
+                    "type": "object",
+                    "properties": {
+                        "column": {
+                            "type": "string",
+                            "description": (
+                                "Column to filter on. One of: " + ", ".join(meta["columns"])
+                            ),
+                        },
+                        "value": {
+                            "type": "string",
+                            "description": "Value to match (case-insensitive substring match).",
+                        },
+                        "keyword": {
+                            "type": "string",
+                            "description": (
+                                "Search keyword across all columns "
+                                "(use instead of column+value for broad search)."
+                            ),
+                        },
                     },
                 },
-            },
-        })
+            }
+        )
 
     # Add grep tool that searches across all data files
     tools.append(_build_grep_tool(config))

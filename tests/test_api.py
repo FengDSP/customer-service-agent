@@ -16,11 +16,14 @@ MOCK_RESULT = {
 
 
 def test_chat_invalid_business():
-    resp = client.post("/chat", json={
-        "business_id": "nonexistent",
-        "customer_id": "alice@example.com",
-        "message": "hello",
-    })
+    resp = client.post(
+        "/chat",
+        json={
+            "business_id": "nonexistent",
+            "customer_id": "alice@example.com",
+            "message": "hello",
+        },
+    )
     assert resp.status_code == 404
 
 
@@ -28,11 +31,14 @@ def test_chat_invalid_business():
 def test_chat_success(mock_loop):
     mock_loop.return_value = MOCK_RESULT
 
-    resp = client.post("/chat", json={
-        "business_id": "acme_retail",
-        "customer_id": "alice@example.com",
-        "message": "Hi there",
-    })
+    resp = client.post(
+        "/chat",
+        json={
+            "business_id": "acme_retail",
+            "customer_id": "alice@example.com",
+            "message": "Hi there",
+        },
+    )
     assert resp.status_code == 200
     data = resp.json()
     assert data["customer_id"] == "alice@example.com"
@@ -51,11 +57,14 @@ def test_chat_session_continuity(mock_loop):
         "needs_human_review": False,
         "suggested_actions": [],
     }
-    resp1 = client.post("/chat", json={
-        "business_id": "acme_retail",
-        "customer_id": "continuity-test@example.com",
-        "message": "First message",
-    })
+    resp1 = client.post(
+        "/chat",
+        json={
+            "business_id": "acme_retail",
+            "customer_id": "continuity-test@example.com",
+            "message": "First message",
+        },
+    )
     assert resp1.json()["customer_id"] == "continuity-test@example.com"
 
     mock_loop.return_value = {
@@ -65,11 +74,14 @@ def test_chat_session_continuity(mock_loop):
         "needs_human_review": True,
         "suggested_actions": ["escalate"],
     }
-    resp2 = client.post("/chat", json={
-        "business_id": "acme_retail",
-        "customer_id": "continuity-test@example.com",
-        "message": "Second message",
-    })
+    resp2 = client.post(
+        "/chat",
+        json={
+            "business_id": "acme_retail",
+            "customer_id": "continuity-test@example.com",
+            "message": "Second message",
+        },
+    )
     data2 = resp2.json()
     assert data2["customer_id"] == "continuity-test@example.com"
     assert data2["reply"] == "Second reply"

@@ -47,10 +47,7 @@ def test_prompt_no_history_section_when_empty():
 
 
 def test_prompt_windows_long_history():
-    history = [
-        {"role": "user", "content": f"msg {i}"}
-        for i in range(30)
-    ]
+    history = [{"role": "user", "content": f"msg {i}"} for i in range(30)]
     prompt = build_user_prompt("new msg", history, _config(), "cust1")
     assert "<older_conversation_summary>" in prompt
     assert "10 earlier messages" in prompt

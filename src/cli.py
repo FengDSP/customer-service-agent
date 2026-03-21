@@ -11,7 +11,9 @@ DEFAULT_URL = "http://localhost:8000"
 def main():
     parser = argparse.ArgumentParser(description="Customer service agent CLI")
     parser.add_argument("--business", required=True, help="Business ID to use")
-    parser.add_argument("--customer", required=True, help="Customer ID (e.g., email or unique identifier)")
+    parser.add_argument(
+        "--customer", required=True, help="Customer ID (e.g., email or unique identifier)"
+    )
     parser.add_argument("--url", default=DEFAULT_URL, help=f"Backend URL (default: {DEFAULT_URL})")
     args = parser.parse_args()
 
