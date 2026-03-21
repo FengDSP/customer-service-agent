@@ -46,9 +46,9 @@ Every plan **must** include at least one verifiable end-to-end test in its task 
 ### Plan Lifecycle
 
 1. Pick a plan from `plans/to-do/`.
-2. Move it to `plans/in-progress/` and note the branch name in the file.
+2. Move it to `plans/in-progress/` and note the branch name in the file. **Commit this move, push, create a PR, and merge it to `main` immediately — before doing any actual work on the plan.** This signals to other agents that the plan is taken.
 3. Work through the tasks. Update checkboxes and the Notes section as you go.
-4. When done, move the plan to `plans/finished/`.
+4. When done, move the plan to `plans/finished/`. **Commit this move, push, create a PR, and merge it to `main` immediately** so other agents see the plan is complete.
 
 If a plan is in `plans/in-progress/`, it is taken — pick a different one.
 
@@ -71,6 +71,8 @@ Agents commit to their feature branch and merge to `main` via PRs.
 - Merge early and often. If a change is atomic and self-contained (e.g., a `.gitignore` update, a new config file, a standalone utility), open a PR and merge it immediately. Do not batch unrelated changes.
 
 ### PR workflow
+
+Every git commit must be immediately followed by a push, then a PR creation, then a PR merge. Do not batch these steps or delay any of them.
 
 1. Push your feature branch to the remote: `git push origin HEAD -u`
 2. Create a PR with `gh pr create` targeting `main`. PR description should summarize what was done and link to the plan file.
