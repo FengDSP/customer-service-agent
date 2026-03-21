@@ -76,3 +76,33 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python -m pytest tests/test_e2e.py -v
+
+  playwright-tests:
+    needs: check-changes
+    if: needs.check-changes.outputs.should_run == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Python dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Install frontend dependencies
+        working-directory: src/frontend/web
+        run: npm ci
+
+      - name: Install Playwright browsers
+        working-directory: src/frontend/web
+        run: npx playwright install chromium
+
+      - name: Run Playwright tests
+        working-directory: src/frontend/web
+        run: npx playwright test
