@@ -7,7 +7,7 @@ A **copilot** for human customer service agents — not a fully autonomous chatb
 ## Quick Start
 
 ```bash
-# 1. Install dependencies
+# 1. Install Python dependencies
 pip install -e ".[dev]"
 
 # 2. Set up your API key
@@ -22,6 +22,17 @@ python -m cli --business beauty_lab --customer CUS-001
 ```
 
 The CLI shows each draft for review before it's "sent." Use `--auto-approve` to skip review (for testing only).
+
+### Admin UI
+
+```bash
+# Requires Node.js (brew install node)
+cd src/frontend/web
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 to browse LLM call logs, inspect conversations, and replay individual LLM calls with edited prompts. See `docs/admin-ui.md` for details.
 
 ## How It Works
 
@@ -38,13 +49,16 @@ The agent is fast at pulling data and composing responses. The human ensures acc
 ```
 src/
   agent/          # Backend service
-    api.py        # FastAPI endpoints (POST /chat)
+    api.py        # FastAPI endpoints (POST /chat, /admin/*)
     loop.py       # Agent loop (LLM + tool calls)
     config.py     # Business config loader
     csv_tool.py   # CSV data lookup tool
+    log_reader.py # Log reading/parsing for admin UI
     logging.py    # LLM call logging (JSONL)
     session.py    # Session management
   cli.py          # CLI client with draft review
+  frontend/
+    web/          # Next.js admin UI
 configs/          # Business configs (YAML per business)
 data/             # CSV data files per business
 scripts/          # Data generation scripts
