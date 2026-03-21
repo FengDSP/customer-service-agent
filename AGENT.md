@@ -75,7 +75,7 @@ Agents commit to their feature branch and merge to `main` via PRs.
 Every git commit must be immediately followed by a push, then a PR creation, then a PR merge. Do not batch these steps or delay any of them.
 
 1. Push your feature branch to the remote: `git push origin HEAD -u`
-2. Create a PR with `gh pr create` targeting `main`. PR description should summarize what was done and link to the plan file.
+2. Create a PR with `gh pr create` targeting `main`. PR description should summarize what was done and link to the plan file (e.g., `plans/in-progress/my-plan.md`).
 3. Merge immediately with `gh pr merge <number> --merge`. Do not wait for human review. If CI is set up, wait for it to pass first.
 4. Do not wait until the entire plan is complete — open and merge PRs at meaningful checkpoints.
 
