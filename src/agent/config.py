@@ -16,6 +16,7 @@ class BusinessConfig(BaseModel):
     name: str
     system_prompt: str
     data_sources: list[DataSource]
+    cs_view_sources: list[str] = []
 
 
 CONFIGS_DIR = Path(__file__).resolve().parent.parent.parent / "configs"

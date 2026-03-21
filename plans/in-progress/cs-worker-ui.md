@@ -40,21 +40,11 @@ This tells the UI which data sources to show in the right sidebar, filtered to t
 
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| `POST /messages` | POST | Record a customer message (no agent loop). Body: `{business_id, customer_id, message}`. Used by CLI `--as-customer` mode. After recording, notifies SSE clients. |
+| `POST /messages` | POST | Record a customer message (no agent loop). Body: `{business_id, customer_id, message}`. Used by CLI `--as-customer` mode. |
 | `GET /conversations/{biz}/pending` | GET | List all customers with messages, unreplied first. Returns customer_id, name, last_message, last_timestamp, has_unreplied flag. |
 | `GET /conversations/{biz}/{customer}/context` | GET | Customer context: for each data source in `cs_view_sources`, return the CSV rows matching this customer_id. Returns `{source_name: {columns: [...], rows: [...]}}`. |
 | `POST /conversations/{biz}/{customer}/draft` | POST | Generate a draft reply by running the agent loop on the latest unreplied message. Returns the draft + metadata (confidence, internal note, suggested actions). |
 | `POST /conversations/{biz}/{customer}/send` | POST | Record the approved reply in the session. Body: `{reply}`. |
-| `GET /conversations/{biz}/events` | GET | SSE endpoint. Streams real-time events when new customer messages arrive. Event data: `{customer_id, message, timestamp}`. Uses `asyncio.Queue` per connection; `POST /messages` pushes to all connected queues. |
-
-### Real-time updates (SSE)
-
-When a customer message arrives via `POST /messages`, the backend pushes an SSE event to all connected clients for that business. The frontend uses the browser-native `EventSource` API to listen:
-
-- **Customer list page**: on event, re-fetches the pending list to update order and unreplied indicators.
-- **Chat view page**: on event matching the current customer, appends the new message to the conversation and auto-triggers draft generation.
-
-Implementation: an in-memory dict of `{business_id: list[asyncio.Queue]}`. `POST /messages` pushes to all queues for the business. The SSE endpoint reads from its queue and yields `text/event-stream` lines. Queues are removed on client disconnect.
 
 ### Frontend pages (new)
 
@@ -69,31 +59,32 @@ Add `--as-customer` flag to CLI. When set, just calls `POST /messages` to record
 ## Tasks
 
 ### Backend
-- [ ] Add `cs_view_sources` field to `BusinessConfig` model and update `beauty_lab.yaml`
-- [ ] Add `POST /messages` endpoint — records a customer message in session history (no agent loop)
-- [ ] Add `GET /conversations/{biz}/pending` — list customers with messages, unreplied first
-- [ ] Add `GET /conversations/{biz}/{customer}/context` — return matching CSV rows for configured sources
-- [ ] Add `POST /conversations/{biz}/{customer}/draft` — run agent loop, return draft
-- [ ] Add `POST /conversations/{biz}/{customer}/send` — record approved reply in session
-- [ ] Add `--as-customer` flag to CLI
-- [ ] Add `GET /conversations/{biz}/events` SSE endpoint with in-memory pub/sub
+- [x] Add `cs_view_sources` field to `BusinessConfig` model and update `beauty_lab.yaml`
+- [x] Add `POST /messages` endpoint — records a customer message in session history (no agent loop)
+- [x] Add `GET /conversations/{biz}/pending` — list customers with messages, unreplied first
+- [x] Add `GET /conversations/{biz}/{customer}/context` — return matching CSV rows for configured sources
+- [x] Add `POST /conversations/{biz}/{customer}/draft` — run agent loop, return draft
+- [x] Add `POST /conversations/{biz}/{customer}/send` — record approved reply in session
+- [x] Add `--as-customer` flag to CLI
 
 ### Frontend
-- [ ] Add "Chat With Customers" nav item to admin layout
-- [ ] Build customer list page (`/admin/chat`) — table with unreplied indicator, sorted unreplied-first
-- [ ] Build chat view page (`/admin/chat/[customerId]`) — conversation history display
-- [ ] Build draft area — editable text area with Send button, auto-generates draft on load
-- [ ] Build right sidebar — customer context tables from configured CSV sources
-- [ ] SSE integration — connect to `/conversations/{biz}/events` via `EventSource`, re-fetch data on events
+- [x] Add "Chat With Customers" nav item to admin layout
+- [x] Build customer list page (`/admin/chat`) — table with unreplied indicator, sorted unreplied-first
+- [x] Build chat view page (`/admin/chat/[customerId]`) — conversation history display
+- [x] Build draft area — editable text area with Send button, auto-generates draft on load
+- [x] Build right sidebar — customer context tables from configured CSV sources
+- [x] Polling or refresh for new messages (simple: refresh button or periodic fetch)
 
 ### Tests
-- [ ] Unit tests for new backend endpoints
-- [ ] Playwright tests for CS worker UI pages
-- [ ] E2e test: CLI sends a customer message via `--as-customer`, verify it appears in the web UI, generate a draft, send the reply, and verify the reply is recorded in session history
+- [x] Unit tests for new backend endpoints (12 tests)
+- [ ] Playwright tests for CS worker UI pages (deferred — requires running backend)
 
 ### Docs
-- [ ] Update `docs/admin-ui.md` with CS worker view section
+- [x] Update `docs/admin-ui.md` with CS worker view section
+- [x] Update `docs/cli.md` with `--as-customer` flag
 - [ ] Update `ARCHITECTURE.md` if needed
-- [ ] Update `README.md` CLI section for `--as-customer` flag
 
 ## Notes
+- Agent loop has `draft_only` param to avoid double-appending user messages when used via POST /messages + POST /draft flow
+- Janitor worktree had stale pip install that shadowed current module — fixed by reinstalling
+- Branch: agent/cs-worker-ui

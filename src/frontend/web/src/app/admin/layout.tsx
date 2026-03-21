@@ -15,7 +15,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
 function AdminLayoutInner({ children }: { children: React.ReactNode }) {
   const [businesses, setBusinesses] = useState<Business[]>([]);
-  const [selectedBiz, setSelectedBiz] = useState("");
+  const [selectedBiz, setSelectedBiz] = useState(searchParams.get("biz") || "");
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -38,7 +38,12 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
   function handleBizChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const biz = e.target.value;
     setSelectedBiz(biz);
-    router.push(`/admin/logs?biz=${biz}`);
+    // Stay on current section when switching business
+    if (pathname.startsWith("/admin/chat")) {
+      router.push(`/admin/chat?biz=${biz}`);
+    } else {
+      router.push(`/admin/logs?biz=${biz}`);
+    }
   }
 
   return (
@@ -63,6 +68,18 @@ function AdminLayoutInner({ children }: { children: React.ReactNode }) {
         {/* Left nav */}
         <nav className="w-52 border-r border-gray-200 bg-white p-4">
           <ul className="space-y-1">
+            <li>
+              <Link
+                href={`/admin/chat?biz=${selectedBiz}`}
+                className={`block rounded px-3 py-2 text-sm ${
+                  pathname.startsWith("/admin/chat")
+                    ? "bg-blue-50 font-medium text-blue-700"
+                    : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                Chat With Customers
+              </Link>
+            </li>
             <li>
               <Link
                 href={`/admin/logs?biz=${selectedBiz}`}
