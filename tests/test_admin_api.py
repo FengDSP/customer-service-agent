@@ -34,12 +34,19 @@ SAMPLE_LOG_2 = {
         {
             "role": "assistant",
             "content": [
-                {"type": "tool_use", "id": "t1", "name": "lookup_appointments", "input": {"query": "available"}},
+                {
+                    "type": "tool_use",
+                    "id": "t1",
+                    "name": "lookup_appointments",
+                    "input": {"query": "available"},
+                },
             ],
         },
         {
             "role": "user",
-            "content": [{"type": "tool_result", "tool_use_id": "t1", "content": "March 25 at 10am"}],
+            "content": [
+                {"type": "tool_result", "tool_use_id": "t1", "content": "March 25 at 10am"}
+            ],
         },
         {
             "role": "assistant",
