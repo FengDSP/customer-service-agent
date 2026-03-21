@@ -33,7 +33,12 @@ def run_agent_loop(
     client = anthropic.Anthropic()
     model = os.getenv("LLM_MODEL", DEFAULT_MODEL)
     tools = build_tool_definitions(config)
-    logger.info("Starting agent loop: model=%s, tools=%d, draft_only=%s", model, len(tools), draft_only)
+    logger.info(
+        "Starting agent loop: model=%s, tools=%d, draft_only=%s",
+        model,
+        len(tools),
+        draft_only,
+    )
 
     if not draft_only:
         user_msg = {"role": "user", "content": message}

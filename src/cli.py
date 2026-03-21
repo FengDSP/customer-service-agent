@@ -178,7 +178,12 @@ def main():
 
     print(f"\nConnected to {biz_name}")
     print(f"Customer: {customer_id}")
-    mode = "customer" if args.as_customer else ("auto-approve" if args.auto_approve else "draft review")
+    if args.as_customer:
+        mode = "customer"
+    elif args.auto_approve:
+        mode = "auto-approve"
+    else:
+        mode = "draft review"
     print(f"Mode: {mode}")
     print("Type a message, or /help for commands.\n")
 
