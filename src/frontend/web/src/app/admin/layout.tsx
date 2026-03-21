@@ -15,10 +15,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
 function AdminLayoutInner({ children }: { children: React.ReactNode }) {
   const [businesses, setBusinesses] = useState<Business[]>([]);
-  const [selectedBiz, setSelectedBiz] = useState(searchParams.get("biz") || "");
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
+  const [selectedBiz, setSelectedBiz] = useState(searchParams.get("biz") || "");
 
   useEffect(() => {
     fetch("/api/businesses")
