@@ -88,7 +88,8 @@ def _show_history(url: str, business_id: str, customer_id: str):
 
         if remaining > 0:
             try:
-                choice = input(f"  {remaining} more messages. [n]ext page / [q]uit > ").strip().lower()
+                prompt = f"  {remaining} more messages. [n]ext page / [q]uit > "
+                choice = input(prompt).strip().lower()
             except (EOFError, KeyboardInterrupt):
                 print()
                 break
