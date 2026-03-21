@@ -4,35 +4,38 @@ A **copilot** for human customer service agents — not a fully autonomous chatb
 
 > **This is a human-in-the-loop system by design.** The LLM generates draft replies with confidence scores and internal notes. Human CS agents audit every draft — approving, editing, or rejecting it. The agent handles data retrieval and drafting; the human owns the final response.
 
-## Quick Start
+## Dev Quick Start
 
 ```bash
 # 1. Install Python dependencies
 pip install -e ".[dev]"
 
-# 2. Set up your API key
+# 2. Install frontend dependencies (requires Node.js: brew install node)
+cd src/frontend/web && npm install && cd ../../..
+
+# 3. Set up your API key
 cp .env.example .env
 # Edit .env with your Anthropic API key
 
-# 3. Start the backend
+# 4. Start the backend
 uvicorn agent.api:app --reload --reload-dir src
 
-# 4. Chat via CLI (in another terminal)
+# 5. Start the frontend (in another terminal)
+cd src/frontend/web && npm run dev
+
+# 6. Chat via CLI (in another terminal)
 python -m cli --business beauty_lab --customer CUS-001
 ```
 
-The CLI shows each draft for review before it's "sent." Use `--auto-approve` to skip review (for testing only).
+Three services running in dev:
 
-### Admin UI
+| Service | URL | Purpose |
+|---------|-----|---------|
+| Backend (FastAPI) | http://localhost:8000 | API server — agent loop, data, logs |
+| Frontend (Next.js) | http://localhost:3000 | Admin UI — log viewer, replay |
+| CLI | terminal | Chat interface with draft review |
 
-```bash
-# Requires Node.js (brew install node)
-cd src/frontend/web
-npm install
-npm run dev
-```
-
-Open http://localhost:3000 to browse LLM call logs, inspect conversations, and replay individual LLM calls with edited prompts. See `docs/admin-ui.md` for details.
+The CLI shows each draft for review before it's "sent." Use `--auto-approve` to skip review (for testing only). The admin UI at `:3000` lets you browse LLM call logs and replay calls with edited prompts. See `docs/admin-ui.md` for details.
 
 ## How It Works
 
