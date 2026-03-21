@@ -41,7 +41,7 @@ Decisions made, blockers hit, approach changes during execution.
 
 ### Plan Requirements
 
-Every plan **must** include at least one verifiable end-to-end test in its task list. This test should exercise the full flow of the feature — from API call (or CLI command) through to observable output — so that the plan's completion can be verified automatically. Unit tests alone are not sufficient.
+Every plan **must** include at least one verifiable end-to-end test in its task list. This test should exercise the full flow of the feature — from API call (or CLI command) through to observable output — so that the plan's completion can be verified automatically. Unit tests alone are not sufficient. If a CI test workflow exists (e.g., `.github/workflows/test.yml`), the e2e test must be added to it so it runs automatically.
 
 ### Plan Lifecycle
 
