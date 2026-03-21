@@ -15,7 +15,7 @@ cp .env.example .env
 # Edit .env with your Anthropic API key
 
 # 3. Start the backend
-uvicorn agent.api:app --reload
+uvicorn agent.api:app --reload --reload-dir src
 
 # 4. Chat via CLI (in another terminal)
 python -m cli --business beauty_lab --customer CUS-001
