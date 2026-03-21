@@ -89,9 +89,7 @@ def _split_history(history: list[dict]) -> tuple[list[dict], str]:
             text = text[:100] + "..."
         summary_lines.append(f"- {sender}: {text}")
 
-    summary = (
-        f"{len(older)} earlier messages:\n" + "\n".join(summary_lines)
-    )
+    summary = f"{len(older)} earlier messages:\n" + "\n".join(summary_lines)
     return recent, summary
 
 

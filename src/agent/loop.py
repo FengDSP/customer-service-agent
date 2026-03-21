@@ -5,8 +5,6 @@ import os
 import anthropic
 from dotenv import load_dotenv
 
-logger = logging.getLogger(__name__)
-
 from agent.config import BusinessConfig
 from agent.csv_tool import build_tool_definitions, execute_csv_lookup, execute_grep
 from agent.logging import log_interaction
@@ -14,6 +12,8 @@ from agent.prompt import build_user_prompt
 from agent.session import append_message
 
 load_dotenv()
+
+logger = logging.getLogger(__name__)
 
 DEFAULT_MODEL = "claude-sonnet-4-6"
 
@@ -53,7 +53,9 @@ def run_agent_loop(
         total_usage["output_tokens"] += response.usage.output_tokens
         logger.info(
             "LLM response: stop_reason=%s, tokens=%d/%d",
-            response.stop_reason, response.usage.input_tokens, response.usage.output_tokens,
+            response.stop_reason,
+            response.usage.input_tokens,
+            response.usage.output_tokens,
         )
 
         if response.stop_reason == "tool_use":
@@ -67,11 +69,13 @@ def run_agent_loop(
                     logger.info("Tool call: %s(%s)", block.name, json.dumps(block.input)[:200])
                     result_text = _dispatch_tool(config, block.name, block.input)
                     logger.info("Tool result: %s chars", len(result_text))
-                    tool_results.append({
-                        "type": "tool_result",
-                        "tool_use_id": block.id,
-                        "content": result_text,
-                    })
+                    tool_results.append(
+                        {
+                            "type": "tool_result",
+                            "tool_use_id": block.id,
+                            "content": result_text,
+                        }
+                    )
 
             tool_msg = {"role": "user", "content": tool_results}
             messages.append(tool_msg)
@@ -81,7 +85,8 @@ def run_agent_loop(
             result = _parse_response(raw_text)
             logger.info(
                 "Agent loop complete: tokens_total=%d/%d, confidence=%s",
-                total_usage["input_tokens"], total_usage["output_tokens"],
+                total_usage["input_tokens"],
+                total_usage["output_tokens"],
                 result.get("confidence"),
             )
 
@@ -125,6 +130,7 @@ def _parse_response(text: str) -> dict:
 
     # Try to extract JSON from code fences anywhere in the text
     import re
+
     fence_match = re.search(r"```(?:json)?\s*\n(.*?)\n\s*```", text, re.DOTALL)
     if fence_match:
         text = fence_match.group(1).strip()
@@ -141,7 +147,7 @@ def _parse_response(text: str) -> dict:
                 elif text[i] == "}":
                     depth -= 1
                     if depth == 0:
-                        text = text[brace_start:i + 1]
+                        text = text[brace_start : i + 1]
                         break
 
     try:

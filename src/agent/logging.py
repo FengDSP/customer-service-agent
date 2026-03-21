@@ -13,7 +13,10 @@ def log_interaction(
     usage: dict,
     system_prompt: str,
 ) -> Path:
-    """Append an agent loop invocation as a JSONL line to logs/llm/{business_id}/{customer_id}.jsonl."""
+    """Append an agent loop invocation as a JSONL line.
+
+    Logs to logs/llm/{business_id}/{customer_id}.jsonl.
+    """
     business_dir = LOGS_DIR / _safe(business_id)
     business_dir.mkdir(parents=True, exist_ok=True)
 
@@ -49,10 +52,7 @@ def _make_serializable(turns: list[dict]) -> list[dict]:
         if isinstance(content, str):
             entry["content"] = content
         elif isinstance(content, list):
-            entry["content"] = [
-                _block_to_dict(b) if hasattr(b, "type") else b
-                for b in content
-            ]
+            entry["content"] = [_block_to_dict(b) if hasattr(b, "type") else b for b in content]
         else:
             entry["content"] = str(content)
         result.append(entry)

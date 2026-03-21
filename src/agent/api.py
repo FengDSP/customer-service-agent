@@ -73,22 +73,20 @@ def list_customers(business_id: str):
 
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
-    logger.info(
-        "[%s] customer=%s message: %s", req.business_id, req.customer_id, req.message
-    )
+    logger.info("[%s] customer=%s message: %s", req.business_id, req.customer_id, req.message)
 
     try:
         config = load_business_config(req.business_id)
     except FileNotFoundError:
         logger.warning("Business not found: %s", req.business_id)
-        raise HTTPException(
-            status_code=404, detail=f"Business '{req.business_id}' not found"
-        )
+        raise HTTPException(status_code=404, detail=f"Business '{req.business_id}' not found")
 
     history = get_or_create_session(req.business_id, req.customer_id)
     logger.info(
         "[%s] customer=%s history=%d messages",
-        req.business_id, req.customer_id, len(history),
+        req.business_id,
+        req.customer_id,
+        len(history),
     )
 
     try:
@@ -96,14 +94,18 @@ def chat(req: ChatRequest):
     except Exception as e:
         logger.error(
             "[%s] customer=%s agent loop failed: %s",
-            req.business_id, req.customer_id, e,
+            req.business_id,
+            req.customer_id,
+            e,
         )
         raise HTTPException(status_code=500, detail=str(e))
 
     logger.info(
         "[%s] customer=%s reply: confidence=%s, needs_review=%s",
-        req.business_id, req.customer_id,
-        result.get("confidence"), result.get("needs_human_review"),
+        req.business_id,
+        req.customer_id,
+        result.get("confidence"),
+        result.get("needs_human_review"),
     )
 
     return ChatResponse(

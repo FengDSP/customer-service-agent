@@ -42,36 +42,52 @@ def test_beauty_lab_tools():
 
 
 def test_lookup_by_column_value():
-    result = execute_csv_lookup(_config(), "lookup_orders", {
-        "column": "customer_email",
-        "value": "alice@example.com",
-    })
+    result = execute_csv_lookup(
+        _config(),
+        "lookup_orders",
+        {
+            "column": "customer_email",
+            "value": "alice@example.com",
+        },
+    )
     assert "alice@example.com" in result
     assert "ORD-1001" in result
     assert "ORD-1003" in result
 
 
 def test_lookup_by_keyword():
-    result = execute_csv_lookup(_config(), "lookup_products", {
-        "keyword": "Widget",
-    })
+    result = execute_csv_lookup(
+        _config(),
+        "lookup_products",
+        {
+            "keyword": "Widget",
+        },
+    )
     assert "Blue Widget" in result
     assert "Green Widget" in result
 
 
 def test_lookup_no_match():
-    result = execute_csv_lookup(_config(), "lookup_orders", {
-        "column": "customer_email",
-        "value": "nobody@example.com",
-    })
+    result = execute_csv_lookup(
+        _config(),
+        "lookup_orders",
+        {
+            "column": "customer_email",
+            "value": "nobody@example.com",
+        },
+    )
     assert "No matching" in result
 
 
 def test_lookup_invalid_column():
-    result = execute_csv_lookup(_config(), "lookup_orders", {
-        "column": "nonexistent",
-        "value": "test",
-    })
+    result = execute_csv_lookup(
+        _config(),
+        "lookup_orders",
+        {
+            "column": "nonexistent",
+            "value": "test",
+        },
+    )
     assert "Error" in result
 
 
@@ -93,10 +109,13 @@ def test_grep_across_files():
 
 
 def test_grep_scoped_to_source():
-    result = execute_grep(_config(), {
-        "query": "Widget",
-        "sources": ["products"],
-    })
+    result = execute_grep(
+        _config(),
+        {
+            "query": "Widget",
+            "sources": ["products"],
+        },
+    )
     assert "products" in result
     assert "Blue Widget" in result
 
@@ -107,8 +126,11 @@ def test_grep_no_match():
 
 
 def test_grep_beauty_lab():
-    result = execute_grep(_beauty_config(), {
-        "query": "Lily Chen",
-        "sources": ["staff"],
-    })
+    result = execute_grep(
+        _beauty_config(),
+        {
+            "query": "Lily Chen",
+            "sources": ["staff"],
+        },
+    )
     assert "Lily Chen" in result
