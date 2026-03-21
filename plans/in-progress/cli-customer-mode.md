@@ -71,5 +71,6 @@ Type /help for commands.
 - [ ] Update `README.md` CLI usage examples
 
 ## Notes
+- Branch: agent/cli-customer-mode
 - `httpx` supports SSE via streaming responses (`httpx.stream`). No extra dependency needed.
 - The background SSE listener thread needs clean shutdown on exit/Ctrl+C.

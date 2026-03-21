@@ -1,3 +1,5 @@
+import asyncio
+import json
 import logging
 from pathlib import Path
 
@@ -6,6 +8,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from agent.config import CONFIGS_DIR, load_business_config
@@ -28,6 +31,18 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# --- SSE pub/sub ---
+# {business_id: [asyncio.Queue, ...]}
+_event_queues: dict[str, list[asyncio.Queue]] = {}
+
+
+def _publish_event(business_id: str, event_type: str, data: dict):
+    """Push an SSE event to all connected clients for a business."""
+    queues = _event_queues.get(business_id, [])
+    for q in queues:
+        q.put_nowait({"event": event_type, "data": data})
 
 
 class ChatRequest(BaseModel):
@@ -121,6 +136,11 @@ def post_message(req: MessageRequest):
     msg = {"role": "user", "content": req.message}
     history.append(msg)
     append_message(req.business_id, req.customer_id, msg)
+    _publish_event(req.business_id, "message", {
+        "customer_id": req.customer_id,
+        "message": req.message,
+        "timestamp": msg.get("timestamp", ""),
+    })
     return {"status": "ok"}
 
 
@@ -253,7 +273,38 @@ def send_reply(business_id: str, customer_id: str, req: SendRequest):
     msg = {"role": "assistant", "content": req.reply}
     history.append(msg)
     append_message(business_id, customer_id, msg)
+    _publish_event(business_id, "reply", {
+        "customer_id": customer_id,
+        "reply": req.reply,
+        "timestamp": msg.get("timestamp", ""),
+    })
     return {"status": "ok"}
+
+
+@app.get("/conversations/{business_id}/events")
+async def conversation_events(business_id: str):
+    """SSE endpoint streaming real-time message and reply events for a business."""
+    try:
+        load_business_config(business_id)
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail=f"Business '{business_id}' not found")
+
+    queue: asyncio.Queue = asyncio.Queue()
+    if business_id not in _event_queues:
+        _event_queues[business_id] = []
+    _event_queues[business_id].append(queue)
+
+    async def event_stream():
+        try:
+            while True:
+                event = await queue.get()
+                yield f"event: {event['event']}\ndata: {json.dumps(event['data'])}\n\n"
+        except asyncio.CancelledError:
+            pass
+        finally:
+            _event_queues[business_id].remove(queue)
+
+    return StreamingResponse(event_stream(), media_type="text/event-stream")
 
 
 @app.post("/chat", response_model=ChatResponse)
