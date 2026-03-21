@@ -23,12 +23,14 @@ def list_customers_with_logs(business_id: str) -> list[dict]:
         total_output = sum(e.get("usage", {}).get("output_tokens", 0) for e in entries)
         last_ts = max(e.get("timestamp", "") for e in entries)
 
-        customers.append({
-            "customer_id": customer_id,
-            "last_interaction": last_ts,
-            "total_interactions": len(entries),
-            "total_tokens": {"input": total_input, "output": total_output},
-        })
+        customers.append(
+            {
+                "customer_id": customer_id,
+                "last_interaction": last_ts,
+                "total_interactions": len(entries),
+                "total_tokens": {"input": total_input, "output": total_output},
+            }
+        )
 
     customers.sort(key=lambda c: c["last_interaction"], reverse=True)
     return customers
@@ -43,16 +45,18 @@ def list_log_entries(business_id: str, customer_id: str) -> list[dict]:
         customer_message = _extract_customer_message(turns)
         draft_reply = _extract_draft_reply(turns)
 
-        summaries.append({
-            "index": i,
-            "timestamp": entry.get("timestamp", ""),
-            "customer_message": customer_message[:200] if customer_message else "",
-            "draft_reply": draft_reply[:200] if draft_reply else "",
-            "model": entry.get("model", ""),
-            "confidence": _extract_confidence(draft_reply),
-            "usage": entry.get("usage", {}),
-            "turns_count": len(turns),
-        })
+        summaries.append(
+            {
+                "index": i,
+                "timestamp": entry.get("timestamp", ""),
+                "customer_message": customer_message[:200] if customer_message else "",
+                "draft_reply": draft_reply[:200] if draft_reply else "",
+                "model": entry.get("model", ""),
+                "confidence": _extract_confidence(draft_reply),
+                "usage": entry.get("usage", {}),
+                "turns_count": len(turns),
+            }
+        )
 
     summaries.sort(key=lambda s: s["timestamp"], reverse=True)
     return summaries
@@ -87,13 +91,15 @@ def _extract_llm_calls(entry: dict) -> list[dict]:
         role = turn.get("role", "")
         if role == "assistant":
             # This is an LLM response — marks the end of an LLM call
-            calls.append({
-                "call_index": call_index,
-                "system": system_prompt,
-                "messages": list(messages_so_far),  # messages sent to get this response
-                "response": turn,
-                "model": model,
-            })
+            calls.append(
+                {
+                    "call_index": call_index,
+                    "system": system_prompt,
+                    "messages": list(messages_so_far),  # messages sent to get this response
+                    "response": turn,
+                    "model": model,
+                }
+            )
             messages_so_far.append(turn)
             call_index += 1
         else:
