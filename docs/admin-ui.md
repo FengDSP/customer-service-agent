@@ -32,6 +32,23 @@ npm run dev
 
 ## Features
 
+### CS Worker Chat View
+
+Web-based customer service agent interface. CS agents see incoming customer messages, get AI-generated draft replies, and review/edit/send them.
+
+1. **Customer List** (`/admin/chat`) — Table of all customers with conversations. Unreplied customers are sorted to the top with a blue indicator dot. Auto-refreshes every 5 seconds.
+
+2. **Chat View** (`/admin/chat/[customerId]`) — Three-column layout:
+   - **Center**: Chat conversation history with message bubbles.
+   - **Bottom**: Editable draft area with Send button. Auto-generates a draft when opened with an unreplied message. Shows confidence level and review status.
+   - **Right sidebar**: Customer context tables showing CSV data configured via `cs_view_sources` in the business YAML.
+
+**Workflow:**
+1. Customer sends a message via CLI (`--as-customer` flag) or future chat integration.
+2. CS agent opens the web UI, sees the customer in the list with an unreplied indicator.
+3. CS agent clicks the customer — a draft reply is auto-generated.
+4. CS agent reviews/edits the draft and clicks Send.
+
 ### LLM Log Viewer
 
 Browse LLM call logs with a 4-level drill-down:
@@ -59,6 +76,11 @@ Dropdown in the top bar selects which business's logs to browse. Fetches availab
 
 | Endpoint | Description |
 |----------|-------------|
+| `POST /messages` | Record a customer message (no agent loop) |
+| `GET /conversations/{biz}/pending` | List customers with messages, unreplied first |
+| `GET /conversations/{biz}/{customer}/context` | Customer CSV context for sidebar |
+| `POST /conversations/{biz}/{customer}/draft` | Generate AI draft reply |
+| `POST /conversations/{biz}/{customer}/send` | Record approved reply |
 | `GET /admin/logs/{biz}/customers` | List customers with logs for a business |
 | `GET /admin/logs/{biz}/{customer}` | List log entries for a customer |
 | `GET /admin/logs/{biz}/{customer}/{index}` | Get full log entry with LLM call boundaries |

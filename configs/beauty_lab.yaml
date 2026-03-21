@@ -29,6 +29,10 @@ system_prompt: |
   We use premium brands including Hydrafacial, Valmont, Cellcosmet, Babor, Pro You, Oribe, and Olaplex.
   Prepaid balance: customers can preload $1000 and receive $1176.47 in service credit (15% bonus).
 
+cs_view_sources:
+  - customers
+  - appointments
+
 data_sources:
   - name: "services"
     type: "csv"

@@ -135,6 +135,11 @@ def main():
     parser.add_argument(
         "--auto-approve", action="store_true", help="Skip draft review, print replies directly"
     )
+    parser.add_argument(
+        "--as-customer",
+        action="store_true",
+        help="Send messages as a customer (POST /messages, no agent reply)",
+    )
     args = parser.parse_args()
 
     # List businesses and exit
@@ -173,7 +178,7 @@ def main():
 
     print(f"\nConnected to {biz_name}")
     print(f"Customer: {customer_id}")
-    mode = "auto-approve" if args.auto_approve else "draft review"
+    mode = "customer" if args.as_customer else ("auto-approve" if args.auto_approve else "draft review")
     print(f"Mode: {mode}")
     print("Type a message, or /help for commands.\n")
 
@@ -195,6 +200,18 @@ def main():
             continue
 
         payload = {"business_id": business_id, "customer_id": customer_id, "message": message}
+
+        if args.as_customer:
+            try:
+                resp = httpx.post(f"{args.url}/messages", json=payload, timeout=10.0)
+            except httpx.ConnectError:
+                print(f"Error: cannot connect to backend at {args.url}. Is it running?")
+                continue
+            if resp.status_code != 200:
+                print(f"Error ({resp.status_code}): {resp.text}")
+            else:
+                print("  (message sent)\n")
+            continue
 
         try:
             resp = httpx.post(f"{args.url}/chat", json=payload, timeout=120.0)

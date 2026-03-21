@@ -23,16 +23,22 @@ def run_agent_loop(
     history: list[dict],
     message: str,
     customer_id: str,
+    draft_only: bool = False,
 ) -> dict:
-    """Run the agent loop and return the structured response dict."""
+    """Run the agent loop and return the structured response dict.
+
+    If draft_only=True, skip appending user/assistant messages to history and disk.
+    Used by the draft endpoint where messages are managed separately.
+    """
     client = anthropic.Anthropic()
     model = os.getenv("LLM_MODEL", DEFAULT_MODEL)
     tools = build_tool_definitions(config)
-    logger.info("Starting agent loop: model=%s, tools=%d", model, len(tools))
+    logger.info("Starting agent loop: model=%s, tools=%d, draft_only=%s", model, len(tools), draft_only)
 
-    user_msg = {"role": "user", "content": message}
-    history.append(user_msg)
-    append_message(config.business_id, customer_id, user_msg)
+    if not draft_only:
+        user_msg = {"role": "user", "content": message}
+        history.append(user_msg)
+        append_message(config.business_id, customer_id, user_msg)
 
     structured_prompt = build_user_prompt(message, history[:-1], config, customer_id)
 
@@ -91,9 +97,10 @@ def run_agent_loop(
             )
 
             reply_text = result["draft_reply"]
-            assistant_msg = {"role": "assistant", "content": reply_text}
-            history.append(assistant_msg)
-            append_message(config.business_id, customer_id, assistant_msg)
+            if not draft_only:
+                assistant_msg = {"role": "assistant", "content": reply_text}
+                history.append(assistant_msg)
+                append_message(config.business_id, customer_id, assistant_msg)
             all_turns.append({"role": "assistant", "content": response.content})
 
             log_interaction(
