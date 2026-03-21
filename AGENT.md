@@ -74,6 +74,12 @@ Agents commit to their feature branch and merge to `main` via PRs.
 
 The human reviews code asynchronously after merge. If issues are found, they will be addressed in a follow-up plan.
 
+## Prerequisites
+
+- **Python 3.11+** with pip — `pip install -e ".[dev]"` from repo root
+- **Node.js 20+** — `brew install node` (Homebrew). Required for frontend work (`src/frontend/web/`).
+- After cloning or switching worktrees, run `cd src/frontend/web && npm install` before any frontend work.
+
 ## Code Practices
 
 - Read existing code before modifying it. Understand context first.
