@@ -74,3 +74,5 @@ Type /help for commands.
 - Branch: agent/cli-customer-mode
 - `httpx` supports SSE via streaming responses (`httpx.stream`). No extra dependency needed.
 - The background SSE listener thread needs clean shutdown on exit/Ctrl+C.
+- PAUSED: origin/main has async SSE (`_sse_subscribers` + `asyncio.Queue`) from cs-worker-ui plan. This branch uses thread-safe `queue.Queue`. Waiting for async-backend refactoring to land before resuming merge.
+- Remaining work: fix `test_sse_endpoint_exists` test (TestClient streaming blocks), update docs, merge conflicts.
