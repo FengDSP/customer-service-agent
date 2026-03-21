@@ -240,9 +240,7 @@ def generate_draft(business_id: str, customer_id: str):
         raise HTTPException(status_code=400, detail="No unreplied message")
 
     try:
-        result = run_agent_loop(
-            config, history, last_msg["content"], customer_id, draft_only=True
-        )
+        result = run_agent_loop(config, history, last_msg["content"], customer_id, draft_only=True)
     except Exception as e:
         logger.error("Draft generation failed: %s", e)
         raise HTTPException(status_code=500, detail=str(e))

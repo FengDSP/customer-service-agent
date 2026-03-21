@@ -44,8 +44,8 @@ This tells the UI which data sources to show in the right sidebar, filtered to t
 | `GET /conversations/{biz}/pending` | GET | List all customers with messages, unreplied first. Returns customer_id, name, last_message, last_timestamp, has_unreplied flag. |
 | `GET /conversations/{biz}/{customer}/context` | GET | Customer context: for each data source in `cs_view_sources`, return the CSV rows matching this customer_id. Returns `{source_name: {columns: [...], rows: [...]}}`. |
 | `POST /conversations/{biz}/{customer}/draft` | POST | Generate a draft reply by running the agent loop on the latest unreplied message. Returns the draft + metadata (confidence, internal note, suggested actions). |
-| `POST /conversations/{biz}/{customer}/send` | POST | Record the approved reply in the session. Body: `{reply}`. |
-| `GET /conversations/{biz}/events` | GET | SSE endpoint. Streams real-time events when new customer messages arrive. Event data: `{customer_id, message, timestamp}`. Uses `asyncio.Queue` per connection; `POST /messages` pushes to all connected queues. |
+| `POST /conversations/{biz}/{customer}/send` | POST | Record the approved reply in the session. Body: `{reply}`. Also pushes a `reply` SSE event. |
+| `GET /conversations/{biz}/events` | GET | SSE endpoint. Streams real-time events: `message` events when customer messages arrive, `reply` events when CS agent sends. Uses `asyncio.Queue` per connection; both `POST /messages` and `POST .../send` push to all connected queues. |
 
 ### Real-time updates (SSE)
 
@@ -53,6 +53,7 @@ When a customer message arrives via `POST /messages`, the backend pushes an SSE 
 
 - **Customer list page**: on event, re-fetches the pending list to update order and unreplied indicators.
 - **Chat view page**: on event matching the current customer, appends the new message to the conversation and auto-triggers draft generation.
+- **CLI customer mode** (separate plan: `cli-customer-mode.md`): listens for `reply` events to display CS agent responses.
 
 Implementation: an in-memory dict of `{business_id: list[asyncio.Queue]}`. `POST /messages` pushes to all queues for the business. The SSE endpoint reads from its queue and yields `text/event-stream` lines. Queues are removed on client disconnect.
 
