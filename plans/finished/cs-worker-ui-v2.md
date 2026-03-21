@@ -70,31 +70,35 @@ Add `--as-customer` flag to CLI. When set, just calls `POST /messages` to record
 ## Tasks
 
 ### Backend
-- [ ] Add `cs_view_sources` field to `BusinessConfig` model and update `beauty_lab.yaml`
-- [ ] Add `POST /messages` endpoint — records a customer message in session history (no agent loop)
-- [ ] Add `GET /conversations/{biz}/pending` — list customers with messages, unreplied first
-- [ ] Add `GET /conversations/{biz}/{customer}/context` — return matching CSV rows for configured sources
-- [ ] Add `POST /conversations/{biz}/{customer}/draft` — run agent loop, return draft
-- [ ] Add `POST /conversations/{biz}/{customer}/send` — record approved reply in session
-- [ ] Add `--as-customer` flag to CLI
-- [ ] Add `GET /conversations/{biz}/events` SSE endpoint with in-memory pub/sub
+- [x] Add `cs_view_sources` field to `BusinessConfig` model and update `beauty_lab.yaml`
+- [x] Add `POST /messages` endpoint — records a customer message in session history (no agent loop)
+- [x] Add `GET /conversations/{biz}/pending` — list customers with messages, unreplied first
+- [x] Add `GET /conversations/{biz}/{customer}/context` — return matching CSV rows for configured sources
+- [x] Add `POST /conversations/{biz}/{customer}/draft` — run agent loop, return draft
+- [x] Add `POST /conversations/{biz}/{customer}/send` — record approved reply in session
+- [x] Add `--as-customer` flag to CLI
+- [x] Add `GET /conversations/{biz}/events` SSE endpoint with in-memory pub/sub
 
 ### Frontend
-- [ ] Add "Chat With Customers" nav item to admin layout
-- [ ] Build customer list page (`/admin/chat`) — table with unreplied indicator, sorted unreplied-first
-- [ ] Build chat view page (`/admin/chat/[customerId]`) — conversation history display
-- [ ] Build draft area — editable text area with Send button, auto-generates draft on load
-- [ ] Build right sidebar — customer context tables from configured CSV sources
-- [ ] SSE integration — connect to `/conversations/{biz}/events` via `EventSource`, re-fetch data on events
+- [x] Add "Chat With Customers" nav item to admin layout
+- [x] Build customer list page (`/admin/chat`) — table with unreplied indicator, sorted unreplied-first
+- [x] Build chat view page (`/admin/chat/[customerId]`) — conversation history display
+- [x] Build draft area — editable text area with Send button, auto-generates draft on load
+- [x] Build right sidebar — customer context tables from configured CSV sources
+- [x] SSE integration — connect to `/conversations/{biz}/events` via `EventSource`, re-fetch data on events
 
 ### Tests
-- [ ] Unit tests for new backend endpoints
-- [ ] Playwright tests for CS worker UI pages
-- [ ] E2e test: CLI sends a customer message via `--as-customer`, verify it appears in the web UI, generate a draft, send the reply, and verify the reply is recorded in session history
+- [x] Unit tests for new backend endpoints (14 tests including SSE)
+- [x] Playwright tests for CS worker UI pages (cs-chat.spec.ts)
+- [x] E2e test: full CS worker flow in test_e2e.py
 
 ### Docs
-- [ ] Update `docs/admin-ui.md` with CS worker view section
-- [ ] Update `ARCHITECTURE.md` if needed
-- [ ] Update `README.md` CLI section for `--as-customer` flag
+- [x] Update `docs/admin-ui.md` with CS worker view section
+- [x] Update `ARCHITECTURE.md` — moved CS Worker UI from Planned to Components
+- [x] Update `docs/cli.md` with `--as-customer` flag
 
 ## Notes
+- v1 plan completed core backend/frontend; v2 added SSE real-time updates and comprehensive tests
+- Branch: agent/cs-worker-ui-v2
+- SSE uses in-memory asyncio.Queue per connection; POST /messages pushes to all subscribers for the business
+- Fixed duplicate return statement in list_pending_conversations during SSE work

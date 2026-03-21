@@ -2,7 +2,7 @@ from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
-from agent.api import app
+from agent.api import _sse_subscribers, app
 from agent.session import SESSIONS_DIR, _cache
 
 client = TestClient(app)
@@ -13,6 +13,7 @@ CUST = "test-cs-worker-cust"
 
 def _cleanup():
     _cache.clear()
+    _sse_subscribers.clear()
     path = SESSIONS_DIR / BIZ / f"{CUST}.jsonl"
     if path.exists():
         path.unlink()
@@ -177,3 +178,31 @@ def test_generate_draft_no_unreplied():
 def test_generate_draft_no_messages():
     resp = client.post(f"/conversations/{BIZ}/{CUST}/draft")
     assert resp.status_code == 400
+
+
+def test_sse_subscriber_notified_on_message():
+    """Test that POST /messages pushes events to SSE subscribers."""
+    import asyncio
+
+    queue = asyncio.Queue()
+    _sse_subscribers.setdefault(BIZ, []).append(queue)
+
+    try:
+        client.post(
+            "/messages",
+            json={"business_id": BIZ, "customer_id": CUST, "message": "sse test"},
+        )
+
+        assert not queue.empty()
+        event = queue.get_nowait()
+        assert event["customer_id"] == CUST
+        assert event["message"] == "sse test"
+    finally:
+        _sse_subscribers[BIZ].remove(queue)
+        if not _sse_subscribers[BIZ]:
+            del _sse_subscribers[BIZ]
+
+
+def test_sse_events_invalid_business():
+    resp = client.get("/conversations/nonexistent/events")
+    assert resp.status_code == 404

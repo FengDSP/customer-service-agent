@@ -1,3 +1,5 @@
+import asyncio
+import json
 import logging
 from pathlib import Path
 
@@ -7,6 +9,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from starlette.responses import StreamingResponse
 
 from agent.config import CONFIGS_DIR, load_business_config
 from agent.log_reader import get_log_entry, list_customers_with_logs, list_log_entries
@@ -20,6 +23,9 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 app = FastAPI(title="Customer Service Agent")
+
+# SSE pub/sub: {business_id: list[asyncio.Queue]}
+_sse_subscribers: dict[str, list[asyncio.Queue]] = {}
 
 # Allow Next.js dev server to call the API
 app.add_middleware(
@@ -110,7 +116,7 @@ def get_history(business_id: str, customer_id: str):
 
 
 @app.post("/messages")
-def post_message(req: MessageRequest):
+async def post_message(req: MessageRequest):
     """Record a customer message without running the agent loop."""
     try:
         load_business_config(req.business_id)
@@ -121,6 +127,16 @@ def post_message(req: MessageRequest):
     msg = {"role": "user", "content": req.message}
     history.append(msg)
     append_message(req.business_id, req.customer_id, msg)
+
+    # Notify SSE subscribers
+    event_data = {
+        "customer_id": req.customer_id,
+        "message": req.message,
+        "timestamp": msg.get("timestamp", ""),
+    }
+    for queue in _sse_subscribers.get(req.business_id, []):
+        await queue.put(event_data)
+
     return {"status": "ok"}
 
 
@@ -170,7 +186,6 @@ def list_pending_conversations(business_id: str):
     # Sort: unreplied first, then by timestamp descending
     results.sort(key=lambda c: c.last_timestamp, reverse=True)
     results.sort(key=lambda c: not c.has_unreplied)
-    return results
     return results
 
 
@@ -252,6 +267,36 @@ def send_reply(business_id: str, customer_id: str, req: SendRequest):
     history.append(msg)
     append_message(business_id, customer_id, msg)
     return {"status": "ok"}
+
+
+@app.get("/conversations/{business_id}/events")
+async def conversation_events(business_id: str):
+    """SSE endpoint for real-time customer message notifications."""
+    try:
+        load_business_config(business_id)
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail=f"Business '{business_id}' not found")
+
+    queue: asyncio.Queue = asyncio.Queue()
+    _sse_subscribers.setdefault(business_id, []).append(queue)
+
+    async def event_stream():
+        try:
+            while True:
+                data = await queue.get()
+                yield f"data: {json.dumps(data)}\n\n"
+        except asyncio.CancelledError:
+            pass
+        finally:
+            _sse_subscribers[business_id].remove(queue)
+            if not _sse_subscribers[business_id]:
+                del _sse_subscribers[business_id]
+
+    return StreamingResponse(
+        event_stream(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
 
 
 @app.post("/chat", response_model=ChatResponse)

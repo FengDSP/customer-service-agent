@@ -38,9 +38,18 @@ function ChatContent() {
   useEffect(() => {
     setLoading(true);
     refresh();
-    const interval = setInterval(refresh, 5000);
-    return () => clearInterval(interval);
-  }, [refresh]);
+
+    // SSE: listen for new customer messages and re-fetch
+    if (!biz) return;
+    const es = new EventSource(`/api/conversations/${biz}/events`);
+    es.onmessage = () => {
+      refresh();
+    };
+    es.onerror = () => {
+      // Reconnect is automatic with EventSource
+    };
+    return () => es.close();
+  }, [refresh, biz]);
 
   if (!biz) return <p className="text-gray-500">Select a business above.</p>;
   if (loading) return <p className="text-gray-500">Loading...</p>;

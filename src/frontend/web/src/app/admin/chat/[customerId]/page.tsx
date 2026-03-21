@@ -74,9 +74,22 @@ function ChatView() {
   useEffect(() => {
     fetchHistory();
     fetchContext();
-    const interval = setInterval(fetchHistory, 5000);
-    return () => clearInterval(interval);
-  }, [fetchHistory, fetchContext]);
+
+    // SSE: listen for new customer messages
+    if (!biz) return;
+    const es = new EventSource(`/api/conversations/${biz}/events`);
+    es.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        if (data.customer_id === customerId) {
+          fetchHistory();
+        }
+      } catch {
+        // ignore parse errors
+      }
+    };
+    return () => es.close();
+  }, [fetchHistory, fetchContext, biz, customerId]);
 
   useEffect(() => {
     scrollToBottom();
