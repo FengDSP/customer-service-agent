@@ -4,20 +4,27 @@ Web-based admin portal for browsing LLM call logs and replaying individual LLM c
 
 ## Setup
 
-Requires Node.js (install via `brew install node`).
+### Prerequisites
+
+- **Node.js 20+** — install via `brew install node` (Homebrew, recommended) or your preferred method
+- **Python backend** installed and configured (see README)
+
+### Install & Run
 
 ```bash
-# Install frontend dependencies
+# Install frontend dependencies (must run from src/frontend/web/)
 cd src/frontend/web
 npm install
 
-# Start the backend (in one terminal)
-uvicorn agent.api:app --reload
+# Start the backend (in one terminal, from repo root)
+uvicorn agent.api:app --reload --reload-dir src
 
-# Start the frontend (in another terminal)
+# Start the frontend (in another terminal, from src/frontend/web/)
 cd src/frontend/web
 npm run dev
 ```
+
+> **Note:** `npm install` must be run inside `src/frontend/web/` before `npm run dev`. The `node_modules/` directory is gitignored and must be installed locally.
 
 - Backend runs on http://localhost:8000
 - Frontend runs on http://localhost:3000

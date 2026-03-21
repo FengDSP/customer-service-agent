@@ -6,26 +6,43 @@ A **copilot** for human customer service agents — not a fully autonomous chatb
 
 ## Dev Quick Start
 
+### Prerequisites
+
+- **Python 3.11+** with pip
+- **Node.js 20+** — install via `brew install node` (Homebrew, recommended) or your preferred method
+- **Anthropic API key**
+
+### Setup
+
 ```bash
 # 1. Install Python dependencies
 pip install -e ".[dev]"
 
-# 2. Install frontend dependencies (requires Node.js: brew install node)
-cd src/frontend/web && npm install && cd ../../..
+# 2. Install frontend dependencies
+cd src/frontend/web
+npm install
+cd ../../..
 
 # 3. Set up your API key
 cp .env.example .env
 # Edit .env with your Anthropic API key
+```
 
-# 4. Start the backend
+### Run (3 terminals)
+
+```bash
+# Terminal 1 — Backend
 uvicorn agent.api:app --reload --reload-dir src
 
-# 5. Start the frontend (in another terminal)
-cd src/frontend/web && npm run dev
+# Terminal 2 — Frontend (run from src/frontend/web/)
+cd src/frontend/web
+npm run dev
 
-# 6. Chat via CLI (in another terminal)
+# Terminal 3 — CLI
 python -m cli --business beauty_lab --customer CUS-001
 ```
+
+> **Note:** You must run `npm install` inside `src/frontend/web/` before `npm run dev`. The `node_modules/` directory is gitignored and must be installed locally.
 
 Three services running in dev:
 
