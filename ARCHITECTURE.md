@@ -26,8 +26,12 @@ Web-based portal for browsing LLM call logs and replaying individual LLM calls w
 
 Details: `docs/admin-ui.md`
 
+### CS Worker UI (Next.js)
+Human-in-the-loop interface where CS agents see incoming customer messages, review AI-generated draft replies, and approve/edit/send them. Shares the Next.js app with Admin UI. Receives real-time updates via SSE when new customer messages arrive.
+
+Details: `docs/admin-ui.md`
+
 ## Planned (not yet built)
 
-- **CS Worker UI** — Human-in-the-loop interface where CS agents approve/modify drafts before sending. Will share the Next.js app with Admin UI.
 - **Chat app integration** — Hook into real chat platforms (e.g., WhatsApp, Slack) as a CS account, generating drafts for each incoming message.
 - **Database / MCP data sources** — Extend beyond CSV to support databases and MCPs as tool-call backends.
