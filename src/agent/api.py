@@ -1,6 +1,6 @@
-import asyncio
 import json
 import logging
+import queue
 from pathlib import Path
 
 import anthropic
@@ -34,8 +34,8 @@ app.add_middleware(
 
 
 # --- SSE pub/sub ---
-# {business_id: [asyncio.Queue, ...]}
-_event_queues: dict[str, list[asyncio.Queue]] = {}
+# {business_id: [queue.Queue, ...]}  — thread-safe queues
+_event_queues: dict[str, list[queue.Queue]] = {}
 
 
 def _publish_event(business_id: str, event_type: str, data: dict):
@@ -282,27 +282,31 @@ def send_reply(business_id: str, customer_id: str, req: SendRequest):
 
 
 @app.get("/conversations/{business_id}/events")
-async def conversation_events(business_id: str):
+def conversation_events(business_id: str):
     """SSE endpoint streaming real-time message and reply events for a business."""
     try:
         load_business_config(business_id)
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=f"Business '{business_id}' not found")
 
-    queue: asyncio.Queue = asyncio.Queue()
+    q: queue.Queue = queue.Queue()
     if business_id not in _event_queues:
         _event_queues[business_id] = []
-    _event_queues[business_id].append(queue)
+    _event_queues[business_id].append(q)
 
-    async def event_stream():
+    def event_stream():
         try:
             while True:
-                event = await queue.get()
-                yield f"event: {event['event']}\ndata: {json.dumps(event['data'])}\n\n"
-        except asyncio.CancelledError:
+                try:
+                    event = q.get(timeout=30)
+                    yield f"event: {event['event']}\ndata: {json.dumps(event['data'])}\n\n"
+                except queue.Empty:
+                    # Send keepalive comment to prevent connection timeout
+                    yield ": keepalive\n\n"
+        except GeneratorExit:
             pass
         finally:
-            _event_queues[business_id].remove(queue)
+            _event_queues[business_id].remove(q)
 
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 
