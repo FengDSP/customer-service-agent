@@ -1,5 +1,5 @@
-# LLM logs
-logs/
+# LLM logs (root-level only, not Next.js route dirs)
+/logs/
 
 # Chat session histories
 data/sessions/
