@@ -14,10 +14,10 @@ Make the CLI easier to use with discovery features, draft review mode, and bette
 ## Tasks
 
 ### 1. Add `--list-businesses` flag
-- [ ] Add `--list-businesses` flag that lists all available business IDs from the backend
-- [ ] Add `GET /businesses` endpoint to the backend that scans `configs/` and returns `[{"business_id": "...", "name": "..."}]`
-- [ ] When `--list-businesses` is passed, print the list and exit
-- [ ] Example:
+- [x] Add `--list-businesses` flag that lists all available business IDs from the backend
+- [x] Add `GET /businesses` endpoint to the backend that scans `configs/` and returns `[{"business_id": "...", "name": "..."}]`
+- [x] When `--list-businesses` is passed, print the list and exit
+- [x] Example:
   ```
   $ python -m cli --list-businesses
   Available businesses:
@@ -26,9 +26,9 @@ Make the CLI easier to use with discovery features, draft review mode, and bette
   ```
 
 ### 2. Add `--list-customers` flag
-- [ ] Add `--list-customers --business <id>` that lists customers from the business's customer CSV
-- [ ] Add `GET /businesses/{business_id}/customers` endpoint that returns customer IDs and names
-- [ ] Example:
+- [x] Add `--list-customers --business <id>` that lists customers from the business's customer CSV
+- [x] Add `GET /businesses/{business_id}/customers` endpoint that returns customer IDs and names
+- [x] Example:
   ```
   $ python -m cli --list-customers --business beauty_lab
   Customers (beauty_lab):
@@ -38,13 +38,13 @@ Make the CLI easier to use with discovery features, draft review mode, and bette
   ```
 
 ### 3. Interactive business/customer selection when args are missing
-- [ ] If `--business` is omitted, fetch the business list and prompt the user to pick one
-- [ ] If `--customer` is omitted, prompt the user to enter a customer ID (or list available ones)
-- [ ] This makes `python -m cli` work with zero args — it walks you through setup
+- [x] If `--business` is omitted, fetch the business list and prompt the user to pick one
+- [x] If `--customer` is omitted, prompt the user to enter a customer ID (or list available ones)
+- [x] This makes `python -m cli` work with zero args — it walks you through setup
 
 ### 4. Draft review mode (from cli-draft-mode plan)
-- [ ] Add `--auto-approve` flag (default: `False`)
-- [ ] When not auto-approve, show draft in a formatted block with metadata:
+- [x] Add `--auto-approve` flag (default: `False`)
+- [x] When not auto-approve, show draft in a formatted block with metadata:
   ```
   --- Draft Reply ---
   Your next appointment is March 25 at 10:00 AM.
@@ -54,24 +54,24 @@ Make the CLI easier to use with discovery features, draft review mode, and bette
 
   [a]pprove  [e]dit  [r]eject >
   ```
-- [ ] `a` — approve and print as final reply
-- [ ] `e` — prompt for replacement text, print that as final reply
-- [ ] `r` — reject draft, loop back to next message input
-- [ ] In auto-approve mode, just print `reply` directly (current behavior)
+- [x] `a` — approve and print as final reply
+- [x] `e` — prompt for replacement text, print that as final reply
+- [x] `r` — reject draft, loop back to next message input
+- [x] In auto-approve mode, just print `reply` directly (current behavior)
 
 ### 5. In-session commands
-- [ ] `/help` — show available commands
-- [ ] `/businesses` — list businesses (same as --list-businesses)
-- [ ] `/customers` — list customers for current business
-- [ ] `/switch <business_id>` — switch to a different business mid-session
-- [ ] `/info` — show current business, customer, and backend URL
-- [ ] `/history` — show conversation history for current session
+- [x] `/help` — show available commands
+- [x] `/businesses` — list businesses (same as --list-businesses)
+- [x] `/customers` — list customers for current business
+- [x] `/switch <business_id>` — switch to a different business mid-session
+- [x] `/info` — show current business, customer, and backend URL
+- [x] `/history` — show conversation history for current session
 
 ### 6. Better startup banner
-- [ ] Show business name (not just ID) on connect
-- [ ] Show customer name if available
-- [ ] Show hint about `/help` for commands
-- [ ] Example:
+- [x] Show business name (not just ID) on connect
+- [x] Show customer name if available
+- [x] Show hint about `/help` for commands
+- [x] Example:
   ```
   Connected to Beauty Lab Customer Service
   Customer: CUS-001 (Aurora White)
@@ -79,8 +79,8 @@ Make the CLI easier to use with discovery features, draft review mode, and bette
   ```
 
 ### 7. Update docs
-- [ ] Update `docs/cli.md` with all new flags and commands
-- [ ] Update README quick start section
+- [x] Update `docs/cli.md` with all new flags and commands
+- [x] Update README quick start section
 
 ## Notes
 - This plan supersedes `plans/to-do/cli-draft-mode.md` — all draft mode tasks are included here.

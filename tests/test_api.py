@@ -15,6 +15,37 @@ MOCK_RESULT = {
 }
 
 
+def test_list_businesses():
+    resp = client.get("/businesses")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) >= 2
+    ids = [b["business_id"] for b in data]
+    assert "acme_retail" in ids
+    assert "beauty_lab" in ids
+
+
+def test_list_customers_beauty_lab():
+    resp = client.get("/businesses/beauty_lab/customers")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) > 0
+    assert "customer_id" in data[0]
+    assert "name" in data[0]
+
+
+def test_list_customers_nonexistent():
+    resp = client.get("/businesses/nonexistent/customers")
+    assert resp.status_code == 404
+
+
+def test_list_customers_no_customer_source():
+    resp = client.get("/businesses/acme_retail/customers")
+    assert resp.status_code == 200
+    # acme_retail has no customers data source, returns empty
+    assert resp.json() == []
+
+
 def test_chat_invalid_business():
     resp = client.post("/chat", json={
         "business_id": "nonexistent",
