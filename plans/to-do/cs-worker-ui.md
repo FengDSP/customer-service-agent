@@ -89,6 +89,7 @@ Add `--as-customer` flag to CLI. When set, just calls `POST /messages` to record
 ### Tests
 - [ ] Unit tests for new backend endpoints
 - [ ] Playwright tests for CS worker UI pages
+- [ ] E2e test: CLI sends a customer message via `--as-customer`, verify it appears in the web UI, generate a draft, send the reply, and verify the reply is recorded in session history
 
 ### Docs
 - [ ] Update `docs/admin-ui.md` with CS worker view section
