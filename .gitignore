@@ -200,6 +200,11 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+# Next.js / Node
+node_modules/
+.next/
+out/
+
 # Claude Code
 .claude/*
 !.claude/settings.json
