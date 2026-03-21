@@ -116,6 +116,8 @@ test.describe("Admin UI — Navigation", () => {
   test("left nav link navigates to log viewer", async ({ page }) => {
     await page.goto("/admin/logs/CUS-001?biz=beauty_lab");
 
+    // Wait for layout to fully load before clicking nav
+    await expect(page.locator("select")).toBeVisible();
     await page.getByText("LLM Log Viewer").click();
     await expect(page.getByText("Customer Sessions")).toBeVisible();
   });
