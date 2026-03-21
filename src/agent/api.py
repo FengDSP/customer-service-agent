@@ -85,6 +85,12 @@ def list_customers(business_id: str):
     return []
 
 
+@app.get("/history/{business_id}/{customer_id}")
+def get_history(business_id: str, customer_id: str):
+    history = get_or_create_session(business_id, customer_id)
+    return history
+
+
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
     logger.info("[%s] customer=%s message: %s", req.business_id, req.customer_id, req.message)

@@ -46,6 +46,12 @@ def test_list_customers_no_customer_source():
     assert resp.json() == []
 
 
+def test_get_history_empty():
+    resp = client.get("/history/acme_retail/nobody@example.com")
+    assert resp.status_code == 200
+    assert resp.json() == []
+
+
 def test_chat_invalid_business():
     resp = client.post(
         "/chat",

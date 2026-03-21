@@ -39,20 +39,85 @@ def _show_draft(data: dict) -> str | None:
         print("  Invalid choice. Use a/e/r.")
 
 
+PAGE_SIZE = 20
+
+
+def _show_history(url: str, business_id: str, customer_id: str):
+    """Fetch and display conversation history with pagination, recent first."""
+    try:
+        resp = httpx.get(f"{url}/history/{business_id}/{customer_id}", timeout=10.0)
+    except (httpx.ConnectError, httpx.TimeoutException):
+        print("  Error: cannot connect to backend.")
+        return
+
+    if resp.status_code != 200:
+        print(f"  Error: {resp.text}")
+        return
+
+    messages = resp.json()
+    if not messages:
+        print("  No history yet.\n")
+        return
+
+    # Reverse for recent-first
+    messages = list(reversed(messages))
+    total = len(messages)
+    offset = 0
+
+    while offset < total:
+        page = messages[offset : offset + PAGE_SIZE]
+        remaining = total - offset - len(page)
+
+        print(f"\n  --- History ({offset + 1}-{offset + len(page)} of {total}, recent first) ---")
+        print(f"  {'Datetime':<22} {'From':<10} Message")
+        print(f"  {'-' * 22} {'-' * 10} {'-' * 40}")
+
+        for msg in page:
+            ts = msg.get("timestamp", "")
+            if ts:
+                # Truncate to seconds
+                ts = ts[:19].replace("T", " ")
+            sender = "customer" if msg.get("role") == "user" else "agent"
+            text = msg.get("content", "")
+            # Truncate long messages for table display
+            if len(text) > 60:
+                text = text[:57] + "..."
+            print(f"  {ts:<22} {sender:<10} {text}")
+
+        print()
+
+        if remaining > 0:
+            try:
+                choice = input(f"  {remaining} more messages. [n]ext page / [q]uit > ").strip().lower()
+            except (EOFError, KeyboardInterrupt):
+                print()
+                break
+            if choice in ("n", "next", ""):
+                offset += PAGE_SIZE
+            else:
+                break
+        else:
+            break
+
+
 def _handle_command(cmd: str, business_id: str, customer_id: str, url: str):
     """Handle in-session /commands."""
     command = cmd.split()[0].lower()
 
     if command == "/help":
         print("\nCommands:")
-        print("  /help    Show this help")
-        print("  /info    Show current session info")
-        print("  quit     End session\n")
+        print("  /help       Show this help")
+        print("  /info       Show current session info")
+        print("  /history    Show conversation history")
+        print("  quit        End session\n")
 
     elif command == "/info":
         print(f"\n  Business: {business_id}")
         print(f"  Customer: {customer_id}")
         print(f"  Backend:  {url}\n")
+
+    elif command == "/history":
+        _show_history(url, business_id, customer_id)
 
     else:
         print(f"  Unknown command: {command}. Type /help for available commands.\n")
