@@ -24,6 +24,7 @@ python -m cli --list-businesses
 | `--url <url>` | Backend URL (default: http://localhost:8000) |
 | `--list-businesses` | List available businesses and exit |
 | `--auto-approve` | Skip draft review, print replies directly |
+| `--as-customer` | Send messages as a customer (no agent reply) |
 
 ## Draft Review Mode
 
@@ -52,6 +53,14 @@ Use `--auto-approve` to skip this and print replies directly.
 | `/help` | Show available commands |
 | `/info` | Show current session info |
 | `quit` / `exit` | End session |
+
+## Customer Mode
+
+Use `--as-customer` to simulate a customer sending messages. Messages are recorded via `POST /messages` without triggering the agent loop. The CS worker web UI will show these as unreplied messages.
+
+```bash
+python -m cli --business beauty_lab --customer CUS-001 --as-customer
+```
 
 ## Behavior
 
