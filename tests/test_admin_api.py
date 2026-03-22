@@ -3,13 +3,17 @@
 import json
 import tempfile
 from pathlib import Path
-from unittest.mock import MagicMock, patch
+from unittest.mock import AsyncMock, MagicMock, patch
 
+import anthropic
+import httpx
+import pytest
 from fastapi.testclient import TestClient
 
 from agent.api import app
 
 client = TestClient(app)
+BASE_URL = "http://testserver"
 
 SAMPLE_LOG_1 = {
     "customer_id": "CUS-001",
@@ -190,60 +194,66 @@ def test_admin_get_log_entry_not_found():
 # --- POST /admin/replay ---
 
 
-@patch("agent.api.anthropic.Anthropic")
-def test_admin_replay(mock_anthropic_cls):
-    mock_client = MagicMock()
-    mock_anthropic_cls.return_value = mock_client
+@pytest.mark.asyncio
+async def test_admin_replay():
+    with patch.object(anthropic, "AsyncAnthropic") as mock_anthropic_cls:
+        mock_client = MagicMock()
+        mock_anthropic_cls.return_value = mock_client
 
-    mock_block = MagicMock()
-    mock_block.text = "Replayed response text"
-    mock_block.type = "text"
+        mock_block = MagicMock()
+        mock_block.text = "Replayed response text"
+        mock_block.type = "text"
 
-    mock_response = MagicMock()
-    mock_response.content = [mock_block]
-    mock_response.usage.input_tokens = 150
-    mock_response.usage.output_tokens = 40
+        mock_response = MagicMock()
+        mock_response.content = [mock_block]
+        mock_response.usage.input_tokens = 150
+        mock_response.usage.output_tokens = 40
 
-    mock_client.messages.create.return_value = mock_response
+        mock_client.messages.create = AsyncMock(return_value=mock_response)
 
-    resp = client.post(
-        "/admin/replay",
-        json={
-            "model": "claude-sonnet-4-6",
-            "system": "You are a helpful agent.",
-            "messages": [{"role": "user", "content": "Hello"}],
-            "tools": [],
-            "original_response_text": "Original response text",
-        },
-    )
+        transport = httpx.ASGITransport(app=app)
+        async with httpx.AsyncClient(transport=transport, base_url=BASE_URL) as ac:
+            resp = await ac.post(
+                "/admin/replay",
+                json={
+                    "model": "claude-sonnet-4-6",
+                    "system": "You are a helpful agent.",
+                    "messages": [{"role": "user", "content": "Hello"}],
+                    "tools": [],
+                    "original_response_text": "Original response text",
+                },
+            )
 
-    assert resp.status_code == 200
-    data = resp.json()
-    assert data["original"]["text"] == "Original response text"
-    assert data["replayed"]["text"] == "Replayed response text"
-    assert data["replayed"]["usage"]["input_tokens"] == 150
-    assert data["replayed"]["usage"]["output_tokens"] == 40
+        assert resp.status_code == 200
+        data = resp.json()
+        assert data["original"]["text"] == "Original response text"
+        assert data["replayed"]["text"] == "Replayed response text"
+        assert data["replayed"]["usage"]["input_tokens"] == 150
+        assert data["replayed"]["usage"]["output_tokens"] == 40
 
-    mock_client.messages.create.assert_called_once()
-    call_kwargs = mock_client.messages.create.call_args[1]
-    assert call_kwargs["model"] == "claude-sonnet-4-6"
-    assert call_kwargs["system"] == "You are a helpful agent."
+        mock_client.messages.create.assert_called_once()
+        call_kwargs = mock_client.messages.create.call_args[1]
+        assert call_kwargs["model"] == "claude-sonnet-4-6"
+        assert call_kwargs["system"] == "You are a helpful agent."
 
 
-@patch("agent.api.anthropic.Anthropic")
-def test_admin_replay_error(mock_anthropic_cls):
-    mock_client = MagicMock()
-    mock_anthropic_cls.return_value = mock_client
-    mock_client.messages.create.side_effect = Exception("API error")
+@pytest.mark.asyncio
+async def test_admin_replay_error():
+    with patch.object(anthropic, "AsyncAnthropic") as mock_anthropic_cls:
+        mock_client = MagicMock()
+        mock_anthropic_cls.return_value = mock_client
+        mock_client.messages.create = AsyncMock(side_effect=Exception("API error"))
 
-    resp = client.post(
-        "/admin/replay",
-        json={
-            "model": "claude-sonnet-4-6",
-            "system": "test",
-            "messages": [{"role": "user", "content": "hi"}],
-            "original_response_text": "original",
-        },
-    )
+        transport = httpx.ASGITransport(app=app)
+        async with httpx.AsyncClient(transport=transport, base_url=BASE_URL) as ac:
+            resp = await ac.post(
+                "/admin/replay",
+                json={
+                    "model": "claude-sonnet-4-6",
+                    "system": "test",
+                    "messages": [{"role": "user", "content": "hi"}],
+                    "original_response_text": "original",
+                },
+            )
 
-    assert resp.status_code == 500
+        assert resp.status_code == 500

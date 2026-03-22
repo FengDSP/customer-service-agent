@@ -2,10 +2,12 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+import aiofiles
+
 LOGS_DIR = Path(__file__).resolve().parent.parent.parent / "logs" / "llm"
 
 
-def log_interaction(
+async def log_interaction(
     customer_id: str,
     business_id: str,
     turns: list[dict],
@@ -32,8 +34,8 @@ def log_interaction(
         "usage": usage,
     }
 
-    with open(log_path, "a") as f:
-        f.write(json.dumps(log_entry, default=str) + "\n")
+    async with aiofiles.open(log_path, "a") as f:
+        await f.write(json.dumps(log_entry, default=str) + "\n")
 
     return log_path
 

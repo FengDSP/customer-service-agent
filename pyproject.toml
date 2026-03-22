@@ -11,6 +11,7 @@ dependencies = [
     "pyyaml>=6.0",
     "pandas>=2.0",
     "python-dotenv>=1.0",
+    "aiofiles>=24.1",
 ]
 
 [project.optional-dependencies]
@@ -26,6 +27,7 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+asyncio_mode = "auto"
 
 [tool.ruff]
 src = ["src"]

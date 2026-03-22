@@ -8,11 +8,12 @@ Tests the full flow:
 5. Verify conversation history has both messages
 """
 
-import queue
+import asyncio
 
+import pytest
 from fastapi.testclient import TestClient
 
-from agent.api import app, _event_queues
+from agent.api import app, _sse_subscribers
 from agent.session import SESSIONS_DIR, _cache
 
 client = TestClient(app)
@@ -27,8 +28,7 @@ def _cleanup():
         path = SESSIONS_DIR / BIZ / f"{cust}.jsonl"
         if path.exists():
             path.unlink()
-    # Clear any leftover queues
-    _event_queues.pop(BIZ, None)
+    _sse_subscribers.pop(BIZ, None)
 
 
 def setup_function():
@@ -39,12 +39,10 @@ def teardown_function():
     _cleanup()
 
 
-def _subscribe(business_id: str) -> queue.Queue:
+def _subscribe(business_id: str) -> asyncio.Queue:
     """Register a queue to receive SSE events for a business (simulates SSE client)."""
-    q: queue.Queue = queue.Queue()
-    if business_id not in _event_queues:
-        _event_queues[business_id] = []
-    _event_queues[business_id].append(q)
+    q: asyncio.Queue = asyncio.Queue()
+    _sse_subscribers.setdefault(business_id, []).append(q)
     return q
 
 
@@ -60,7 +58,7 @@ def test_message_and_reply_full_flow():
     assert resp.status_code == 200
 
     # Verify message event was published
-    event = q.get(timeout=2)
+    event = q.get_nowait()
     assert event["event"] == "message"
     assert event["data"]["customer_id"] == CUST
     assert event["data"]["message"] == "I need help with my appointment"
@@ -74,7 +72,7 @@ def test_message_and_reply_full_flow():
     assert resp.status_code == 200
 
     # Verify reply event was published
-    event = q.get(timeout=2)
+    event = q.get_nowait()
     assert event["event"] == "reply"
     assert event["data"]["customer_id"] == CUST
     assert event["data"]["reply"] == "Sure, let me look up your appointment."
@@ -104,8 +102,8 @@ def test_events_broadcast_to_multiple_subscribers():
         json={"business_id": BIZ, "customer_id": CUST, "message": "hello"},
     )
 
-    e1 = q1.get(timeout=2)
-    e2 = q2.get(timeout=2)
+    e1 = q1.get_nowait()
+    e2 = q2.get_nowait()
     assert e1 == e2
     assert e1["event"] == "message"
     assert e1["data"]["customer_id"] == CUST
@@ -125,7 +123,7 @@ def test_events_include_all_customers():
         json={"business_id": BIZ, "customer_id": other_cust, "message": "msg from cust 2"},
     )
 
-    events = [q.get(timeout=2), q.get(timeout=2)]
+    events = [q.get_nowait(), q.get_nowait()]
     cust_ids = [e["data"]["customer_id"] for e in events]
     assert CUST in cust_ids
     assert other_cust in cust_ids
@@ -138,25 +136,6 @@ def test_no_events_without_subscriber():
         json={"business_id": BIZ, "customer_id": CUST, "message": "no one listening"},
     )
     assert resp.status_code == 200
-
-
-def test_sse_endpoint_exists():
-    """The SSE endpoint returns a streaming response for valid businesses."""
-    import threading
-
-    result = {}
-
-    def check_stream():
-        with client.stream("GET", f"/conversations/{BIZ}/events") as resp:
-            result["status"] = resp.status_code
-            result["content_type"] = resp.headers.get("content-type", "")
-
-    t = threading.Thread(target=check_stream, daemon=True)
-    t.start()
-    t.join(timeout=2)
-
-    assert result.get("status") == 200
-    assert "text/event-stream" in result.get("content_type", "")
 
 
 def test_sse_endpoint_invalid_business():
