@@ -15,15 +15,19 @@ A **copilot** for human customer service agents — not a fully autonomous chatb
 ### Setup
 
 ```bash
-# 1. Install Python dependencies
+# 1. Create and activate a virtual environment
+python -m venv .venv
+source .venv/bin/activate
+
+# 2. Install Python dependencies
 pip install -e ".[dev]"
 
-# 2. Install frontend dependencies
+# 3. Install frontend dependencies
 cd src/frontend/web
 npm install
 cd ../../..
 
-# 3. Set up your API key
+# 4. Set up your API key
 cp .env.example .env
 # Edit .env with your Anthropic API key
 ```
