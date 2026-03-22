@@ -2,6 +2,16 @@
 
 A customer service copilot that drafts reply messages by autonomously retrieving company data. Human agents approve or modify drafts before sending.
 
+## Setup
+
+The Python backend requires a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+```
+
 ## Components
 
 ### Backend Service (FastAPI, Python)
