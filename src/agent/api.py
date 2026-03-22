@@ -8,7 +8,6 @@ import pandas as pd
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from starlette.responses import StreamingResponse
 
@@ -147,11 +146,15 @@ async def post_message(req: MessageRequest):
     msg = {"role": "user", "content": req.message}
     history.append(msg)
     await append_message(req.business_id, req.customer_id, msg)
-    await _publish_event(req.business_id, "message", {
-        "customer_id": req.customer_id,
-        "message": req.message,
-        "timestamp": msg.get("timestamp", ""),
-    })
+    await _publish_event(
+        req.business_id,
+        "message",
+        {
+            "customer_id": req.customer_id,
+            "message": req.message,
+            "timestamp": msg.get("timestamp", ""),
+        },
+    )
     return {"status": "ok"}
 
 
@@ -283,11 +286,15 @@ async def send_reply(business_id: str, customer_id: str, req: SendRequest):
     msg = {"role": "assistant", "content": req.reply}
     history.append(msg)
     await append_message(business_id, customer_id, msg)
-    await _publish_event(business_id, "reply", {
-        "customer_id": customer_id,
-        "reply": req.reply,
-        "timestamp": msg.get("timestamp", ""),
-    })
+    await _publish_event(
+        business_id,
+        "reply",
+        {
+            "customer_id": customer_id,
+            "reply": req.reply,
+            "timestamp": msg.get("timestamp", ""),
+        },
+    )
     return {"status": "ok"}
 
 
