@@ -95,6 +95,16 @@ The human reviews code asynchronously after merge. If issues are found, they wil
 - Keep changes minimal. Solve the task, not adjacent problems.
 - Do not add dead code, speculative features, or TODOs for future agents. If something needs doing, write a plan for it.
 
+### Bug Fix Workflow (Test First)
+
+When fixing a bug, always follow this order:
+
+1. **Write or fix the test first.** Add a test that reproduces the bug, or fix an existing test so it actually fails for the right reason. Run CI to confirm the test fails.
+2. **Then fix the code.** Only after you have a reliably failing test, fix the actual bug in the source code.
+3. **Run CI again** to confirm the test now passes.
+
+Never fix the code before you have a test that covers the bug. If an existing test passes despite the bug, the test is wrong — fix the test first.
+
 ## Documentation
 
 - `ARCHITECTURE.md` contains only must-know information and links to `docs/` files. Keep it concise.
