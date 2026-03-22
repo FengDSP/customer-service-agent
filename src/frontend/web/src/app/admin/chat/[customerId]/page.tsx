@@ -75,9 +75,11 @@ function ChatView() {
     fetchHistory();
     fetchContext();
 
-    // SSE: listen for new customer messages
+    // SSE: connect directly to the backend (Next.js rewrite proxy buffers
+    // streaming responses, which breaks EventSource).
     if (!biz) return;
-    const es = new EventSource(`/api/conversations/${biz}/events`);
+    const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+    const es = new EventSource(`${apiBase}/conversations/${biz}/events`);
     es.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);

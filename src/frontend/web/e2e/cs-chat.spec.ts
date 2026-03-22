@@ -107,6 +107,41 @@ test.describe("CS Chat — Chat View", () => {
   });
 });
 
+test.describe("CS Chat — SSE Real-time Updates", () => {
+  test("chat view updates in real-time when a new message arrives via SSE", async ({ page }) => {
+    const sseCust = `e2e-sse-${Date.now()}`;
+    // Seed an initial message so the chat view has something to show
+    await postMessage(sseCust, "initial message");
+
+    // Open the chat view FIRST
+    await page.goto(`/admin/chat/${sseCust}?biz=${BIZ}`);
+    await expect(page.getByText("initial message")).toBeVisible({ timeout: 10000 });
+
+    // Now post a new message while the page is open (no refresh)
+    await postMessage(sseCust, "real-time update test");
+
+    // The new message should appear via SSE without a page refresh
+    await expect(page.getByText("real-time update test")).toBeVisible({ timeout: 15000 });
+  });
+
+  test("conversation list updates in real-time when a new message arrives via SSE", async ({ page }) => {
+    const sseCust = `e2e-sse-list-${Date.now()}`;
+
+    // Open the conversation list FIRST
+    await page.goto(`/admin/chat?biz=${BIZ}`);
+    await expect(page.getByText("Customer Conversations")).toBeVisible({ timeout: 10000 });
+
+    // Allow time for the SSE connection to establish
+    await page.waitForTimeout(2000);
+
+    // Post a message while the list page is open
+    await postMessage(sseCust, "list update test");
+
+    // The new customer should appear via SSE without a page refresh
+    await expect(page.getByText(sseCust).first()).toBeVisible({ timeout: 15000 });
+  });
+});
+
 test.describe("CS Chat — Context Sidebar", () => {
   test("shows customer context for known customer", async ({ page }) => {
     // CUS-001 exists in beauty_lab CSV data
