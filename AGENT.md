@@ -138,9 +138,8 @@ Since agents work in parallel on separate branches, merge conflicts can happen.
 If your work requires changes to another agent's plan (e.g., you discovered a dependency, a conflicting approach, or missing prerequisite work):
 
 - Do not edit their in-progress plan directly.
-- Create a note file at `plans/in-progress/<their-plan-name>.note.md` describing what you need changed and why.
+- Ask the human to copy-paste your message to the other agent's session.
 - If the change is blocking your work, document the blocker in your own plan's Notes section and move on to other tasks or stop.
-- The human will coordinate between agents during async review.
 
 If the other plan is in `to-do/` (unclaimed), you may edit it directly since no agent is working on it.
 
