@@ -2,37 +2,39 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+import aiofiles
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 SESSIONS_DIR = PROJECT_ROOT / "data" / "sessions"
 
 _cache: dict[str, list[dict]] = {}
 
 
-def get_or_create_session(business_id: str, customer_id: str) -> list[dict]:
+async def get_or_create_session(business_id: str, customer_id: str) -> list[dict]:
     """Return conversation history for a customer, loading from disk if available."""
     key = f"{business_id}/{customer_id}"
     if key not in _cache:
-        _cache[key] = _load_history(business_id, customer_id)
+        _cache[key] = await _load_history(business_id, customer_id)
     return _cache[key]
 
 
-def append_message(business_id: str, customer_id: str, message: dict) -> None:
+async def append_message(business_id: str, customer_id: str, message: dict) -> None:
     """Append a message (with timestamp) to the session history file."""
     if "timestamp" not in message:
         message["timestamp"] = datetime.now().isoformat()
     path = _session_path(business_id, customer_id)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "a") as f:
-        f.write(json.dumps(message) + "\n")
+    async with aiofiles.open(path, "a") as f:
+        await f.write(json.dumps(message) + "\n")
 
 
-def _load_history(business_id: str, customer_id: str) -> list[dict]:
+async def _load_history(business_id: str, customer_id: str) -> list[dict]:
     path = _session_path(business_id, customer_id)
     if not path.exists():
         return []
     history = []
-    with open(path) as f:
-        for line in f:
+    async with aiofiles.open(path) as f:
+        async for line in f:
             line = line.strip()
             if line:
                 history.append(json.loads(line))

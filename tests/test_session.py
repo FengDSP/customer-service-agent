@@ -26,19 +26,21 @@ def clean_sessions():
     _cache.clear()
 
 
-def test_new_session_returns_empty():
-    history = get_or_create_session(TEST_BIZ, TEST_CUST)
+@pytest.mark.asyncio
+async def test_new_session_returns_empty():
+    history = await get_or_create_session(TEST_BIZ, TEST_CUST)
     assert history == []
 
 
-def test_append_and_reload():
-    append_message(TEST_BIZ, TEST_CUST, {"role": "user", "content": "hello"})
-    append_message(TEST_BIZ, TEST_CUST, {"role": "assistant", "content": "hi there"})
+@pytest.mark.asyncio
+async def test_append_and_reload():
+    await append_message(TEST_BIZ, TEST_CUST, {"role": "user", "content": "hello"})
+    await append_message(TEST_BIZ, TEST_CUST, {"role": "assistant", "content": "hi there"})
 
     # Clear cache to force reload from disk
     _cache.clear()
 
-    history = get_or_create_session(TEST_BIZ, TEST_CUST)
+    history = await get_or_create_session(TEST_BIZ, TEST_CUST)
     assert len(history) == 2
     assert history[0]["role"] == "user"
     assert history[0]["content"] == "hello"
@@ -47,9 +49,10 @@ def test_append_and_reload():
     assert history[1]["content"] == "hi there"
 
 
-def test_session_file_is_jsonl():
-    append_message(TEST_BIZ, TEST_CUST, {"role": "user", "content": "msg1"})
-    append_message(TEST_BIZ, TEST_CUST, {"role": "user", "content": "msg2"})
+@pytest.mark.asyncio
+async def test_session_file_is_jsonl():
+    await append_message(TEST_BIZ, TEST_CUST, {"role": "user", "content": "msg1"})
+    await append_message(TEST_BIZ, TEST_CUST, {"role": "user", "content": "msg2"})
 
     path = SESSIONS_DIR / TEST_BIZ / f"{TEST_CUST}.jsonl"
     assert path.exists()
@@ -57,14 +60,15 @@ def test_session_file_is_jsonl():
     assert len(lines) == 2
 
 
-def test_session_scoped_by_business():
-    append_message("biz_a", TEST_CUST, {"role": "user", "content": "from a"})
-    append_message("biz_b", TEST_CUST, {"role": "user", "content": "from b"})
+@pytest.mark.asyncio
+async def test_session_scoped_by_business():
+    await append_message("biz_a", TEST_CUST, {"role": "user", "content": "from a"})
+    await append_message("biz_b", TEST_CUST, {"role": "user", "content": "from b"})
 
     _cache.clear()
 
-    history_a = get_or_create_session("biz_a", TEST_CUST)
-    history_b = get_or_create_session("biz_b", TEST_CUST)
+    history_a = await get_or_create_session("biz_a", TEST_CUST)
+    history_b = await get_or_create_session("biz_b", TEST_CUST)
 
     assert len(history_a) == 1
     assert history_a[0]["content"] == "from a"

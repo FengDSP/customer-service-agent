@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import re
 
 import anthropic
 from dotenv import load_dotenv
@@ -18,7 +19,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_MODEL = "claude-sonnet-4-6"
 
 
-def run_agent_loop(
+async def run_agent_loop(
     config: BusinessConfig,
     history: list[dict],
     message: str,
@@ -30,7 +31,7 @@ def run_agent_loop(
     If draft_only=True, skip appending user/assistant messages to history and disk.
     Used by the draft endpoint where messages are managed separately.
     """
-    client = anthropic.Anthropic()
+    client = anthropic.AsyncAnthropic()
     model = os.getenv("LLM_MODEL", DEFAULT_MODEL)
     tools = build_tool_definitions(config)
     logger.info(
@@ -43,7 +44,7 @@ def run_agent_loop(
     if not draft_only:
         user_msg = {"role": "user", "content": message}
         history.append(user_msg)
-        append_message(config.business_id, customer_id, user_msg)
+        await append_message(config.business_id, customer_id, user_msg)
 
     structured_prompt = build_user_prompt(message, history[:-1], config, customer_id)
 
@@ -52,7 +53,7 @@ def run_agent_loop(
     total_usage = {"input_tokens": 0, "output_tokens": 0}
 
     while True:
-        response = client.messages.create(
+        response = await client.messages.create(
             model=model,
             max_tokens=2048,
             system=config.system_prompt,
@@ -105,10 +106,10 @@ def run_agent_loop(
             if not draft_only:
                 assistant_msg = {"role": "assistant", "content": reply_text}
                 history.append(assistant_msg)
-                append_message(config.business_id, customer_id, assistant_msg)
+                await append_message(config.business_id, customer_id, assistant_msg)
             all_turns.append({"role": "assistant", "content": response.content})
 
-            log_interaction(
+            await log_interaction(
                 customer_id=customer_id,
                 business_id=config.business_id,
                 turns=all_turns,
@@ -141,8 +142,6 @@ def _parse_response(text: str) -> dict:
     text = text.strip()
 
     # Try to extract JSON from code fences anywhere in the text
-    import re
-
     fence_match = re.search(r"```(?:json)?\s*\n(.*?)\n\s*```", text, re.DOTALL)
     if fence_match:
         text = fence_match.group(1).strip()

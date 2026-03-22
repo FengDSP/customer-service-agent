@@ -3,7 +3,7 @@
 import json
 import tempfile
 from pathlib import Path
-from unittest.mock import MagicMock, patch
+from unittest.mock import AsyncMock, MagicMock, patch
 
 from fastapi.testclient import TestClient
 
@@ -190,7 +190,7 @@ def test_admin_get_log_entry_not_found():
 # --- POST /admin/replay ---
 
 
-@patch("agent.api.anthropic.Anthropic")
+@patch("agent.api.anthropic.AsyncAnthropic")
 def test_admin_replay(mock_anthropic_cls):
     mock_client = MagicMock()
     mock_anthropic_cls.return_value = mock_client
@@ -204,7 +204,7 @@ def test_admin_replay(mock_anthropic_cls):
     mock_response.usage.input_tokens = 150
     mock_response.usage.output_tokens = 40
 
-    mock_client.messages.create.return_value = mock_response
+    mock_client.messages.create = AsyncMock(return_value=mock_response)
 
     resp = client.post(
         "/admin/replay",
@@ -230,11 +230,11 @@ def test_admin_replay(mock_anthropic_cls):
     assert call_kwargs["system"] == "You are a helpful agent."
 
 
-@patch("agent.api.anthropic.Anthropic")
+@patch("agent.api.anthropic.AsyncAnthropic")
 def test_admin_replay_error(mock_anthropic_cls):
     mock_client = MagicMock()
     mock_anthropic_cls.return_value = mock_client
-    mock_client.messages.create.side_effect = Exception("API error")
+    mock_client.messages.create = AsyncMock(side_effect=Exception("API error"))
 
     resp = client.post(
         "/admin/replay",
