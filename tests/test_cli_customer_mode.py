@@ -10,10 +10,9 @@ Tests the full flow:
 
 import asyncio
 
-import pytest
 from fastapi.testclient import TestClient
 
-from agent.api import app, _sse_subscribers
+from agent.api import _sse_subscribers, app
 from agent.session import SESSIONS_DIR, _cache
 
 client = TestClient(app)
@@ -47,13 +46,17 @@ def _subscribe(business_id: str) -> asyncio.Queue:
 
 
 def test_message_and_reply_full_flow():
-    """Full flow: customer sends message, CS agent replies, events are published, history is correct."""
+    """Full flow: customer sends message, CS agent replies, events published."""
     q = _subscribe(BIZ)
 
     # Step 1: Customer sends a message
     resp = client.post(
         "/messages",
-        json={"business_id": BIZ, "customer_id": CUST, "message": "I need help with my appointment"},
+        json={
+            "business_id": BIZ,
+            "customer_id": CUST,
+            "message": "I need help with my appointment",
+        },
     )
     assert resp.status_code == 200
 
