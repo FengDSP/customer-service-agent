@@ -316,7 +316,8 @@ async def conversation_events(business_id: str):
                     event = await asyncio.wait_for(q.get(), timeout=30)
                     if event is None:
                         break
-                    yield f"event: {event['event']}\ndata: {json.dumps(event['data'])}\n\n"
+                    payload = {**event["data"], "type": event["event"]}
+                    yield f"data: {json.dumps(payload)}\n\n"
                 except asyncio.TimeoutError:
                     yield ": keepalive\n\n"
         except asyncio.CancelledError:

@@ -110,12 +110,21 @@ test.describe("CS Chat — Chat View", () => {
 test.describe("CS Chat — SSE Real-time Updates", () => {
   test("chat view updates in real-time when a new message arrives via SSE", async ({ page }) => {
     const sseCust = `e2e-sse-${Date.now()}`;
-    // Seed an initial message so the chat view has something to show
+    // Seed an initial message AND reply so auto-draft doesn't trigger
+    // (auto-draft would call fetchHistory as a side effect, masking SSE failures)
     await postMessage(sseCust, "initial message");
+    await fetch(`${API}/conversations/${BIZ}/${sseCust}/send`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ reply: "thanks" }),
+    });
 
     // Open the chat view FIRST
     await page.goto(`/admin/chat/${sseCust}?biz=${BIZ}`);
     await expect(page.getByText("initial message")).toBeVisible({ timeout: 10000 });
+
+    // Allow time for the SSE connection to establish
+    await page.waitForTimeout(2000);
 
     // Now post a new message while the page is open (no refresh)
     await postMessage(sseCust, "real-time update test");
