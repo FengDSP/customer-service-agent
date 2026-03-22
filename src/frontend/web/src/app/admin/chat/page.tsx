@@ -44,13 +44,24 @@ function ChatContent() {
     if (!biz) return;
     const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
     const es = new EventSource(`${apiBase}/conversations/${biz}/events`);
+    let sseConnected = false;
+    es.onopen = () => {
+      sseConnected = true;
+    };
     es.onmessage = () => {
       refresh();
     };
     es.onerror = () => {
-      // Reconnect is automatic with EventSource
+      sseConnected = false;
     };
-    return () => es.close();
+    // Polling fallback: refresh every 5s if SSE is not connected
+    const poll = setInterval(() => {
+      if (!sseConnected) refresh();
+    }, 5000);
+    return () => {
+      es.close();
+      clearInterval(poll);
+    };
   }, [refresh, biz]);
 
   if (!biz) return <p className="text-gray-500">Select a business above.</p>;

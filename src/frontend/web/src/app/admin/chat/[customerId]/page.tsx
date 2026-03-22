@@ -80,6 +80,10 @@ function ChatView() {
     if (!biz) return;
     const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
     const es = new EventSource(`${apiBase}/conversations/${biz}/events`);
+    let sseConnected = false;
+    es.onopen = () => {
+      sseConnected = true;
+    };
     es.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
@@ -90,7 +94,17 @@ function ChatView() {
         // ignore parse errors
       }
     };
-    return () => es.close();
+    es.onerror = () => {
+      sseConnected = false;
+    };
+    // Polling fallback: refresh every 5s if SSE is not connected
+    const poll = setInterval(() => {
+      if (!sseConnected) fetchHistory();
+    }, 5000);
+    return () => {
+      es.close();
+      clearInterval(poll);
+    };
   }, [fetchHistory, fetchContext, biz, customerId]);
 
   useEffect(() => {
