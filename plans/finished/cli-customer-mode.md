@@ -60,19 +60,19 @@ Type /help for commands.
 ```
 
 ## Tasks
-- [ ] Extend SSE endpoint to emit `reply` events when `POST /conversations/{biz}/{customer}/send` is called
-- [ ] Refactor CLI: make customer mode the default, move current behavior behind `--cs-mode`
-- [ ] Remove `--as-customer` flag (now the default)
-- [ ] Implement SSE listener in CLI (background thread using `httpx-sse` or raw `httpx` streaming)
-- [ ] Display incoming replies asynchronously while accepting input
-- [ ] Update `/help` and banner for customer mode
-- [ ] E2e test: CLI sends a customer message in customer mode, a test script calls the send endpoint to simulate the CS agent, verify the CLI receives and displays the reply
-- [ ] Update `docs/cli.md` with new modes
-- [ ] Update `README.md` CLI usage examples
+- [x] Extend SSE endpoint to emit `reply` events when `POST /conversations/{biz}/{customer}/send` is called
+- [x] Refactor CLI: make customer mode the default, move current behavior behind `--cs-mode`
+- [x] Remove `--as-customer` flag (now the default)
+- [x] Implement SSE listener in CLI (background thread using `httpx-sse` or raw `httpx` streaming)
+- [x] Display incoming replies asynchronously while accepting input
+- [x] Update `/help` and banner for customer mode
+- [x] E2e test: CLI sends a customer message in customer mode, a test script calls the send endpoint to simulate the CS agent, verify the CLI receives and displays the reply
+- [x] Update `docs/cli.md` with new modes
+- N/A Update `README.md` CLI usage examples (no project-root README exists)
 
 ## Notes
 - Branch: agent/cli-customer-mode
 - `httpx` supports SSE via streaming responses (`httpx.stream`). No extra dependency needed.
 - The background SSE listener thread needs clean shutdown on exit/Ctrl+C.
-- PAUSED: origin/main has async SSE (`_sse_subscribers` + `asyncio.Queue`) from cs-worker-ui plan. This branch uses thread-safe `queue.Queue`. Waiting for async-backend refactoring to land before resuming merge.
-- Remaining work: fix `test_sse_endpoint_exists` test (TestClient streaming blocks), update docs, merge conflicts.
+- Resolved merge conflicts with async backend refactoring — now uses asyncio.Queue + _publish_event helper.
+- SSE events include typed `event:` field (message/reply) for client-side filtering.
