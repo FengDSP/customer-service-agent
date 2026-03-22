@@ -80,7 +80,7 @@ class ConversationSummary(BaseModel):
 
 
 @app.get("/businesses", response_model=list[BusinessInfo])
-def list_businesses():
+async def list_businesses():
     results = []
     for path in sorted(CONFIGS_DIR.glob("*.yaml")):
         config = load_business_config(path.stem)
@@ -89,7 +89,7 @@ def list_businesses():
 
 
 @app.get("/businesses/{business_id}/customers", response_model=list[CustomerInfo])
-def list_customers(business_id: str):
+async def list_customers(business_id: str):
     try:
         config = load_business_config(business_id)
     except FileNotFoundError:
@@ -110,8 +110,8 @@ def list_customers(business_id: str):
 
 
 @app.get("/history/{business_id}/{customer_id}")
-def get_history(business_id: str, customer_id: str):
-    history = get_or_create_session(business_id, customer_id)
+async def get_history(business_id: str, customer_id: str):
+    history = await get_or_create_session(business_id, customer_id)
     return history
 
 
@@ -123,10 +123,10 @@ async def post_message(req: MessageRequest):
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=f"Business '{req.business_id}' not found")
 
-    history = get_or_create_session(req.business_id, req.customer_id)
+    history = await get_or_create_session(req.business_id, req.customer_id)
     msg = {"role": "user", "content": req.message}
     history.append(msg)
-    append_message(req.business_id, req.customer_id, msg)
+    await append_message(req.business_id, req.customer_id, msg)
 
     # Notify SSE subscribers
     event_data = {
@@ -141,7 +141,7 @@ async def post_message(req: MessageRequest):
 
 
 @app.get("/conversations/{business_id}/pending", response_model=list[ConversationSummary])
-def list_pending_conversations(business_id: str):
+async def list_pending_conversations(business_id: str):
     """List all customers with messages, unreplied first."""
     try:
         config = load_business_config(business_id)
@@ -167,7 +167,7 @@ def list_pending_conversations(business_id: str):
     results = []
     for session_file in biz_dir.glob("*.jsonl"):
         customer_id = session_file.stem
-        history = get_or_create_session(business_id, customer_id)
+        history = await get_or_create_session(business_id, customer_id)
         if not history:
             continue
 
@@ -190,7 +190,7 @@ def list_pending_conversations(business_id: str):
 
 
 @app.get("/conversations/{business_id}/{customer_id}/context")
-def get_customer_context(business_id: str, customer_id: str):
+async def get_customer_context(business_id: str, customer_id: str):
     """Return CSV rows matching this customer from configured cs_view_sources."""
     try:
         config = load_business_config(business_id)
@@ -219,7 +219,7 @@ def get_customer_context(business_id: str, customer_id: str):
 
 
 @app.post("/conversations/{business_id}/{customer_id}/draft")
-def generate_draft(business_id: str, customer_id: str):
+async def generate_draft(business_id: str, customer_id: str):
     """Generate a draft reply for the latest unreplied message.
 
     Unlike POST /chat, this does NOT append the user message (it's already recorded
@@ -231,7 +231,7 @@ def generate_draft(business_id: str, customer_id: str):
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=f"Business '{business_id}' not found")
 
-    history = get_or_create_session(business_id, customer_id)
+    history = await get_or_create_session(business_id, customer_id)
     if not history:
         raise HTTPException(status_code=400, detail="No messages in conversation")
 
@@ -240,7 +240,9 @@ def generate_draft(business_id: str, customer_id: str):
         raise HTTPException(status_code=400, detail="No unreplied message")
 
     try:
-        result = run_agent_loop(config, history, last_msg["content"], customer_id, draft_only=True)
+        result = await run_agent_loop(
+            config, history, last_msg["content"], customer_id, draft_only=True
+        )
     except Exception as e:
         logger.error("Draft generation failed: %s", e)
         raise HTTPException(status_code=500, detail=str(e))
@@ -255,17 +257,17 @@ def generate_draft(business_id: str, customer_id: str):
 
 
 @app.post("/conversations/{business_id}/{customer_id}/send")
-def send_reply(business_id: str, customer_id: str, req: SendRequest):
+async def send_reply(business_id: str, customer_id: str, req: SendRequest):
     """Record an approved reply in the session."""
     try:
         load_business_config(business_id)
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=f"Business '{business_id}' not found")
 
-    history = get_or_create_session(business_id, customer_id)
+    history = await get_or_create_session(business_id, customer_id)
     msg = {"role": "assistant", "content": req.reply}
     history.append(msg)
-    append_message(business_id, customer_id, msg)
+    await append_message(business_id, customer_id, msg)
     return {"status": "ok"}
 
 
@@ -300,7 +302,7 @@ async def conversation_events(business_id: str):
 
 
 @app.post("/chat", response_model=ChatResponse)
-def chat(req: ChatRequest):
+async def chat(req: ChatRequest):
     logger.info("[%s] customer=%s message: %s", req.business_id, req.customer_id, req.message)
 
     try:
@@ -309,7 +311,7 @@ def chat(req: ChatRequest):
         logger.warning("Business not found: %s", req.business_id)
         raise HTTPException(status_code=404, detail=f"Business '{req.business_id}' not found")
 
-    history = get_or_create_session(req.business_id, req.customer_id)
+    history = await get_or_create_session(req.business_id, req.customer_id)
     logger.info(
         "[%s] customer=%s history=%d messages",
         req.business_id,
@@ -318,7 +320,7 @@ def chat(req: ChatRequest):
     )
 
     try:
-        result = run_agent_loop(config, history, req.message, req.customer_id)
+        result = await run_agent_loop(config, history, req.message, req.customer_id)
     except Exception as e:
         logger.error(
             "[%s] customer=%s agent loop failed: %s",
@@ -350,17 +352,17 @@ def chat(req: ChatRequest):
 
 
 @app.get("/admin/logs/{business_id}/customers")
-def admin_list_customers_with_logs(business_id: str):
+async def admin_list_customers_with_logs(business_id: str):
     return list_customers_with_logs(business_id)
 
 
 @app.get("/admin/logs/{business_id}/{customer_id}")
-def admin_list_log_entries(business_id: str, customer_id: str):
+async def admin_list_log_entries(business_id: str, customer_id: str):
     return list_log_entries(business_id, customer_id)
 
 
 @app.get("/admin/logs/{business_id}/{customer_id}/{log_index}")
-def admin_get_log_entry(business_id: str, customer_id: str, log_index: int):
+async def admin_get_log_entry(business_id: str, customer_id: str, log_index: int):
     entry = get_log_entry(business_id, customer_id, log_index)
     if entry is None:
         raise HTTPException(status_code=404, detail="Log entry not found")
@@ -376,8 +378,8 @@ class ReplayRequest(BaseModel):
 
 
 @app.post("/admin/replay")
-def admin_replay(req: ReplayRequest):
-    client = anthropic.Anthropic()
+async def admin_replay(req: ReplayRequest):
+    client = anthropic.AsyncAnthropic()
     try:
         kwargs = {
             "model": req.model,
@@ -388,7 +390,7 @@ def admin_replay(req: ReplayRequest):
         if req.tools:
             kwargs["tools"] = req.tools
 
-        response = client.messages.create(**kwargs)
+        response = await client.messages.create(**kwargs)
 
         replayed_text = ""
         for block in response.content:
