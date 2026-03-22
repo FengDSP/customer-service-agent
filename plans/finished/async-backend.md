@@ -16,12 +16,17 @@ Convert all FastAPI endpoints and internal functions (session, agent loop, confi
 - Async file I/O (via `aiofiles` or similar) would prevent blocking the event loop during session reads/writes.
 
 ## Tasks
-- [ ] Convert all endpoint functions in `api.py` to `async def`
-- [ ] Switch SSE pub/sub from `queue.Queue` to `asyncio.Queue`
-- [ ] Convert `run_agent_loop` to async using `AsyncAnthropic`
-- [ ] Convert session I/O (`get_or_create_session`, `append_message`) to async
-- [ ] Convert config loading to async (or cache eagerly at startup)
-- [ ] Update all tests to work with async endpoints (pytest-asyncio or TestClient handles this)
-- [ ] E2e test: verify SSE flow works end-to-end with pure async stack
+- [x] Convert all endpoint functions in `api.py` to `async def`
+- [x] Switch SSE pub/sub from `queue.Queue` to `asyncio.Queue`
+- [x] Convert `run_agent_loop` to async using `AsyncAnthropic`
+- [x] Convert session I/O (`get_or_create_session`, `append_message`) to async
+- [x] Convert config loading to async (or cache eagerly at startup)
+- [x] Update all tests to work with async endpoints (pytest-asyncio or TestClient handles this)
+- [x] E2e test: verify SSE flow works end-to-end with pure async stack
 
 ## Notes
+- SSE pub/sub was already using `asyncio.Queue` — no change needed.
+- Config loading kept sync with caching (small YAML files, negligible blocking).
+- Added `aiofiles` dependency for async file I/O in session and logging.
+- `patch.object(anthropic, "AsyncAnthropic")` required instead of string-based `patch` for mocking async Anthropic client in tests.
+- Branch: `agent/async-backend`
