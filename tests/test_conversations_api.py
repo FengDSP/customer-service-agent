@@ -195,8 +195,9 @@ def test_sse_subscriber_notified_on_message():
 
         assert not queue.empty()
         event = queue.get_nowait()
-        assert event["customer_id"] == CUST
-        assert event["message"] == "sse test"
+        assert event["event"] == "message"
+        assert event["data"]["customer_id"] == CUST
+        assert event["data"]["message"] == "sse test"
     finally:
         _sse_subscribers[BIZ].remove(queue)
         if not _sse_subscribers[BIZ]:

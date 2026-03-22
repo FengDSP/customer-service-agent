@@ -2,6 +2,9 @@
 """CLI for interacting with the customer service agent backend."""
 
 import argparse
+import json
+import sys
+import threading
 
 import httpx
 
@@ -101,7 +104,7 @@ def _show_history(url: str, business_id: str, customer_id: str):
             break
 
 
-def _handle_command(cmd: str, business_id: str, customer_id: str, url: str):
+def _handle_command(cmd: str, business_id: str, customer_id: str, url: str, cs_mode: bool):
     """Handle in-session /commands."""
     command = cmd.split()[0].lower()
 
@@ -110,18 +113,63 @@ def _handle_command(cmd: str, business_id: str, customer_id: str, url: str):
         print("  /help       Show this help")
         print("  /info       Show current session info")
         print("  /history    Show conversation history")
-        print("  quit        End session\n")
+        print("  quit        End session")
+        if not cs_mode:
+            print("\nIn customer mode: type a message and a CS agent will reply from the admin UI.")
+        print()
 
     elif command == "/info":
         print(f"\n  Business: {business_id}")
         print(f"  Customer: {customer_id}")
-        print(f"  Backend:  {url}\n")
+        print(f"  Backend:  {url}")
+        print(f"  Mode:     {'cs-agent' if cs_mode else 'customer'}\n")
 
     elif command == "/history":
         _show_history(url, business_id, customer_id)
 
     else:
         print(f"  Unknown command: {command}. Type /help for available commands.\n")
+
+
+def _start_sse_listener(url: str, business_id: str, customer_id: str, stop_event: threading.Event):
+    """Background thread that listens for SSE reply events and prints them."""
+    sse_url = f"{url}/conversations/{business_id}/events"
+    while not stop_event.is_set():
+        try:
+            with httpx.stream("GET", sse_url, timeout=None) as response:
+                event_type = ""
+                data_buf = ""
+                for line in response.iter_lines():
+                    if stop_event.is_set():
+                        break
+                    if line.startswith("event: "):
+                        event_type = line[7:].strip()
+                    elif line.startswith("data: "):
+                        data_buf = line[6:]
+                    elif line == "":
+                        # End of event
+                        if event_type == "reply" and data_buf:
+                            try:
+                                payload = json.loads(data_buf)
+                                if payload.get("customer_id") == customer_id:
+                                    reply = payload.get("reply", "")
+                                    print(f"\nAgent: {reply}\n")
+                                    # Re-show prompt hint
+                                    sys.stdout.write("You: ")
+                                    sys.stdout.flush()
+                            except json.JSONDecodeError:
+                                pass
+                        event_type = ""
+                        data_buf = ""
+        except (httpx.ConnectError, httpx.RemoteProtocolError, httpx.ReadError):
+            if stop_event.is_set():
+                break
+            # Reconnect after a brief pause
+            stop_event.wait(2)
+        except Exception:
+            if stop_event.is_set():
+                break
+            stop_event.wait(2)
 
 
 def main():
@@ -133,12 +181,14 @@ def main():
         "--list-businesses", action="store_true", help="List available businesses and exit"
     )
     parser.add_argument(
-        "--auto-approve", action="store_true", help="Skip draft review, print replies directly"
+        "--cs-mode",
+        action="store_true",
+        help="CS agent mode: review/edit/approve AI-generated draft replies",
     )
     parser.add_argument(
-        "--as-customer",
+        "--auto-approve",
         action="store_true",
-        help="Send messages as a customer (POST /messages, no agent reply)",
+        help="(CS mode only) Skip draft review, print replies directly",
     )
     args = parser.parse_args()
 
@@ -161,8 +211,12 @@ def main():
     if not args.customer:
         parser.error("--customer is required")
 
+    if args.auto_approve and not args.cs_mode:
+        parser.error("--auto-approve requires --cs-mode")
+
     business_id = args.business
     customer_id = args.customer
+    cs_mode = args.cs_mode
 
     # Startup banner
     biz_name = business_id
@@ -178,69 +232,89 @@ def main():
 
     print(f"\nConnected to {biz_name}")
     print(f"Customer: {customer_id}")
-    if args.as_customer:
-        mode = "customer"
-    elif args.auto_approve:
-        mode = "auto-approve"
+    if cs_mode:
+        mode = "auto-approve" if args.auto_approve else "draft review"
     else:
-        mode = "draft review"
+        mode = "customer"
     print(f"Mode: {mode}")
-    print("Type a message, or /help for commands.\n")
+    if cs_mode:
+        print("Type a message, or /help for commands.\n")
+    else:
+        print("\nType a message to start chatting. A CS agent will reply from the admin UI.")
+        print("Type /help for commands.\n")
 
-    while True:
-        try:
-            message = input("You: ").strip()
-        except (EOFError, KeyboardInterrupt):
-            print("\nBye!")
-            break
+    # In customer mode, start SSE listener for reply events
+    stop_event = threading.Event()
+    sse_thread = None
+    if not cs_mode:
+        sse_thread = threading.Thread(
+            target=_start_sse_listener,
+            args=(args.url, business_id, customer_id, stop_event),
+            daemon=True,
+        )
+        sse_thread.start()
 
-        if not message:
-            continue
-        if message.lower() in ("quit", "exit"):
-            print("Bye!")
-            break
-
-        if message.startswith("/"):
-            _handle_command(message, business_id, customer_id, args.url)
-            continue
-
-        payload = {"business_id": business_id, "customer_id": customer_id, "message": message}
-
-        if args.as_customer:
+    try:
+        while True:
             try:
-                resp = httpx.post(f"{args.url}/messages", json=payload, timeout=10.0)
+                message = input("You: ").strip()
+            except (EOFError, KeyboardInterrupt):
+                print("\nBye!")
+                break
+
+            if not message:
+                continue
+            if message.lower() in ("quit", "exit"):
+                print("Bye!")
+                break
+
+            if message.startswith("/"):
+                _handle_command(message, business_id, customer_id, args.url, cs_mode)
+                continue
+
+            payload = {"business_id": business_id, "customer_id": customer_id, "message": message}
+
+            if not cs_mode:
+                # Customer mode: send message, wait for reply via SSE
+                try:
+                    resp = httpx.post(f"{args.url}/messages", json=payload, timeout=10.0)
+                except httpx.ConnectError:
+                    print(f"Error: cannot connect to backend at {args.url}. Is it running?")
+                    continue
+                if resp.status_code != 200:
+                    print(f"Error ({resp.status_code}): {resp.text}")
+                else:
+                    print("  (message sent, waiting for reply...)\n")
+                continue
+
+            # CS agent mode: send via /chat and review draft
+            try:
+                resp = httpx.post(f"{args.url}/chat", json=payload, timeout=120.0)
             except httpx.ConnectError:
                 print(f"Error: cannot connect to backend at {args.url}. Is it running?")
                 continue
+            except httpx.TimeoutException:
+                print("Error: request timed out.")
+                continue
+
             if resp.status_code != 200:
                 print(f"Error ({resp.status_code}): {resp.text}")
+                continue
+
+            data = resp.json()
+
+            if args.auto_approve:
+                print(f"\nAgent: {data['reply']}\n")
             else:
-                print("  (message sent)\n")
-            continue
-
-        try:
-            resp = httpx.post(f"{args.url}/chat", json=payload, timeout=120.0)
-        except httpx.ConnectError:
-            print(f"Error: cannot connect to backend at {args.url}. Is it running?")
-            continue
-        except httpx.TimeoutException:
-            print("Error: request timed out.")
-            continue
-
-        if resp.status_code != 200:
-            print(f"Error ({resp.status_code}): {resp.text}")
-            continue
-
-        data = resp.json()
-
-        if args.auto_approve:
-            print(f"\nAgent: {data['reply']}\n")
-        else:
-            result = _show_draft(data)
-            if result:
-                print(f"\nApproved reply: {result}\n")
-            else:
-                print("Draft rejected.\n")
+                result = _show_draft(data)
+                if result:
+                    print(f"\nApproved reply: {result}\n")
+                else:
+                    print("Draft rejected.\n")
+    finally:
+        stop_event.set()
+        if sse_thread:
+            sse_thread.join(timeout=3)
 
 
 if __name__ == "__main__":

@@ -8,6 +8,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from starlette.responses import StreamingResponse
 
@@ -34,6 +35,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# --- SSE pub/sub ---
+# {business_id: [asyncio.Queue, ...]}
+_sse_subscribers: dict[str, list[asyncio.Queue]] = {}
+
+
+async def _publish_event(business_id: str, event_type: str, data: dict):
+    """Push an SSE event to all connected clients for a business."""
+    for q in _sse_subscribers.get(business_id, []):
+        await q.put({"event": event_type, "data": data})
 
 
 class ChatRequest(BaseModel):
@@ -127,16 +139,11 @@ async def post_message(req: MessageRequest):
     msg = {"role": "user", "content": req.message}
     history.append(msg)
     await append_message(req.business_id, req.customer_id, msg)
-
-    # Notify SSE subscribers
-    event_data = {
+    await _publish_event(req.business_id, "message", {
         "customer_id": req.customer_id,
         "message": req.message,
         "timestamp": msg.get("timestamp", ""),
-    }
-    for queue in _sse_subscribers.get(req.business_id, []):
-        await queue.put(event_data)
-
+    })
     return {"status": "ok"}
 
 
@@ -268,29 +275,37 @@ async def send_reply(business_id: str, customer_id: str, req: SendRequest):
     msg = {"role": "assistant", "content": req.reply}
     history.append(msg)
     await append_message(business_id, customer_id, msg)
+    await _publish_event(business_id, "reply", {
+        "customer_id": customer_id,
+        "reply": req.reply,
+        "timestamp": msg.get("timestamp", ""),
+    })
     return {"status": "ok"}
 
 
 @app.get("/conversations/{business_id}/events")
 async def conversation_events(business_id: str):
-    """SSE endpoint for real-time customer message notifications."""
+    """SSE endpoint streaming real-time message and reply events for a business."""
     try:
         load_business_config(business_id)
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=f"Business '{business_id}' not found")
 
-    queue: asyncio.Queue = asyncio.Queue()
-    _sse_subscribers.setdefault(business_id, []).append(queue)
+    q: asyncio.Queue = asyncio.Queue()
+    _sse_subscribers.setdefault(business_id, []).append(q)
 
     async def event_stream():
         try:
             while True:
-                data = await queue.get()
-                yield f"data: {json.dumps(data)}\n\n"
+                try:
+                    event = await asyncio.wait_for(q.get(), timeout=30)
+                    yield f"event: {event['event']}\ndata: {json.dumps(event['data'])}\n\n"
+                except asyncio.TimeoutError:
+                    yield ": keepalive\n\n"
         except asyncio.CancelledError:
             pass
         finally:
-            _sse_subscribers[business_id].remove(queue)
+            _sse_subscribers[business_id].remove(q)
             if not _sse_subscribers[business_id]:
                 del _sse_subscribers[business_id]
 
