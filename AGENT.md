@@ -58,9 +58,9 @@ Each agent works in its own git worktree on a feature branch. Never push directl
 
 - Branch naming: `agent/<plan-name>` (e.g., `agent/csv-tool-calls`)
 - Branch from `main` at the latest commit.
-- Do not work on `main` directly.
 - Each worktree is isolated — agents do not coordinate in real time.
 - Push your feature branch to the remote as its own branch (e.g., `git push origin HEAD -u`). Never push to `origin/main` directly.
+- Keep your changes scoped to your plan to minimize conflicts. If two plans touch the same files, the earlier merge wins. The later agent resolves conflicts on their branch.
 
 ## Commits and PRs
 
@@ -72,12 +72,11 @@ Agents commit to their feature branch and merge to `main` via PRs.
 
 ### PR workflow
 
-Every git commit must be immediately followed by a push, then a PR creation, then a PR merge. Do not batch these steps or delay any of them.
+Push and merge PRs at meaningful checkpoints — don't sit on unpushed work, but you don't need a separate PR for every single commit. Group related commits into one PR when they form a logical unit.
 
 1. Push your feature branch to the remote: `git push origin HEAD -u`
 2. Create a PR with `gh pr create` targeting `main`. PR description should summarize what was done and link to the plan file (e.g., `plans/in-progress/my-plan.md`).
 3. Merge immediately with `gh pr merge <number> --merge`. Do not wait for human review. If CI is set up, wait for it to pass first.
-4. Do not wait until the entire plan is complete — open and merge PRs at meaningful checkpoints.
 
 The human reviews code asynchronously after merge. If issues are found, they will be addressed in a follow-up plan.
 
@@ -95,13 +94,13 @@ The human reviews code asynchronously after merge. If issues are found, they wil
 - Keep changes minimal. Solve the task, not adjacent problems.
 - Do not add dead code, speculative features, or TODOs for future agents. If something needs doing, write a plan for it.
 
-### Bug Fix Workflow (Test First)
+## Bug Fix Workflow (Test First)
 
 When fixing a bug, always follow this order:
 
-1. **Write or fix the test first.** Add a test that reproduces the bug, or fix an existing test so it actually fails for the right reason. Run CI to confirm the test fails.
+1. **Write or fix the test first.** Add a test that reproduces the bug, or fix an existing test so it actually fails for the right reason. Run the test locally to confirm it fails.
 2. **Then fix the code.** Only after you have a reliably failing test, fix the actual bug in the source code.
-3. **Run CI again** to confirm the test now passes.
+3. **Push both the test and fix together** so CI stays green. Run tests locally to confirm everything passes before pushing.
 
 Never fix the code before you have a test that covers the bug. If an existing test passes despite the bug, the test is wrong — fix the test first.
 
@@ -111,10 +110,7 @@ Never fix the code before you have a test that covers the bug. If an existing te
 - Each component gets its own file in `docs/` (e.g., `docs/agent-loop.md`, `docs/csv-tools.md`).
 - When you build a new component, create its doc. When you modify a component, update its doc.
 - Do not duplicate information between ARCHITECTURE.md and docs/ files. ARCHITECTURE.md links; docs/ explains.
-
-## LLM Logging
-
-All LLM API calls made by the backend service (not by the agent harness) are logged for debugging. See `docs/llm-logging.md` once it exists for the format and location.
+- All LLM API calls made by the backend service (not by the agent harness) are logged for debugging. See `docs/llm-logging.md`.
 
 ## Session Start
 
@@ -125,13 +121,6 @@ Complete all of the following **before** responding to the first human message:
 3. Run: `/loop 10m git fetch origin main && git merge origin/main --no-edit` — this keeps your branch up to date throughout the session and reduces merge conflicts.
 
 If a merge fails due to conflicts, resolve them immediately — if a conflict is non-trivial, note it in your plan and ask the human.
-
-## Conflict Resolution
-
-Since agents work in parallel on separate branches, merge conflicts can happen.
-
-- Keep your changes scoped to your plan to minimize conflicts.
-- If two plans touch the same files, the earlier merge wins. The later agent resolves conflicts on their branch.
 
 ## Cross-Agent Plan Changes
 
@@ -160,7 +149,5 @@ Specialized agents live in `.claude/agents/`. Each coding agent session should a
 ## What Not to Do
 
 - Do not modify another agent's in-progress plan or branch.
-- Do not commit directly to `main` — always go through a branch and PR.
 - Do not refactor code unrelated to your plan.
 - Do not add dependencies without justification in the plan notes.
-- Do not leave the plan in `in-progress/` if you're done — move it to `finished/`.
