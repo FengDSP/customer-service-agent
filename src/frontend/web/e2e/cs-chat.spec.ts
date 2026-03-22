@@ -49,7 +49,7 @@ test.describe("CS Chat — Customer List", () => {
     await postMessage(CUST, "Hello, I need help");
 
     await page.goto(`/admin/chat?biz=${BIZ}`);
-    await expect(page.getByText(CUST)).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText(CUST).first()).toBeVisible({ timeout: 10000 });
     await expect(page.getByText("Hello, I need help")).toBeVisible();
   });
 
