@@ -101,7 +101,11 @@ def test_cs_worker_full_flow(server):
     # 1. Post a customer message (simulates CLI --as-customer)
     resp = httpx.post(
         f"{BASE_URL}/messages",
-        json={"business_id": CS_BIZ, "customer_id": CS_CUST, "message": "When is my next appointment?"},
+        json={
+            "business_id": CS_BIZ,
+            "customer_id": CS_CUST,
+            "message": "When is my next appointment?",
+        },
         timeout=10.0,
     )
     assert resp.status_code == 200
@@ -111,7 +115,9 @@ def test_cs_worker_full_flow(server):
     assert resp.status_code == 200
     pending = resp.json()
     found = [c for c in pending if c["customer_id"] == CS_CUST]
-    assert len(found) == 1, f"Expected {CS_CUST} in pending, got {[c['customer_id'] for c in pending]}"
+    assert len(found) == 1, (
+        f"Expected {CS_CUST} in pending, got {[c['customer_id'] for c in pending]}"
+    )
     assert found[0]["has_unreplied"] is True
 
     # 3. Check customer context returns data
