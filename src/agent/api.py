@@ -25,9 +25,6 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 app = FastAPI(title="Customer Service Agent")
 
-# SSE pub/sub: {business_id: list[asyncio.Queue]}
-_sse_subscribers: dict[str, list[asyncio.Queue]] = {}
-
 # Allow Next.js dev server to call the API
 app.add_middleware(
     CORSMiddleware,
@@ -40,6 +37,17 @@ app.add_middleware(
 # --- SSE pub/sub ---
 # {business_id: [asyncio.Queue, ...]}
 _sse_subscribers: dict[str, list[asyncio.Queue]] = {}
+_shutdown_event = asyncio.Event()
+
+
+@app.on_event("shutdown")
+async def _on_shutdown():
+    """Signal all SSE connections to close so uvicorn can exit promptly."""
+    _shutdown_event.set()
+    # Push a sentinel to unblock any queues waiting in asyncio.wait_for
+    for queues in _sse_subscribers.values():
+        for q in queues:
+            await q.put(None)
 
 
 async def _publish_event(business_id: str, event_type: str, data: dict):
@@ -296,9 +304,11 @@ async def conversation_events(business_id: str):
 
     async def event_stream():
         try:
-            while True:
+            while not _shutdown_event.is_set():
                 try:
                     event = await asyncio.wait_for(q.get(), timeout=30)
+                    if event is None:
+                        break
                     yield f"event: {event['event']}\ndata: {json.dumps(event['data'])}\n\n"
                 except asyncio.TimeoutError:
                     yield ": keepalive\n\n"
